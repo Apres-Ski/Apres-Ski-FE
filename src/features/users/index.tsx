@@ -1,18 +1,22 @@
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../app/store";
+import { selectUser } from './usersSlice'
 
 const UsersList = () => {
-    const { users } = useSelector((state: RootState) => state.users)
+    const { users, activeUser } = useSelector((state: RootState) => state.users)
+
+    const dispatch = useDispatch()
 
     const renderedUsers = users.map(user => (
         <div>
-            <p>{user.name}</p>
+            <button onClick={() => dispatch(selectUser(user))}>{user.name}</button>
         </div>
     ))
 
     return (
         <section>
             {renderedUsers}
+            <p>Active User: {activeUser.name}</p>
         </section>
     )
 }

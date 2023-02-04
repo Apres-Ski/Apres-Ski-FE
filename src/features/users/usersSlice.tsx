@@ -55,7 +55,16 @@ const initialState: InitialState = {
 export const usersSlice = createSlice({
     name: 'users',
     initialState,
-    reducers: {},
+    reducers: {
+        selectUser (state, action) {
+            const { id, name, location } = action.payload
+            state.activeUser.id = id,
+            state.activeUser.name = name,
+            state.activeUser.location = location
+        }
+    },
 })
+
+export const { selectUser } = usersSlice.actions
 
 export default usersSlice.reducer
