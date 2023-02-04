@@ -28,6 +28,8 @@ function App() {
     ))
     content = (
       <div>
+        <h2>User List</h2>
+        <UsersList />
         <h2>List of Restaurants</h2>
         {renderedRestaurants}
       </div>
@@ -43,7 +45,6 @@ function App() {
 
   return (
     <div>
-      <UsersList />
       {content}
     </div>
   )
