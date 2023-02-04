@@ -1,6 +1,6 @@
 import { RestaurantsState } from "../app/store/interfaces";
 
-export const fullCleanedList = (restaurants: RestaurantsState[]) => {
+export const cleanList = (restaurants: RestaurantsState[]) => {
   const cleanedList = restaurants.map((restaurant: RestaurantsState) => {
     return {
       id: restaurant.id,
