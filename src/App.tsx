@@ -4,6 +4,7 @@ import './App.css'
 import UsersList from './features/users'
 
 function App() {
+  const dispatch = useDispatch<AppDispatch>()
 
 
   return (
