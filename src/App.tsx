@@ -21,7 +21,7 @@ function App() {
     content = <p>Loading...</p>
   } else if (status === 'succeeded') {
     const renderedRestaurants = restaurants.map((restaurant) => (
-      <div>
+      <div key={restaurant.id}>
         <p>{restaurant.name}</p>
         <img style={{ width: 350 }} src={restaurant.coverImg} />
       </div>
