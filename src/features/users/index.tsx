@@ -8,7 +8,7 @@ const UsersList = () => {
     const dispatch = useDispatch()
 
     const renderedUsers = users.map(user => (
-        <div>
+        <div key={user.id}>
             <button onClick={() => dispatch(selectUser(user))}>{user.name}</button>
         </div>
     ))
