@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getRestaurants } from './features/restaurants/restaurantsSlice'
+import { Map } from './components/Map'
 
 function App() {
   const dispatch = useDispatch<AppDispatch>()
@@ -30,6 +31,7 @@ function App() {
       <div>
         <h2>User List</h2>
         <UsersList />
+        <Map />
         <h2>List of Restaurants</h2>
         {renderedRestaurants}
       </div>
