@@ -68,7 +68,7 @@ button:focus-visible {
   }
 }
 
-.marker {
+.lift-marker {
   background-image: url('lift.png');
   background-size: cover;
   width: 50px;
