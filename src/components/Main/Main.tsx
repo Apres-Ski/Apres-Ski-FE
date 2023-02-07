@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getRestaurants } from '../../features/restaurants/restaurantsSlice'
 import { RestaurantList } from '../RestaurantList/RestaurantList'
+import { NavComp } from '../NavComp'
 
 export const Main = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -24,6 +25,7 @@ export const Main = () => {
     content = (
       <div>
         <h1>MAIN COMPONENT</h1>
+        <NavComp />
         <Map />
         <RestaurantList />
       </div>
@@ -41,6 +43,5 @@ export const Main = () => {
     <section>
       {content}
     </section>
-
   )
 }
