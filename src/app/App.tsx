@@ -1,20 +1,20 @@
-import './App.css'
+import '../App.css'
 import { Landing } from '../components/Landing'
 import { DemoUsers } from '../features/users/DemoUsers'
 import { Main } from '../features/restaurants/Dashboard'
 import { Error } from '../components/Error'
-import { Sorry } from '../components/Sorry'
+import { Routes, Route, NavLink } from 'react-router-dom'
 
 function App() {
   return (
     <div>
       <h1>Apres Ski</h1>
-      <Landing />
-      <h2>User List</h2>
-      <DemoUsers />
-      <Main />
-      <Error />
-      <Sorry />
+        <Routes>
+          <Route path='/' element={(<Landing />)} />
+          <Route path='/demo' element={(<DemoUsers />)} />
+          <Route path='/dashboard' element={(<Main />)} />
+          <Route path='/*' element={(<Error />)} />
+        </Routes>
     </div>
   )
 }
