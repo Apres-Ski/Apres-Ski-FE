@@ -5,7 +5,6 @@ import { Main } from './components/Main/Main'
 import { Error } from './components/Error/Error'
 import { Sorry } from './components/Sorry/Sorry'
 
-
 function App() {
 
 return (
