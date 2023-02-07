@@ -1,6 +1,6 @@
-import { RestaurantCard } from "../RestaurantCard/RestaurantCard"
+import { RestaurantCard } from "../../components/RestaurantCard"
 import { useSelector } from 'react-redux'
-import { RootState } from '../../app/store/store'
+import { RootState } from '../../app/store'
 import { ReactElement, useEffect, useState } from "react"
 
 export const RestaurantList = () => {

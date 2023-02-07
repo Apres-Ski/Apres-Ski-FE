@@ -1,9 +1,9 @@
 import './App.css'
 import { Landing } from './components/Landing'
 import { DemoUsers } from './components/DemoUsers'
-import { Main } from './components/Main/Main'
-import { Error } from './components/Error/Error'
-import { Sorry } from './components/Sorry/Sorry'
+import { Main } from './features/restaurants/Main'
+import { Error } from './components/Error'
+import { Sorry } from './components/Sorry'
 
 function App() {
 

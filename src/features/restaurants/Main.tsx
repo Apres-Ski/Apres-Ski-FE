@@ -1,11 +1,11 @@
-import { Map } from '../Map'
+import { Map } from '../../app/Map'
 import { useDispatch } from 'react-redux'
-import { AppDispatch, RootState } from '../../app/store/store'
+import { AppDispatch, RootState } from '../../app/store'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { getRestaurants } from '../../features/restaurants/restaurantsSlice'
-import { RestaurantList } from '../RestaurantList/RestaurantList'
-import { NavComp } from '../NavComp'
+import { getRestaurants } from './restaurantsSlice'
+import { RestaurantList } from './RestaurantList'
+import { NavComp } from '../../app/NavComp'
 
 export const Main = () => {
   const dispatch = useDispatch<AppDispatch>()

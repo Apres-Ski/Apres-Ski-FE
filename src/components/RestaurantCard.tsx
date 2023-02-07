@@ -1,4 +1,4 @@
-import { CleanedRestaurantsState } from '../../app/store/interfaces'
+import { CleanedRestaurantsState } from '../app/interfaces'
 
 export const RestaurantCard = ({ restaurant }: {restaurant: CleanedRestaurantsState}) => {
 

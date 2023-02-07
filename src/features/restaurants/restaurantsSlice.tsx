@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { CleanedRestaurantsState } from '../../app/store/interfaces'
+import { CleanedRestaurantsState } from '../../app/interfaces'
 import { fetchRestaurants } from '../../utilities/APICalls'
 import { cleanList } from '../../utilities/utilities'
 

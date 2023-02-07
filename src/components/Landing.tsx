@@ -1,9 +1,4 @@
-import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { RootState } from '../app/store/store'
-
 export const Landing = () => {
-
 
   return (
     <div>
