@@ -2,7 +2,6 @@ import { CleanedRestaurantsState } from '../../app/store/interfaces'
 
 export const RestaurantCard = ({ restaurant }: {restaurant: CleanedRestaurantsState}) => {
 
-  console.log(restaurant)
   return (
     <div>
       <p>{restaurant.name}</p>
