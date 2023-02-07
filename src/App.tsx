@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getRestaurants } from './features/restaurants/restaurantsSlice'
 import { Map } from './components/Map'
+import { Landing } from './components/Landing'
+
 
 function App() {
   const dispatch = useDispatch<AppDispatch>()
@@ -29,6 +31,8 @@ function App() {
     ))
     content = (
       <div>
+        <h1>Apres Ski</h1>
+        <Landing />
         <h2>User List</h2>
         <UsersList />
         <Map />
