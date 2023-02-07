@@ -43,6 +43,5 @@ export const Main = () => {
     <section>
       {content}
     </section>
-
   )
 }
