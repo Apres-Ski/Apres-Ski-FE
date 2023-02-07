@@ -8,7 +8,7 @@ import { getRestaurants } from './features/restaurants/restaurantsSlice'
 import { Map } from './components/Map'
 import { Landing } from './components/Landing'
 import { DemoUsers } from './components/DemoUsers'
-
+import { NavComp } from './components/NavComp'
 
 function App() {
   const dispatch = useDispatch<AppDispatch>()
@@ -35,6 +35,7 @@ function App() {
         <h1>Apres Ski</h1>
         <Landing />
         <DemoUsers />
+        <NavComp />
         <Map />
         <h2>List of Restaurants</h2>
         {renderedRestaurants}
