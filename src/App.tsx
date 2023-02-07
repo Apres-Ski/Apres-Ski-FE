@@ -4,8 +4,6 @@ import { Landing } from './components/Landing'
 import { DemoUsers } from './components/DemoUsers'
 import { Main } from './components/Main/Main'
 
-
-
 function App() {
 
 return (
