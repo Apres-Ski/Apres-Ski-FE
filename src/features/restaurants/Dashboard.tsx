@@ -1,15 +1,16 @@
-import { Map } from '../Map'
+import { Map } from '../common/Map'
 import { useDispatch } from 'react-redux'
-import { AppDispatch, RootState } from '../../app/store/store'
+import { AppDispatch, RootState } from '../../app/store'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { getRestaurants } from '../../features/restaurants/restaurantsSlice'
-import { RestaurantList } from '../RestaurantList/RestaurantList'
-import { NavComp } from '../NavComp'
+import { getRestaurants } from './restaurantsSlice'
+import { RestaurantList } from './RestaurantList'
+import { Nav } from '../users/Nav'
 
 export const Main = () => {
   const dispatch = useDispatch<AppDispatch>()
   const { status, error } = useSelector((state: RootState) => state.restaurants)
+  const { users, activeUser } = useSelector((state: RootState) => state.users)
 
   useEffect(() => {
     if (status === 'idle') {
@@ -25,7 +26,7 @@ export const Main = () => {
     content = (
       <div>
         <h1>MAIN COMPONENT</h1>
-        <NavComp />
+        <Nav />
         <Map />
         <RestaurantList />
       </div>
@@ -39,9 +40,5 @@ export const Main = () => {
     )
   }
 
-  return (
-    <section>
-      {content}
-    </section>
-  )
+  return <section>{content}</section>
 }

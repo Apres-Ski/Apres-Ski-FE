@@ -1,7 +1,6 @@
-import { CleanedRestaurantsState } from '../../app/store/interfaces'
+import { CleanedRestaurantsState } from '../../utilities/interfaces'
 
-export const RestaurantCard = ({ restaurant }: {restaurant: CleanedRestaurantsState}) => {
-
+export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsState }) => {
   return (
     <div>
       <p>{restaurant.name}</p>
