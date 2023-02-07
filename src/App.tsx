@@ -1,9 +1,9 @@
 import './App.css'
-import UsersList from './features/users'
 import { Landing } from './components/Landing'
 import { DemoUsers } from './components/DemoUsers'
 import { Main } from './components/Main/Main'
-
+import { Error } from './components/Error/Error'
+import { Sorry } from './components/Sorry/Sorry'
 
 
 function App() {
@@ -15,6 +15,8 @@ return (
     <h2>User List</h2>
     <DemoUsers />
     <Main />
+    <Error />
+    <Sorry />
   </div>
 )
 }
