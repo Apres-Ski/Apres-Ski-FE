@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { RootState } from './store'
+import { RootState } from '../../app/store'
 
-export const NavComp = () => {
+export const Nav = () => {
   const { activeUser } = useSelector((state: RootState) => state.users)
 
   const userName = activeUser.name.split(' ')
@@ -11,7 +10,7 @@ export const NavComp = () => {
   return (
     <div>
       <h2>Nav Component</h2>
-      <div style={{display: 'flex'}}>
+      <div style={{ display: 'flex' }}>
         <p>Welcome {grabName}!</p>
         <p>---Logo Here---</p>
         <button>Logout</button>

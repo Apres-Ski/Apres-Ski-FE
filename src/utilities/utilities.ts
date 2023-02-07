@@ -1,4 +1,4 @@
-import { CleanedHappyHours, CleanedHours, CleanedRestaurantsState, Hours, RestaurantsState } from '../app/interfaces'
+import { CleanedHappyHours, CleanedHours, CleanedRestaurantsState, Hours, RestaurantsState } from './interfaces'
 
 export const cleanList = (restaurants: RestaurantsState[]): CleanedRestaurantsState[] => {
   return restaurants.map((restaurant: RestaurantsState) => {

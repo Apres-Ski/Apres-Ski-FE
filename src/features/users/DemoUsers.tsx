@@ -1,7 +1,6 @@
-import UsersList from '../features/users'
+import UsersList from './UsersList'
 
 export const DemoUsers = () => {
-
   return (
     <div>
       <h2>Demo Users Component</h2>
