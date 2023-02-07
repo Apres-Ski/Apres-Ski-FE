@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { RootState } from '../../app/store/store'
+import { RootState } from '../../app/store'
 
 export const Nav = () => {
   const { activeUser } = useSelector((state: RootState) => state.users)

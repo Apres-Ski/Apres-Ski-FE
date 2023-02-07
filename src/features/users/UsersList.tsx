@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import type { RootState } from "../../app/store/store";
+import type { RootState } from "../../app/store";
 import { selectUser } from './usersSlice'
 
 const UsersList = () => {

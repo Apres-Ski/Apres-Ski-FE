@@ -1,11 +1,11 @@
-import { Map } from '../Map'
+import { Map } from '../common/Map'
 import { useDispatch } from 'react-redux'
-import { AppDispatch, RootState } from '../../app/store/store'
+import { AppDispatch, RootState } from '../../app/store'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { getRestaurants } from '../../features/restaurants/restaurantsSlice'
-import { RestaurantList } from '../RestaurantList/RestaurantList'
-import { NavComp } from '../NavComp'
+import { getRestaurants } from './restaurantsSlice'
+import { RestaurantList } from './RestaurantList'
+import { NavComp } from '../users/Nav'
 
 export const Main = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -39,9 +39,5 @@ export const Main = () => {
     )
   }
 
-  return (
-    <section>
-      {content}
-    </section>
-  )
+  return <section>{content}</section>
 }

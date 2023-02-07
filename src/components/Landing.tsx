@@ -1,4 +1,5 @@
 export const Landing = () => {
+
   return (
     <div>
       <h2>Landing Component</h2>
