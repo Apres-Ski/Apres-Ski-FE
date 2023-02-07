@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { getRestaurants } from './features/restaurants/restaurantsSlice'
 import { Map } from './components/Map'
 import { Landing } from './components/Landing'
+import { DemoUsers } from './components/DemoUsers'
 
 
 function App() {
@@ -33,8 +34,7 @@ function App() {
       <div>
         <h1>Apres Ski</h1>
         <Landing />
-        <h2>User List</h2>
-        <UsersList />
+        <DemoUsers />
         <Map />
         <h2>List of Restaurants</h2>
         {renderedRestaurants}
