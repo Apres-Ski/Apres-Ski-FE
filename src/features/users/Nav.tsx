@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import { RootState } from '../../app/store'
+import { Link } from 'react-router-dom'
 
 export const Nav = () => {
   const { activeUser } = useSelector((state: RootState) => state.users)
@@ -13,7 +14,9 @@ export const Nav = () => {
       <div style={{ display: 'flex' }}>
         <p>Welcome {grabName}!</p>
         <p>---Logo Here---</p>
-        <button>Logout</button>
+        <Link to='/'>
+          <button>Logout</button>
+        </Link>
       </div>
     </div>
   )
