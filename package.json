@@ -11,6 +11,8 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
     "@types/react-redux": "^7.1.25",
+    "bootstrap": "^3.4.1",
+    "grunt-cli": "^1.4.3",
     "mapbox-gl": "^2.12.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
