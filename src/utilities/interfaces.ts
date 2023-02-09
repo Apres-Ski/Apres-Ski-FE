@@ -1,14 +1,26 @@
 export interface Hours {
-  id: string
-  week_day: string
-  hours: string
+    "id": number
+    "sunday": string
+    "monday": string
+    "tuesday": string
+    "wednesday": string
+    "thursday": string
+    "friday": string
+    "saturday": string
+    "restaurant": number
 }
 
 export interface HappyHours {
-  id: string
-  week_day: string
-  hours: string
-  specals: string // fix spelling
+  "id": number
+  "sunday": string
+  "monday": string
+  "tuesday": string
+  "wednesday": string
+  "thursday": string
+  "friday": string
+  "saturday": string
+  "special": string
+  "restaurant": number
 }
 
 export interface Engagement {
