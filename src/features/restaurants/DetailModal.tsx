@@ -12,6 +12,7 @@ export const DetailModal = () => {
               <button onClick={() => dispatch(selectRestaurant(spot))}>{spot.name}</button>
       </div>
     ))
+
   return (
     <div>
       <img src={activeRestaurant.coverImg} alt={activeRestaurant.alt} />
