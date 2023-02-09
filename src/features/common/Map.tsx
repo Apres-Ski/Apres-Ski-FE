@@ -10,9 +10,9 @@ export const Map = () => {
 
   const userLong = useSelector((state: RootState) => Number(state.users.activeUser.location.long))
   const userLat = useSelector((state: RootState) => Number(state.users.activeUser.location.lat))
-  const [zoom, setZoom] = useState<number>(14)
   
   const { restaurants } = useSelector((state: RootState) => state.restaurants)
+
   let geoJsonRestaurants: GeoJson
   
   const getGeoJsonRestaurants = () => {
@@ -42,7 +42,7 @@ export const Map = () => {
       container: 'map-container',
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [userLong, userLat],
-      zoom: zoom,
+      zoom: 15,
     })
 
   const marker1 = new mapboxgl.Marker().setLngLat([userLong, userLat]).addTo(map)
