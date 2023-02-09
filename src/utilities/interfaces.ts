@@ -1,13 +1,13 @@
 export interface Hours {
-    id: number
-    sunday: string
-    monday: string
-    tuesday: string
-    wednesday: string
-    thursday: string
-    friday: string
-    saturday: string
-    restaurant: number
+  id: number
+  sunday: string
+  monday: string
+  tuesday: string
+  wednesday: string
+  thursday: string
+  friday: string
+  saturday: string
+  restaurant: number
 }
 
 export interface HappyHours {
@@ -24,12 +24,12 @@ export interface HappyHours {
 }
 
 export interface Engagement {
-    id: number
-    vibe: string
-    rating: string
-    favorites: boolean
-    restaurant: number[]
-    user: number[]
+  id: number
+  vibe: string
+  rating: string
+  favorites: boolean
+  restaurant: number[]
+  user: number[]
 }
 
 export interface RestaurantsState {
@@ -92,4 +92,22 @@ export interface CleanedRestaurantsState {
   happyHours: CleanedHappyHours
   engagements: Engagement[]
   avgRating: number
+}
+
+export interface Users {
+  id: number
+  attributes: {
+    name: string
+    lat: string
+    lon: string
+  }
+}
+
+export interface CleanedUserState {
+  id: number | null
+  name: string
+  location: {
+    lat: string
+    long: string
+  }
 }
