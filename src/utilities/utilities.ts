@@ -58,7 +58,7 @@ const cleanHours = (restaurant: RestaurantsState) => {
 
 const cleanHappyHours = (restaurant: RestaurantsState) => {
   if (restaurant.attributes.happyhour[0]) {
-    const cleanedHappyHours = (({ id, restaurant, ...o }) => o)(restaurant.attributes.happyhour[0])
+    const cleanedHappyHours = (({ id, restaurant, ...obj }) => obj)(restaurant.attributes.happyhour[0])
     return cleanedHappyHours
   }
 }
