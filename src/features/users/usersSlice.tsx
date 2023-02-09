@@ -61,10 +61,15 @@ export const usersSlice = createSlice({
             state.activeUser.id = id,
             state.activeUser.name = name,
             state.activeUser.location = location
+        },
+        resetUser (state, action) {
+          state.activeUser.id = '',
+          state.activeUser.name = '',
+          state.activeUser.location = { long: '', lat: ''}
         }
     },
 })
 
-export const { selectUser } = usersSlice.actions
+export const { selectUser, resetUser } = usersSlice.actions
 
 export default usersSlice.reducer
