@@ -17,7 +17,7 @@ const initialState = {
 
 export const getRestaurants = createAsyncThunk('restaurants/fetchRestaurants', async () => {
   const response = await fetchRestaurants()
-  const restaurantList = cleanList(response.args.data)
+  const restaurantList = cleanList(response.data)
   return restaurantList
 })
 

@@ -4,7 +4,7 @@ export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsS
   return (
     <div>
       <p>{restaurant.name}</p>
-      <p>Vibe: {restaurant.vibe}</p>
+      <p>Vibe: {restaurant.vibes}</p>
       <p>Distance: .25m</p>
       <img style={{ width: 350 }} src={restaurant.coverImg} />
       <p>PLACEHOLDER FOR VIBE BADGES</p>

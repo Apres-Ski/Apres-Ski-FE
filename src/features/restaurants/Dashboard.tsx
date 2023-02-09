@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import { getRestaurants } from './restaurantsSlice'
 import { RestaurantList } from './RestaurantList'
 import { Nav } from '../users/Nav'
+import { Filter } from './Filter'
 
 export const Main = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -29,6 +30,7 @@ export const Main = () => {
         <Nav />
         <Map />
         <RestaurantList />
+        <Filter />
       </div>
     )
   } else if (status === 'failed') {
