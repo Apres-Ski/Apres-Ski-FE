@@ -11,6 +11,15 @@ export interface HappyHours {
   specals: string // fix spelling
 }
 
+export interface Engagement {
+    "id": number
+    "vibe": string
+    "rating": string
+    "favorites": boolean
+    "restaurant": number[]
+    "user": number[]
+}
+
 export interface RestaurantsState {
   id: string
   type: string
@@ -19,20 +28,16 @@ export interface RestaurantsState {
     address: string
     food_type: string
     cost: string
-    vibe: string
     cover_img: string
     alt_text: string
     lat: string
-    long: string
-    alcholic_drinks: string // fix spelling
-    happy_hour: string
+    lon: string
+    alcoholic_drinks: string // fix spelling
+    has_happy_hour: string
+    hour: Hours[]
+    happyhour?: HappyHours[]
+    engagement: Engagement[]
   }
-  relationships: [
-    {
-      hours: Hours[]
-      happy_hours?: HappyHours[]
-    }
-  ]
 }
 
 export interface CleanedHours {
