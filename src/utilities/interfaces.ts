@@ -93,3 +93,21 @@ export interface CleanedRestaurantsState {
   engagements: Engagement[]
   avgRating: number
 }
+
+export interface Feature {
+    type: string,
+    geometry: {
+      type: string,
+      coordinates: { lon: number, lat: number },
+    },
+    properties: {
+      title: string,
+    }
+
+}
+
+export interface GeoJson {
+  type: string,
+  features: Feature[]
+}
+
