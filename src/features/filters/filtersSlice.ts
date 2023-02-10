@@ -30,10 +30,15 @@ export const filtersSlice = createSlice({
         state.vibes.push(action.payload)
       }
     },
+    resetFilters(state, action) {
+      state.vibes = []
+      state.hasAlcohol = false
+      state.hasHappyHour = false
+    },
   },
 })
 
-export const { toggleHasAlcohol, toggleHasHappyHour, toggleVibes } =
+export const { toggleHasAlcohol, toggleHasHappyHour, toggleVibes, resetFilters } =
   filtersSlice.actions
 
 export default filtersSlice.reducer
