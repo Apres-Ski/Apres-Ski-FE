@@ -8,7 +8,7 @@ import { Routes, Route, NavLink } from 'react-router-dom'
 function App() {
   return (
     <div>
-      <h1>Apres Ski</h1>
+      <h1 style={{marginBottom: '10%', maxHeight: '100vh'}}>Apres Ski</h1>
         <Routes>
           <Route path='/' element={(<Landing />)} />
           <Route path='/demo' element={(<DemoUsers />)} />

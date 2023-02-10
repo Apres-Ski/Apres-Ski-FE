@@ -21,8 +21,7 @@ export const DemoUsers = () => {
   } else if (status === 'succeeded') {
     content = (
       <div>
-        <h2>Demo Users Component</h2>
-        <p>Placeholder - Please select a User</p>
+        <h2 style={{marginBottom: '5%'}}>Please Select a User</h2>
         <UsersList />
       </div>
     )
