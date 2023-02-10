@@ -41,7 +41,7 @@ export const filtersSlice = createSlice({
       state.hasHappyHour = !state.hasHappyHour
     },
     toggleVibes(state, action) {
-      state.vibes[action.payload] = !state.vibes[action.payload]
+      state.vibes[action.payload as keyof Vibes] = !state.vibes[action.payload as keyof Vibes]
     }
   }
 })
