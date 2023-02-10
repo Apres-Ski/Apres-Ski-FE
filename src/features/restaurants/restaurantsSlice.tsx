@@ -15,7 +15,24 @@ const initialState = {
   status: 'idle',
   error: null,
   activeRestaurant: {
-    id: null
+    id: null,
+    name: '',
+    address: '',
+    foodType: '',
+    cost: '',
+    vibes: '',
+    coverImg: '',
+    alt: '',
+    location: {
+      lat: '',
+      long: ''
+    },
+    alcoholic: false,
+    happyHour: false,
+    hours: [],
+    happyHours: [],
+    engagements: [],
+    avgRating: null
   }
 }
 

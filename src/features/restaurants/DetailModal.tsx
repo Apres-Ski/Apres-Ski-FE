@@ -3,15 +3,7 @@ import type { RootState } from "../../app/store"
 import { selectRestaurant } from './restaurantsSlice'
 
 export const DetailModal = () => {
-    const { restaurants, activeRestaurant } = useSelector((state: RootState) => state.activeRestaurant)
-
-    const dispatch = useDispatch()
-
-    const selectedRestaurant = restaurants.map(spot => (
-      <div key={spot.id}>
-              <button onClick={() => dispatch(selectRestaurant(spot))}>{spot.name}</button>
-      </div>
-    ))
+    const { activeRestaurant } = useSelector((state: RootState) => state.restaurants)
 
   return (
     <div>
