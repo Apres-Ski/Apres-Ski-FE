@@ -4,3 +4,9 @@ export const API_ROUTES = {
   GET_RESTAURANTS: `${API_URL}api/v1/restaurant/`,
   GET_USERS: `${API_URL}api/v1/user/`
 }
+
+export const APP_ROUTES = {
+  LANDING: '/',
+  DEMO: '/demo',
+  DASH: '/dashboard'
+}
