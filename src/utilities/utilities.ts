@@ -1,6 +1,14 @@
-import { CleanedRestaurantsState, Engagement, RestaurantsState } from './interfaces'
+import {
+  CleanedRestaurantsState,
+  CleanedUserState,
+  Engagement,
+  RestaurantsState,
+  Users,
+} from './interfaces'
 
-export const cleanList = (restaurants: RestaurantsState[]): CleanedRestaurantsState[] => {
+export const cleanList = (
+  restaurants: RestaurantsState[]
+): CleanedRestaurantsState[] => {
   return restaurants.map((restaurant: RestaurantsState) => {
     const vibes = getVibes(restaurant.attributes.engagement)
     const cleanedHours = cleanHours(restaurant)
@@ -20,26 +28,29 @@ export const cleanList = (restaurants: RestaurantsState[]): CleanedRestaurantsSt
         lat: restaurant.attributes.lat,
         long: restaurant.attributes.lon,
       },
-      alcoholic: restaurant.attributes['alcoholic_drinks'], 
+      alcoholic: restaurant.attributes['alcoholic_drinks'],
       happyHour: restaurant.attributes['has_happy_hour'],
       hours: cleanedHours,
       happyHours: cleanedHappyHours,
       engagements: restaurant.attributes.engagement,
-      avgRating: avgRating
+      avgRating: avgRating,
     } as CleanedRestaurantsState
   })
 }
 
 const getAvgRating = (engagements: Engagement[]) => {
   let ratingCount = 0
-  const totalRating = engagements.reduce((acc: number, engagement: Engagement) => {
-    if (engagement.rating) {
-      acc += Number(engagement.rating)
-      ratingCount++
-    }
-    return acc
-  }, 0)
-  return totalRating/ratingCount
+  const totalRating = engagements.reduce(
+    (acc: number, engagement: Engagement) => {
+      if (engagement.rating) {
+        acc += Number(engagement.rating)
+        ratingCount++
+      }
+      return acc
+    },
+    0
+  )
+  return totalRating / ratingCount
 }
 
 const getVibes = (engagements: Engagement[]) => {
@@ -52,14 +63,30 @@ const getVibes = (engagements: Engagement[]) => {
 }
 
 const cleanHours = (restaurant: RestaurantsState) => {
-    const cleanedHours = (({ id, restaurant, ...obj }) => obj)(restaurant.attributes.hour[0])
-    return cleanedHours
+  const cleanedHours = (({ id, restaurant, ...obj }) => obj)(
+    restaurant.attributes.hour[0]
+  )
+  return cleanedHours
 }
 
 const cleanHappyHours = (restaurant: RestaurantsState) => {
   if (restaurant.attributes.happyhour[0]) {
-    const cleanedHappyHours = (({ id, restaurant, ...obj }) => obj)(restaurant.attributes.happyhour[0])
+    const cleanedHappyHours = (({ id, restaurant, ...obj }) => obj)(
+      restaurant.attributes.happyhour[0]
+    )
     return cleanedHappyHours
   }
 }
 
+export const cleanUsersData = (users: Users[]): CleanedUserState[] => {
+  return users.map((user: Users) => {
+    return {
+      id: user.id,
+      name: user.attributes.name,
+      location: {
+        lat: user.attributes.lat,
+        long: user.attributes.lon,
+      },
+    } as CleanedUserState
+  })
+}
