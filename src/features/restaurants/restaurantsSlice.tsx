@@ -5,7 +5,7 @@ import { cleanList } from '../../utilities/utilities'
 
 export interface ListState {
   restaurants: CleanedRestaurantsState[]
-  activeRestaurant: CleanedRestaurantsState
+  activeRestaurant: CleanedRestaurantsState 
   status: string
   error: string | null
 }
@@ -14,26 +14,26 @@ const initialState = {
   restaurants: [] as CleanedRestaurantsState[],
   status: 'idle',
   error: null,
-  activeRestaurant: {
-    id: null,
-    name: '',
-    address: '',
-    foodType: '',
-    cost: '',
-    vibes: '',
-    coverImg: '',
-    alt: '',
-    location: {
-      lat: '',
-      long: ''
-    },
-    alcoholic: false,
-    happyHour: false,
-    hours: [],
-    happyHours: [],
-    engagements: [],
-    avgRating: null
-  }
+  activeRestaurant: null
+  //   id: null,
+  //   name: '',
+  //   address: '',
+  //   foodType: '',
+  //   cost: '',
+  //   vibes: '',
+  //   coverImg: '',
+  //   alt: '',
+  //   location: {
+  //     lat: '',
+  //     long: ''
+  //   },
+  //   alcoholic: false,
+  //   happyHour: false,
+  //   hours: [],
+  //   happyHours: [],
+  //   engagements: [],
+  //   avgRating: null
+  // }
 }
 
 export const getRestaurants = createAsyncThunk('restaurants/fetchRestaurants', async () => {
@@ -45,7 +45,15 @@ export const getRestaurants = createAsyncThunk('restaurants/fetchRestaurants', a
 export const restaurantsSlice = createSlice({
   name: 'restaurants',
   initialState,
-  reducers: {},
+  reducers: {
+    selectRestaurant(state, action) {
+      const { restaurant } = action.payload;
+      (state.activeRestaurant = restaurant)
+    },
+    resetRestaurant (state, action) {
+      state.activeRestaurant = null
+    }
+  },
   extraReducers(builder) {
     builder
       .addCase(getRestaurants.pending, (state, action) => {
@@ -64,18 +72,12 @@ export const restaurantsSlice = createSlice({
 
 export default restaurantsSlice.reducer
 
-export const selectRestaurantSlice = createSlice({
-  name: 'activeRestaurant',
-  initialState,
-  reducers: {
-    selectRestaurant(state, action) {
-      const { id } = action.payload;
-      (state.activeRestaurant.id)
-    },
-    resetRestaurant (state, action) {
-      state.activeRestaurant.id = null
-    }
-  }
-})
+// export const selectRestaurantSlice = createSlice({
+//   name: 'activeRestaurant',
+//   initialState,
+//   reducers: {
+    
+//   }
+// })
 
-export const { selectRestaurant, resetRestaurant} = selectRestaurantSlice.actions
+export const { selectRestaurant, resetRestaurant} = restaurantsSlice.actions

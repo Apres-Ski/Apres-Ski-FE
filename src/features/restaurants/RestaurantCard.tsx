@@ -22,7 +22,7 @@ export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsS
       <p>Distance: .25m</p>
       <img style={{ width: 350 }} src={restaurant.coverImg} />
       <p>PLACEHOLDER FOR VIBE BADGES</p>
-      <button onClick={() => dispatch(selectRestaurant(selectedRestaurant))}>Show Details</button>
+      <button onClick={() => dispatch(selectRestaurant(restaurant))}>Show Details</button>
     </div>
   )
 }
