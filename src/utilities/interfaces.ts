@@ -94,6 +94,23 @@ export interface CleanedRestaurantsState {
   avgRating: number
 }
 
+export interface Feature {
+    type: string,
+    geometry: {
+      type: string,
+      coordinates: { lon: number, lat: number },
+    },
+    properties: {
+      title: string,
+    }
+
+}
+
+export interface GeoJson {
+  type: string,
+  features: Feature[]
+}
+
 export interface Users {
   id: number
   attributes: {
