@@ -19,15 +19,22 @@ export const NavMenu = () => {
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            Signed in as: <a href="#login">{activeUser.name}</a>
+          <Nav>
+            <Navbar.Text>
+              Signed in as:{' '}
+              <Navbar.Text className="fw-bold text-decoration-underline text-white">
+                {activeUser.name}
+              </Navbar.Text>
+            </Navbar.Text>
             <Button
-              variant="outline-success"
+              className="ms-4"
+              size='sm'
+              variant="outline-dark"
               onClick={() => dispatch(resetUser(activeUser))}
             >
               Logout
             </Button>
-          </Navbar.Text>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
