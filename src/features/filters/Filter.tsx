@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { AppDispatch, RootState } from '../../app/store'
 import Form from 'react-bootstrap/Form'
-import { toggleHasAlcohol, toggleHasHappyHour } from './filtersSlice'
+import { toggleHasAlcohol, toggleHasHappyHour, toggleVibes } from './filtersSlice'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 
@@ -17,6 +17,10 @@ export const Filter = () => {
 
   const handleHappyHourChange = () => {
     dispatch(toggleHasHappyHour(hasAlcohol))
+  }
+
+  const handleVibeChange = (vibe: string) => {
+    dispatch(toggleVibes(vibe))
   }
 
 
@@ -42,45 +46,63 @@ export const Filter = () => {
         <ToggleButton
           id='familyFriendly'
           value='familyFriendly'
-          checked={vibes.familyFriendly}
+          className={`btn btn-dark ${vibes.familyFriendly ? 'active' : ''}`}
           type='checkbox'
+          onChange={(e) => handleVibeChange(e.target.value)}
         >
           Family Friendly
         </ToggleButton>
         <ToggleButton
+          id='casual'
           value='casual'
-          checked={vibes.casual}
+          className={`btn btn-dark ${vibes.casual ? 'active' : ''}`}
           type='checkbox'
+          onChange={(e) => handleVibeChange(e.target.value)}
         >
           Casual
         </ToggleButton>
         <ToggleButton
+          id='upscale'
           value='upscale'
-          className="btn btn-dark"
+          className={`btn btn-dark ${vibes.upscale ? 'active' : ''}`}
+          type='checkbox'
+          onChange={(e) => handleVibeChange(e.target.value)}
         >
           Upscale
         </ToggleButton>
         <ToggleButton
+          id='quickEasy'
           value='quickEasy'
-          className="btn btn-dark"
+          className={`btn btn-dark ${vibes.quickEasy ? 'active' : ''}`}
+          type='checkbox'
+          onChange={(e) => handleVibeChange(e.target.value)}
         >
           Quick & Easy
         </ToggleButton>
         <ToggleButton
+          id='lively'
           value='lively'
-          className="btn btn-dark"
+          className={`btn btn-dark ${vibes.lively ? 'active' : ''}`}
+          type='checkbox'
+          onChange={(e) => handleVibeChange(e.target.value)}
         >
           Lively
         </ToggleButton>
         <ToggleButton
+          id='fun'
           value='fun'
-          className="btn btn-dark"
+          className={`btn btn-dark ${vibes.fun ? 'active' : ''}`}
+          type='checkbox'
+          onChange={(e) => handleVibeChange(e.target.value)}
         >
           Fun
         </ToggleButton>
         <ToggleButton
+          id='cozy'
           value='cozy'
-          className="btn btn-dark"
+          className={`btn btn-dark ${vibes.cozy ? 'active' : ''}`}
+          type='checkbox'
+          onChange={(e) => handleVibeChange(e.target.value)}
         >
           Cozy
         </ToggleButton>

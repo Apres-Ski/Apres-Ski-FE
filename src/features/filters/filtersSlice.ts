@@ -18,7 +18,7 @@ export interface FiltersState {
 
 const initialState: FiltersState = {
   vibes: {
-    familyFriendly: true,
+    familyFriendly: false,
     casual: false,
     upscale: false,
     quickEasy: false,
@@ -39,10 +39,13 @@ export const filtersSlice = createSlice({
     },
     toggleHasHappyHour(state, action) {
       state.hasHappyHour = !state.hasHappyHour
+    },
+    toggleVibes(state, action) {
+      state.vibes[action.payload] = !state.vibes[action.payload]
     }
   }
 })
 
-export const { toggleHasAlcohol, toggleHasHappyHour } = filtersSlice.actions
+export const { toggleHasAlcohol, toggleHasHappyHour, toggleVibes } = filtersSlice.actions
 
 export default filtersSlice.reducer
