@@ -95,19 +95,18 @@ export interface CleanedRestaurantsState {
 }
 
 export interface Feature {
-    type: string,
-    geometry: {
-      type: string,
-      coordinates: { lon: number, lat: number },
-    },
-    properties: {
-      title: string,
-    }
-
+  type: string
+  geometry: {
+    type: string
+    coordinates: { lon: number; lat: number }
+  }
+  properties: {
+    title: string
+  }
 }
 
 export interface GeoJson {
-  type: string,
+  type: string
   features: Feature[]
 }
 

@@ -2,8 +2,6 @@ import { RestaurantCard } from './RestaurantCard'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../app/store'
 import { ReactElement, useEffect, useState } from 'react'
-import { CleanedRestaurantsState } from '../../utilities/interfaces'
-import { filter } from 'cypress/types/bluebird'
 
 export const RestaurantList = () => {
   const { restaurants } = useSelector((state: RootState) => state.restaurants)
@@ -15,6 +13,7 @@ export const RestaurantList = () => {
 
   useEffect(() => {
     let filteredRest = restaurants
+
     if (hasAlcohol) {
       filteredRest = filteredRest.filter((restaurant) => restaurant.alcoholic)
     }
