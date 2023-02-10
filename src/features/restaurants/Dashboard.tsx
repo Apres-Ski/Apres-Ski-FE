@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { getRestaurants } from './restaurantsSlice'
 import { RestaurantList } from './RestaurantList'
 import { NavMenu } from '../users/Nav'
-import { Filter } from './Filter'
+import { Filter } from '../filters/Filter'
 import { useNavigate } from 'react-router-dom'
 import { APP_ROUTES } from '../../utilities/constants'
 
