@@ -14,3 +14,18 @@ export const fetchRestaurants = async () => {
     return error
   }
 }
+
+export const fetchUsers = async () => {
+  try {
+    const response = await fetch(API_ROUTES.GET_USERS, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+
+    return await response.json()
+  } catch (error) {
+    return error
+  }
+}
