@@ -3,24 +3,36 @@ import type { AppDispatch, RootState } from '../../app/store'
 import { selectUser } from './usersSlice'
 import { Link } from 'react-router-dom'
 
+const colors = ['danger', 'primary', 'success']
+
 const UsersList = () => {
   const dispatch = useDispatch<AppDispatch>()
   const { users, activeUser } = useSelector((state: RootState) => state.users)
 
-  const renderedUsers = users.map((user) => (
-    <div key={user.id}>
+  const renderedUsers = users.map((user, index) => (
+    <div key={user.id} className='container' style={{ width: '45%' }}>
       <Link to="/dashboard">
-        <button onClick={() => dispatch(selectUser(user))}>{user.name}</button>
+        <img
+          src={`src/assets/user${index + 1}.jpg`}
+          className={`img-fluid rounded border border-2 border-${colors[index]}`}
+          alt='...'
+          onClick={() => dispatch(selectUser(user))}
+        />
       </Link>
+      <p className={`text-${colors[index]}`}>{user.name}</p>
     </div>
   ))
 
   return (
-    <section>
-      {renderedUsers}
-      <p>Active User: {activeUser.name}</p>
-    </section>
-  )
-}
+    <div>
+      <section className='d-flex'>
+        {renderedUsers[0]}
+        {renderedUsers[1]}
+      </section>
+      <section>
+        {renderedUsers[2]}
+      </section>
+    </div>
+)}
 
 export default UsersList
