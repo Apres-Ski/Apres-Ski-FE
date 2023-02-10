@@ -1,8 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import type { AppDispatch, RootState } from '../../app/store'
-import { getUsers, selectUser } from './usersSlice'
+import { selectUser } from './usersSlice'
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
 
 const UsersList = () => {
   const dispatch = useDispatch<AppDispatch>()
