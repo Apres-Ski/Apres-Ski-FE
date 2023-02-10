@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getRestaurants } from './restaurantsSlice'
 import { RestaurantList } from './RestaurantList'
-import { Nav } from '../users/Nav'
+import { NavMenu } from '../users/Nav'
 import { Filter } from './Filter'
 
 export const Main = () => {
@@ -25,8 +25,8 @@ export const Main = () => {
   } else if (status === 'succeeded') {
     content = (
       <div>
+        <NavMenu />
         <h1>MAIN COMPONENT</h1>
-        <Nav />
         <Map />
         <RestaurantList />
         <Filter />
