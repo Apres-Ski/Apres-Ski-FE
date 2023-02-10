@@ -4,14 +4,15 @@ import { DemoUsers } from '../features/users/DemoUsers'
 import { Main } from '../features/restaurants/Dashboard'
 import { Error } from '../components/Error'
 import { Routes, Route, NavLink } from 'react-router-dom'
+import { APP_ROUTES } from '../utilities/constants'
 
 function App() {
   return (
     <div>
         <Routes>
-          <Route path='/' element={(<Landing />)} />
-          <Route path='/demo' element={(<DemoUsers />)} />
-          <Route path='/dashboard' element={(<Main />)} />
+          <Route path={APP_ROUTES.LANDING} element={(<Landing />)} />
+          <Route path={APP_ROUTES.DEMO} element={(<DemoUsers />)} />
+          <Route path={APP_ROUTES.DASH} element={(<Main />)} />
           <Route path='/*' element={(<Error />)} />
         </Routes>
     </div>
