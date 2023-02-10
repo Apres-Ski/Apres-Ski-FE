@@ -11,8 +11,7 @@ import { Filter } from './Filter'
 export const Main = () => {
   const dispatch = useDispatch<AppDispatch>()
   const { status, error } = useSelector((state: RootState) => state.restaurants)
-  const { users, activeUser } = useSelector((state: RootState) => state.users)
-
+  
   useEffect(() => {
     if (status === 'idle') {
       dispatch(getRestaurants())
