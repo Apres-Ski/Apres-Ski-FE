@@ -7,11 +7,21 @@ import { getRestaurants } from './restaurantsSlice'
 import { RestaurantList } from './RestaurantList'
 import { NavMenu } from '../users/Nav'
 import { Filter } from './Filter'
+import { useNavigate } from 'react-router-dom'
+import { APP_ROUTES } from '../../utilities/constants'
 
 export const Main = () => {
   const dispatch = useDispatch<AppDispatch>()
+  const navigate = useNavigate()
   const { status, error } = useSelector((state: RootState) => state.restaurants)
-  
+  const { activeUser } = useSelector((state: RootState) => state.users)
+
+  useEffect(() => {
+    if (activeUser.id === null) {
+      navigate(APP_ROUTES.LANDING)
+    }
+  }, [activeUser])
+
   useEffect(() => {
     if (status === 'idle') {
       dispatch(getRestaurants())
