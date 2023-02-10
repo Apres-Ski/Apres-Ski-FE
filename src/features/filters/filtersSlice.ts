@@ -1,13 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+export interface Vibes {
+  familyFriendly: boolean,
+  casual: boolean,
+  upscale: boolean,
+  quickEasy: boolean,
+  lively: boolean,
+  fun: boolean,
+  cozy: boolean
+}
+
 export interface FiltersState {
-  vibes: string[]
+  vibes: Vibes
   hasAlcohol: boolean
   hasHappyHour: boolean
 }
 
 const initialState: FiltersState = {
-  vibes: [] as string[],
+  vibes: {
+    familyFriendly: true,
+    casual: false,
+    upscale: false,
+    quickEasy: false,
+    lively: false,
+    fun: false,
+    cozy: false
+  },
   hasAlcohol: false,
   hasHappyHour: false,
 }

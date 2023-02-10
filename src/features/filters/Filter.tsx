@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { AppDispatch, RootState } from '../../app/store'
 import Form from 'react-bootstrap/Form'
 import { toggleHasAlcohol, toggleHasHappyHour } from './filtersSlice'
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
+import ToggleButton from 'react-bootstrap/ToggleButton'
 
 export const Filter = () => {
   const { vibes, hasAlcohol, hasHappyHour } = useSelector(
@@ -35,58 +37,54 @@ export const Filter = () => {
           X
         </button>
       </section>
-      <section>
+      <ToggleButtonGroup type='checkbox'>
         <h2>Vibe</h2>
-        <button
-          className="btn btn-dark"
-          data-bs-toggle="button"
-          onClick={() => console.log('family-friendly')}
+        <ToggleButton
+          id='familyFriendly'
+          value='familyFriendly'
+          checked={vibes.familyFriendly}
+          type='checkbox'
         >
           Family Friendly
-        </button>
-        <button
-          className="btn btn-dark"
-          data-bs-toggle="button"
-          onClick={() => console.log('casual')}
+        </ToggleButton>
+        <ToggleButton
+          value='casual'
+          checked={vibes.casual}
+          type='checkbox'
         >
           Casual
-        </button>
-        <button
+        </ToggleButton>
+        <ToggleButton
+          value='upscale'
           className="btn btn-dark"
-          data-bs-toggle="button"
-          onClick={() => console.log('upscale')}
         >
           Upscale
-        </button>
-        <button
+        </ToggleButton>
+        <ToggleButton
+          value='quickEasy'
           className="btn btn-dark"
-          data-bs-toggle="button"
-          onClick={() => console.log('quick & easy')}
         >
           Quick & Easy
-        </button>
-        <button
+        </ToggleButton>
+        <ToggleButton
+          value='lively'
           className="btn btn-dark"
-          data-bs-toggle="button"
-          onClick={() => console.log('lively')}
         >
           Lively
-        </button>
-        <button
+        </ToggleButton>
+        <ToggleButton
+          value='fun'
           className="btn btn-dark"
-          data-bs-toggle="button"
-          onClick={() => console.log('fun')}
         >
           Fun
-        </button>
-        <button
+        </ToggleButton>
+        <ToggleButton
+          value='cozy'
           className="btn btn-dark"
-          data-bs-toggle="button"
-          onClick={() => console.log('cozy')}
         >
           Cozy
-        </button>
-      </section>
+        </ToggleButton>
+      </ToggleButtonGroup>
       <section>
         <h3>Alcohol</h3>
         <Form.Check
