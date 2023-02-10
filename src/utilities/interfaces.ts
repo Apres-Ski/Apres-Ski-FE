@@ -32,7 +32,7 @@ export interface Engagement {
   user: number[]
 }
 
-export interface RestaurantsState {
+export interface Restaurants {
   id: string
   type: string
   attributes: {
