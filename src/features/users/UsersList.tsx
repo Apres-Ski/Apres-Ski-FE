@@ -7,7 +7,7 @@ const colors = ['danger', 'primary', 'success']
 
 const UsersList = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const { users, activeUser } = useSelector((state: RootState) => state.users)
+  const { users } = useSelector((state: RootState) => state.users)
 
   const renderedUsers = users.map((user, index) => (
     <div key={user.id} className='container' style={{ width: '45%' }}>
