@@ -7,6 +7,7 @@ import { getRestaurants } from './restaurantsSlice'
 import { RestaurantList } from './RestaurantList'
 import { Nav } from '../users/Nav'
 import { Filter } from './Filter'
+import { Error } from '../../components/Error'
 
 export const Main = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -34,10 +35,7 @@ export const Main = () => {
     )
   } else if (status === 'failed') {
     content = (
-      <div>
-        <h2 style={{ color: 'red' }}>ERROR</h2>
-        <p>{error}</p>
-      </div>
+      <Error message='There was a problem on our end. Please try again.'/>
     )
   }
 

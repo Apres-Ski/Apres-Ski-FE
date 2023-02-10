@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-export const Error = () => {
+export const Error = ({ message }: { message: string}) => {
 
   return (
       <div
@@ -10,10 +10,10 @@ export const Error = () => {
         style={{ display: 'block', position: 'initial' }}
       >
         <Modal.Dialog>
-            <Modal.Title>Error</Modal.Title>
+            <Modal.Title className='text-danger'>Error</Modal.Title>
   
           <Modal.Body>
-            <p>404 Page Not Found</p>
+            <p>{message}</p>
           </Modal.Body>
   
           <Modal.Footer className='d-flex justify-content-center'>
@@ -22,13 +22,5 @@ export const Error = () => {
         </Modal.Dialog>
       </div>
     )
-    // <div>
-    //   <h2>Error Component (General)</h2>
-    //   <p>There seems to be a problem loading this content. Please return to the Main page</p>
-    //   <Link to='/'>
-    //     <button>Go Back</button>  
-    //   </Link>
-    // </div>
 }
 
-// Route button to Main page
