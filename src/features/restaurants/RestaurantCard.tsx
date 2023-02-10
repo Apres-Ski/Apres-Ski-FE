@@ -9,7 +9,7 @@ export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsS
 
   const dispatch = useDispatch<AppDispatch>()
 
-  const selectedRestaurant = restaurants.map(spot => (
+  const selectedRestaurant = restaurants.find(spot => (
       <div key={spot.id}>
               <button onClick={() => dispatch(selectRestaurant(spot))}>{spot.name}</button>
       </div>
