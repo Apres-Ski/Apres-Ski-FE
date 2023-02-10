@@ -45,8 +45,8 @@ export const Filter = () => {
         <h2>Vibe</h2>
         <ToggleButton
           id='familyFriendly'
-          value='familyFriendly'
-          className={`btn btn-dark ${vibes.familyFriendly ? 'active' : ''}`}
+          value='family friendly'
+          className={`btn btn-dark ${vibes.includes('family friendly') ? 'active' : ''}`}
           type='checkbox'
           onChange={(e) => handleVibeChange(e.target.value)}
         >
@@ -55,7 +55,7 @@ export const Filter = () => {
         <ToggleButton
           id='casual'
           value='casual'
-          className={`btn btn-dark ${vibes.casual ? 'active' : ''}`}
+          className={`btn btn-dark ${vibes.includes('casual') ? 'active' : ''}`}
           type='checkbox'
           onChange={(e) => handleVibeChange(e.target.value)}
         >
@@ -64,7 +64,7 @@ export const Filter = () => {
         <ToggleButton
           id='upscale'
           value='upscale'
-          className={`btn btn-dark ${vibes.upscale ? 'active' : ''}`}
+          className={`btn btn-dark ${vibes.includes('upscale') ? 'active' : ''}`}
           type='checkbox'
           onChange={(e) => handleVibeChange(e.target.value)}
         >
@@ -72,8 +72,8 @@ export const Filter = () => {
         </ToggleButton>
         <ToggleButton
           id='quickEasy'
-          value='quickEasy'
-          className={`btn btn-dark ${vibes.quickEasy ? 'active' : ''}`}
+          value='quick & easy'
+          className={`btn btn-dark ${vibes.includes('quick & easy') ? 'active' : ''}`}
           type='checkbox'
           onChange={(e) => handleVibeChange(e.target.value)}
         >
@@ -82,7 +82,7 @@ export const Filter = () => {
         <ToggleButton
           id='lively'
           value='lively'
-          className={`btn btn-dark ${vibes.lively ? 'active' : ''}`}
+          className={`btn btn-dark ${vibes.includes('lively') ? 'active' : ''}`}
           type='checkbox'
           onChange={(e) => handleVibeChange(e.target.value)}
         >
@@ -91,7 +91,7 @@ export const Filter = () => {
         <ToggleButton
           id='fun'
           value='fun'
-          className={`btn btn-dark ${vibes.fun ? 'active' : ''}`}
+          className={`btn btn-dark ${vibes.includes('fun') ? 'active' : ''}`}
           type='checkbox'
           onChange={(e) => handleVibeChange(e.target.value)}
         >
@@ -100,7 +100,7 @@ export const Filter = () => {
         <ToggleButton
           id='cozy'
           value='cozy'
-          className={`btn btn-dark ${vibes.cozy ? 'active' : ''}`}
+          className={`btn btn-dark ${vibes.includes('cozy') ? 'active' : ''}`}
           type='checkbox'
           onChange={(e) => handleVibeChange(e.target.value)}
         >
