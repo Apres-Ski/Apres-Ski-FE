@@ -35,11 +35,16 @@ export const usersSlice = createSlice({
   initialState,
   reducers: {
     selectUser(state, action) {
-      const { id, name, location } = action.payload
-      ;(state.activeUser.id = id),
-        (state.activeUser.name = name),
-        (state.activeUser.location = location)
+      const { id, name, location } = action.payload;
+      (state.activeUser.id = id),
+      (state.activeUser.name = name),
+      (state.activeUser.location = location)
     },
+    resetUser (state, action) {
+      state.activeUser.id = null,
+      state.activeUser.name = '',
+      state.activeUser.location = { long: '', lat: ''}
+    }
   },
   extraReducers(builder) {
     builder
@@ -57,6 +62,6 @@ export const usersSlice = createSlice({
   },
 })
 
-export const { selectUser } = usersSlice.actions
+export const { selectUser, resetUser } = usersSlice.actions
 
 export default usersSlice.reducer

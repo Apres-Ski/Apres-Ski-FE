@@ -1,10 +1,14 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../app/store'
 import { Link } from 'react-router-dom'
+import { resetUser } from './usersSlice'
+
 
 export const Nav = () => {
   const { activeUser } = useSelector((state: RootState) => state.users)
 
+  const dispatch = useDispatch()
+  
   const userName = activeUser.name.split(' ')
   let grabName = userName[0]
 
@@ -15,7 +19,7 @@ export const Nav = () => {
         <p>Welcome {grabName}!</p>
         <p>---Logo Here---</p>
         <Link to='/'>
-          <button>Logout</button>
+          <button onClick={() => dispatch(resetUser(activeUser))}>Logout</button>
         </Link>
       </div>
     </div>
