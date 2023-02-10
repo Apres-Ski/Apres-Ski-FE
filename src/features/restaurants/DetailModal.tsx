@@ -16,6 +16,7 @@ export const DetailModal = () => {
   return (
     <div>
       <img src={activeRestaurant.coverImg} alt={activeRestaurant.alt} />
+      <button>X</button>
       <p>{activeRestaurant.name}</p>
       <p>{activeRestaurant.address}</p>
       <p>Food Type: {activeRestaurant.name}</p>
@@ -25,7 +26,6 @@ export const DetailModal = () => {
       <p>Hours: {activeRestaurant.hours}</p>
       <p>Happy Hours: {activeRestaurant.happyHours}</p>
       <p>Vibe: {activeRestaurant.vibe}</p>
-      <button>Collapse</button>
     </div>
   )
 }

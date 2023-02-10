@@ -5,6 +5,7 @@ import { cleanList } from '../../utilities/utilities'
 
 export interface ListState {
   restaurants: CleanedRestaurantsState[]
+  activeRestaurant: CleanedRestaurantsState
   status: string
   error: string | null
 }
@@ -13,6 +14,9 @@ const initialState = {
   restaurants: [] as CleanedRestaurantsState[],
   status: 'idle',
   error: null,
+  activeRestaurant: {
+    id: null
+  }
 }
 
 export const getRestaurants = createAsyncThunk('restaurants/fetchRestaurants', async () => {
@@ -42,3 +46,19 @@ export const restaurantsSlice = createSlice({
 })
 
 export default restaurantsSlice.reducer
+
+export const selectRestaurantSlice = createSlice({
+  name: 'activeRestaurant',
+  initialState,
+  reducers: {
+    selectRestaurant(state, action) {
+      const { id } = action.payload;
+      (state.activeRestaurant.id)
+    },
+    resetRestaurant (state, action) {
+      state.activeRestaurant.id = null
+    }
+  }
+})
+
+export const { selectRestaurant, resetRestaurant} = selectRestaurantSlice.actions
