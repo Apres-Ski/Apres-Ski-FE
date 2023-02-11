@@ -44,7 +44,9 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
         <Offcanvas.Title>Filters</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
-      <Button variant="info" onClick={() => handleBtnClick()}>Reset</Button>
+        <Button variant="outline-success" onClick={() => handleBtnClick()}>
+          Reset
+        </Button>
         <Form>
           <section
             style={{
@@ -55,86 +57,87 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
           >
             <h1>Filters</h1>
           </section>
-            <h2>Vibe</h2>
-          <ToggleButtonGroup type="checkbox">
-            <ToggleButton
-              id="familyFriendly"
-              value="family friendly"
-              className={`btn btn-dark ${
-                vibes.includes('family friendly') ? 'active' : ''
-              }`}
-              type="checkbox"
-              onChange={(e) => handleVibeChange(e.target.value)}
-            >
-              Family Friendly
-            </ToggleButton>
-            <ToggleButton
-              id="casual"
-              value="casual"
-              className={`btn btn-dark ${
-                vibes.includes('casual') ? 'active' : ''
-              }`}
-              type="checkbox"
-              onChange={(e) => handleVibeChange(e.target.value)}
-            >
-              Casual
-            </ToggleButton>
-            <ToggleButton
-              id="upscale"
-              value="upscale"
-              className={`btn btn-dark ${
-                vibes.includes('upscale') ? 'active' : ''
-              }`}
-              type="checkbox"
-              onChange={(e) => handleVibeChange(e.target.value)}
-            >
-              Upscale
-            </ToggleButton>
-            <ToggleButton
-              id="quickEasy"
-              value="quick & easy"
-              className={`btn btn-dark ${
-                vibes.includes('quick & easy') ? 'active' : ''
-              }`}
-              type="checkbox"
-              onChange={(e) => handleVibeChange(e.target.value)}
-            >
-              Quick & Easy
-            </ToggleButton>
-            <ToggleButton
-              id="lively"
-              value="lively"
-              className={`btn btn-dark ${
-                vibes.includes('lively') ? 'active' : ''
-              }`}
-              type="checkbox"
-              onChange={(e) => handleVibeChange(e.target.value)}
-            >
-              Lively
-            </ToggleButton>
-            <ToggleButton
-              id="fun"
-              value="fun"
-              className={`btn btn-dark ${
-                vibes.includes('fun') ? 'active' : ''
-              }`}
-              type="checkbox"
-              onChange={(e) => handleVibeChange(e.target.value)}
-            >
-              Fun
-            </ToggleButton>
-            <ToggleButton
-              id="cozy"
-              value="cozy"
-              className={`btn btn-dark ${
-                vibes.includes('cozy') ? 'active' : ''
-              }`}
-              type="checkbox"
-              onChange={(e) => handleVibeChange(e.target.value)}
-            >
-              Cozy
-            </ToggleButton>
-          </ToggleButtonGroup>
+          <h2>Vibe</h2>
+          <ToggleButton
+            variant="outline-dark"
+            id="familyFriendly"
+            value="family friendly"
+            checked={vibes.includes('family friendly')}
+            type="checkbox"
+            onChange={(e) => handleVibeChange(e.target.value)}
+          >
+            Family Friendly
+          </ToggleButton>{' '}
+          <ToggleButton
+            variant="outline-dark"
+            id="casual"
+            value="casual"
+            checked={vibes.includes('casual')}
+            type="checkbox"
+            onChange={(e) => handleVibeChange(e.target.value)}
+          >
+            Casual
+          </ToggleButton>{' '}
+          <ToggleButton
+            variant="outline-dark"
+            id="upscale"
+            value="upscale"
+            checked={vibes.includes('upscale')}
+            type="checkbox"
+            onChange={(e) => handleVibeChange(e.target.value)}
+          >
+            Upscale
+          </ToggleButton>{' '}
+          <ToggleButton
+            variant="outline-dark"
+            id="quickEasy"
+            value="quick & easy"
+            checked={vibes.includes('quick & easy')}
+            type="checkbox"
+            onChange={(e) => handleVibeChange(e.target.value)}
+          >
+            Quick & Easy
+          </ToggleButton>{' '}
+          <ToggleButton
+            variant="outline-dark"
+            id="lively"
+            value="lively"
+            checked={vibes.includes('lively')}
+            type="checkbox"
+            onChange={(e) => handleVibeChange(e.target.value)}
+          >
+            Lively
+          </ToggleButton>{' '}
+          <ToggleButton
+            variant="outline-dark"
+            id="fun"
+            value="fun"
+            checked={vibes.includes('fun')}
+            type="checkbox"
+            onChange={(e) => handleVibeChange(e.target.value)}
+          >
+            Fun
+          </ToggleButton>{' '}
+          <ToggleButton
+            variant="outline-dark"
+            id="cozy"
+            value="cozy"
+            checked={vibes.includes('cozy')}
+            type="checkbox"
+            onChange={(e) => handleVibeChange(e.target.value)}
+          >
+            Cozy
+          </ToggleButton>
+          <ToggleButton
+            variant="outline-dark"
+            id="relaxed"
+            value="relaxed"
+            checked={vibes.includes('relaxed')}
+            type="checkbox"
+            onChange={(e) => handleVibeChange(e.target.value)}
+          >
+            Relaxed
+          </ToggleButton>{' '}
           <section>
             <h3>Alcohol</h3>
             <Form.Check
