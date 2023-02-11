@@ -5,12 +5,14 @@ import { cleanList } from '../../utilities/utilities'
 
 export interface RestaurantsState {
   restaurants: CleanedRestaurantsState[]
+  filteredRestaurants: CleanedRestaurantsState[]
   status: string
   error: string | null
 }
 
 const initialState: RestaurantsState = {
   restaurants: [] as CleanedRestaurantsState[],
+  filteredRestaurants: [] as CleanedRestaurantsState[],
   status: 'idle',
   error: null,
 }
@@ -33,6 +35,7 @@ export const restaurantsSlice = createSlice({
       .addCase(getRestaurants.fulfilled, (state, action) => {
         state.status = 'succeeded'
         state.restaurants = action.payload
+        state.filteredRestaurants = action.payload
       })
       .addCase(getRestaurants.rejected, (state, action) => {
         state.status = 'failed'
