@@ -14,26 +14,26 @@ const initialState = {
   restaurants: [] as CleanedRestaurantsState[],
   status: 'idle',
   error: null,
-  activeRestaurant: null
-  //   id: null,
-  //   name: '',
-  //   address: '',
-  //   foodType: '',
-  //   cost: '',
-  //   vibes: '',
-  //   coverImg: '',
-  //   alt: '',
-  //   location: {
-  //     lat: '',
-  //     long: ''
-  //   },
-  //   alcoholic: false,
-  //   happyHour: false,
-  //   hours: [],
-  //   happyHours: [],
-  //   engagements: [],
-  //   avgRating: null
-  // }
+  activeRestaurant: {
+    id: null,
+    name: '',
+    address: '',
+    foodType: '',
+    cost: '',
+    vibes: '',
+    coverImg: '',
+    alt: '',
+    location: {
+      lat: '',
+      long: ''
+    },
+    alcoholic: false,
+    happyHour: false,
+    hours: [],
+    happyHours: [],
+    engagements: [],
+    avgRating: null
+  }
 }
 
 export const getRestaurants = createAsyncThunk('restaurants/fetchRestaurants', async () => {
@@ -47,11 +47,29 @@ export const restaurantsSlice = createSlice({
   initialState,
   reducers: {
     selectRestaurant(state, action) {
-      const { restaurant } = action.payload;
+      const restaurant = action.payload;
       (state.activeRestaurant = restaurant)
+      console.log(state.activeRestaurant)
     },
     resetRestaurant (state, action) {
-      state.activeRestaurant = null
+      state.activeRestaurant.id = null,
+      state.activeRestaurant.name = '',
+      state.activeRestaurant.address = '',
+      state.activeRestaurant.foodType = '',
+      state.activeRestaurant.cost = '',
+      state.activeRestaurant.vibes = '',
+      state.activeRestaurant.coverImg = '',
+      state.activeRestaurant.alt = '',
+      state.activeRestaurant.location = {
+        lat: '',
+        long: ''
+      },
+      state.activeRestaurant.alcoholic = false,
+      state.activeRestaurant.happyHour = false,
+      state.activeRestaurant.hours = [],
+      state.activeRestaurant.happyHours = [],
+      state.activeRestaurant.engagements = [],
+      state.activeRestaurant.avgRating = null
     }
   },
   extraReducers(builder) {

@@ -15,9 +15,9 @@ export const DetailModal = () => {
       <p>Distance: Logic Placeholder</p>
       <p>Cost: {activeRestaurant.cost}</p>
       <p>Alcohol: {activeRestaurant.name}</p>
-      <p>Hours: {activeRestaurant.hours}</p>
-      <p>Happy Hours: {activeRestaurant.happyHours}</p>
-      <p>Vibe: {activeRestaurant.vibe}</p>
+      {/* <p>Hours: {activeRestaurant.hours}</p>
+      <p>Happy Hours: {activeRestaurant.happyHours}</p> */}
+      {/* <p>Vibes: {activeRestaurant.vibes}</p> */}
     </div>
   )
 }
