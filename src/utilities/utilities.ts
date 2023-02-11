@@ -93,7 +93,7 @@ export const cleanUsersData = (users: Users[]): CleanedUserState[] => {
   })
 }
 
-export const cleanListData = (lifts: Lifts[]): CleanedLiftsState[] => {
+export const cleanLiftsData = (lifts: Lifts[]): CleanedLiftsState[] => {
   return lifts.map((lift: Lifts) => {
     return {
       id: lift.id,

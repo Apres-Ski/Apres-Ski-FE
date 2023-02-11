@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { CleanedLiftsState } from '../../utilities/interfaces'
 import { fetchLifts } from '../../utilities/APICalls'
-import { cleanListData } from '../../utilities/utilities'
+import { cleanLiftsData } from '../../utilities/utilities'
 
 export interface LiftsState {
   lifts: CleanedLiftsState[]
@@ -17,7 +17,7 @@ const initialState: LiftsState = {
 
 export const getLifts = createAsyncThunk('restaurants/fetchLifts', async () => {
   const response = await fetchLifts()
-  const lifts = cleanListData(response.data)
+  const lifts = cleanLiftsData(response.data)
   return lifts
 })
 
