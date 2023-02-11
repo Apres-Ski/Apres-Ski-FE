@@ -11,12 +11,14 @@ import { Error } from '../../components/Error'
 import { useNavigate } from 'react-router-dom'
 import { APP_ROUTES } from '../../utilities/constants'
 import { Button } from 'react-bootstrap'
+import { getLifts } from '../lifts/liftsSlice' 
 
 export const Main = () => {
   const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
-  const { status, error } = useSelector((state: RootState) => state.restaurants)
+  const { status } = useSelector((state: RootState) => state.restaurants)
   const { activeUser } = useSelector((state: RootState) => state.users)
+  const { liftsStatus } = useSelector((state: RootState) => state.lifts)
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -32,6 +34,12 @@ export const Main = () => {
       dispatch(getRestaurants())
     }
   }, [status, dispatch])
+
+  useEffect(() => {
+    if (liftsStatus === 'idle') {
+      dispatch(getLifts())
+    }
+  }, [liftsStatus, dispatch])
 
   let content
 

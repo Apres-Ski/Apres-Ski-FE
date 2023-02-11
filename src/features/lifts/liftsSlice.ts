@@ -5,14 +5,14 @@ import { cleanListData } from '../../utilities/utilities'
 
 export interface LiftsState {
   lifts: CleanedLiftsState[]
-  status: string
-  error: string | null
+  liftsStatus: string
+  liftsError: string | null
 }
 
 const initialState: LiftsState = {
   lifts: [] as CleanedLiftsState[],
-  status: 'idle',
-  error: null,
+  liftsStatus: 'idle',
+  liftsError: null,
 }
 
 export const getLifts = createAsyncThunk('restaurants/fetchLifts', async () => {
@@ -28,15 +28,15 @@ export const liftsSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(getLifts.pending, (state, action) => {
-        state.status = 'loading'
+        state.liftsStatus = 'loading'
       })
       .addCase(getLifts.fulfilled, (state, action) => {
-        state.status = 'succeeded'
+        state.liftsStatus = 'succeeded'
         state.lifts = action.payload
       })
       .addCase(getLifts.rejected, (state, action) => {
-        state.status = 'failed'
-        state.error = action.error.message as any
+        state.liftsStatus = 'failed'
+        state.liftsError = action.error.message as any
       })
   },
 })
