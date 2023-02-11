@@ -13,7 +13,7 @@ import { APP_ROUTES } from '../../utilities/constants'
 import { Button } from 'react-bootstrap'
 import { getLifts } from '../lifts/liftsSlice' 
 
-export const Main = () => {
+export const Dashboard = () => {
   const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
   const { status } = useSelector((state: RootState) => state.restaurants)
