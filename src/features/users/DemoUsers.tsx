@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, RootState } from '../../app/store'
 import UsersList from './UsersList'
 import { getUsers } from './usersSlice'
+import { Error } from '../../components/Error'
 
 export const DemoUsers = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -27,10 +28,7 @@ export const DemoUsers = () => {
     )
   } else if (status === 'failed') {
     content = (
-      <div>
-        <h2 style={{ color: 'red' }}>ERROR</h2>
-        <p>{error}</p>
-      </div>
+      <Error message='There was a problem on our end. Please try again.'/>
     )
   }
 

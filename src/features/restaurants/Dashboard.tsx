@@ -7,6 +7,7 @@ import { getRestaurants } from './restaurantsSlice'
 import { RestaurantList } from './RestaurantList'
 import { NavMenu } from '../users/Nav'
 import { Filter } from './Filter'
+import { Error } from '../../components/Error'
 import { useNavigate } from 'react-router-dom'
 import { APP_ROUTES } from '../../utilities/constants'
 
@@ -44,10 +45,7 @@ export const Main = () => {
     )
   } else if (status === 'failed') {
     content = (
-      <div>
-        <h2 style={{ color: 'red' }}>ERROR</h2>
-        <p>{error}</p>
-      </div>
+      <Error message='There was a problem on our end. Please try again.'/>
     )
   }
 
