@@ -16,12 +16,12 @@ export const Map = () => {
     Number(state.users.activeUser.location.lat)
   )
 
-  const { restaurants } = useSelector((state: RootState) => state.restaurants)
+  const { filteredRestaurants } = useSelector((state: RootState) => state.restaurants)
 
   let geoJsonRestaurants: GeoJson
 
   const getGeoJsonRestaurants = () => {
-    geoJsonRestaurants = restaurants.reduce(
+    geoJsonRestaurants = filteredRestaurants.reduce(
       (acc: GeoJson, restaurant: CleanedRestaurantsState) => {
         acc.features.push({
           type: 'Feature',
@@ -109,7 +109,7 @@ export const Map = () => {
     .setLngLat([userLong, userLat])
     .addTo(map) 
     
-  }, [userLong, userLat])
+  }, [userLong, userLat, filteredRestaurants])
 
   return (
     <div>
