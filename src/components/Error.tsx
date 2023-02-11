@@ -1,38 +1,30 @@
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
-import { useSelector } from 'react-redux'
-import { RootState } from '../app/store'
+import { useState } from 'react'
 
-export const Error = () => {
-  const usersError = useSelector((state: RootState) => state.users.error)
-  const restaurantError = useSelector((state: RootState) => state.restaurants.error)
-  
+export const Error = ({ message }: { message: string}) => {
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(false);
+
   return (
-    // <div>
-    //   <h2>Error Component (General)</h2>
-    //   <p>There seems to be a problem loading this content. Please return to the Main page</p>
-    //   <Link to='/'>
-    //     <button>Go Back</button>
-    //   </Link>
-    // </div>
-        <div
-          className="modal show"
-          style={{ display: 'block', position: 'initial' }}
-        >
-          <Modal.Dialog>
-            <Modal.Header closeButton>
-              <Modal.Title>Error</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              
-            </Modal.Body>
-            <Modal.Footer>
-              <Link to='/'><Button variant="secondary">Close</Button></Link>
-            </Modal.Footer>
-          </Modal.Dialog>
-        </div>
-      )
-    }
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+      >
+        <Modal.Header className='d-flex justify-content-center'>
+            <Modal.Title className='text-danger'>Error</Modal.Title>
+        </Modal.Header>
+          <Modal.Body className='d-flex justify-content-center'>
+            <p>{message}</p>
+          </Modal.Body>
+  
+          <Modal.Footer className='d-flex justify-content-center'>
+            <Link to='/'><Button variant='primary'>Close</Button></Link>
+          </Modal.Footer>
+      </Modal>
+    )
+}
 
-// Route button to Main page

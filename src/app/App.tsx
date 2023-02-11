@@ -13,7 +13,7 @@ function App() {
           <Route path={APP_ROUTES.LANDING} element={(<Landing />)} />
           <Route path={APP_ROUTES.DEMO} element={(<DemoUsers />)} />
           <Route path={APP_ROUTES.DASH} element={(<Main />)} />
-          <Route path='/*' element={(<Error />)} />
+          <Route path='/*' element={(<Error message='404 Page Not Found'/>)} />
         </Routes>
     </div>
   )
