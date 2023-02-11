@@ -29,3 +29,18 @@ export const fetchUsers = async () => {
     return error
   }
 }
+
+export const fetchLifts = async () => {
+  try {
+    const response = await fetch(API_ROUTES.GET_LIFTS, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+
+    return await response.json()
+  } catch (error) {
+    return error
+  }
+}

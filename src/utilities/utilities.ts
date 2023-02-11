@@ -4,6 +4,8 @@ import {
   Engagement,
   Restaurants,
   Users,
+  Lifts,
+  CleanedLiftsState
 } from './interfaces'
 
 export const cleanList = (
@@ -88,5 +90,18 @@ export const cleanUsersData = (users: Users[]): CleanedUserState[] => {
         long: user.attributes.lon,
       },
     } as CleanedUserState
+  })
+}
+
+export const cleanLiftsData = (lifts: Lifts[]): CleanedLiftsState[] => {
+  return lifts.map((lift: Lifts) => {
+    return {
+      id: lift.id,
+      name: lift.attributes.name,
+      location: {
+        lat: lift.attributes.lat,
+        long: lift.attributes.lon,
+      }
+    }
   })
 }
