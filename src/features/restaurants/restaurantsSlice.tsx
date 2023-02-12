@@ -49,7 +49,6 @@ export const restaurantsSlice = createSlice({
     selectRestaurant(state, action) {
       const restaurant = action.payload;
       (state.activeRestaurant = restaurant)
-      console.log(state.activeRestaurant)
     },
     resetRestaurant (state, action) {
       state.activeRestaurant.id = null,

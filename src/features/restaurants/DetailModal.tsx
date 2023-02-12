@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux"
 import type { RootState } from "../../app/store"
-import { selectRestaurant } from './restaurantsSlice'
+import { HappyHours } from "./HappyHours"
 
 export const DetailModal = () => {
   const { activeRestaurant } = useSelector((state: RootState) => state.restaurants)
@@ -9,42 +9,11 @@ export const DetailModal = () => {
     return `${day[0][0].toUpperCase()}: ${day[1]}`
   })
 
-  function showHappyHours() {
-    Object.entries(activeRestaurant.happyHours).map((day) => {
-      if(day[1]) {
-        return `${day[0][0].toUpperCase()}: ${day[1]}`
-    }})
-  }
-
-  const showSpecial = () => {
-    Object.entries(activeRestaurant.happyHours).find((day) => {
-      return day[0] === 'special'
-    })!
-  }
-
   function hasBooze () {
     if(activeRestaurant.alcoholic) {
       return 'Yes'
     } else {
       return 'No'
-    }
-  }
-
-  const displayHappyHours = () => {
-    if(!activeRestaurant.happyHour) {
-      return 'No Specials Available'
-    } else {
-      return (
-        <div>Happy Hours: {showSpecial[1]}
-          <p>{showHappyHours[0]}</p>
-          <p>{showHappyHours[1]}</p>
-          <p>{showHappyHours[2]}</p>
-          <p>{showHappyHours[3]}</p>
-          <p>{showHappyHours[4]}</p>
-          <p>{showHappyHours[5]}</p>
-          <p>{showHappyHours[6]}</p>
-        </div>
-      )
     }
   }
 
@@ -67,16 +36,7 @@ export const DetailModal = () => {
           <p>{showHours[5]}</p>
           <p>{showHours[6]}</p>
         </div>
-        {displayHappyHours()}
-        {/* <div>Happy Hours: {showSpecial[1]}
-          <p>{showHappyHours[0]}</p>
-          <p>{showHappyHours[1]}</p>
-          <p>{showHappyHours[2]}</p>
-          <p>{showHappyHours[3]}</p>
-          <p>{showHappyHours[4]}</p>
-          <p>{showHappyHours[5]}</p>
-          <p>{showHappyHours[6]}</p>
-        </div> */}
+        {activeRestaurant.happyHours ? <HappyHours /> : <p>No Specials Available</p>}
       </div>
       <p>Vibes: {activeRestaurant.vibes}</p>
     </div>
