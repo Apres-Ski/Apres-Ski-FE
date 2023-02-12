@@ -2,12 +2,18 @@ import { useSelector, useDispatch } from 'react-redux'
 import type { AppDispatch, RootState } from '../../app/store'
 import { selectUser } from './usersSlice'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { resetFilters } from '../filters/filtersSlice'
 
 const colors = ['danger', 'primary', 'success']
 
 const UsersList = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const { users } = useSelector((state: RootState) => state.users)
+  const { users, activeUser } = useSelector((state: RootState) => state.users)
+
+  useEffect(() => {
+    dispatch(resetFilters(''))
+  }, [activeUser])
 
   const renderedUsers = users.map((user, index) => (
     <div key={user.id} className='container' style={{ width: '45%' }}>
