@@ -74,7 +74,7 @@ export interface CleanedHappyHours {
 }
 
 export interface CleanedRestaurantsState {
-  id: string | null
+  id: string
   name: string
   address: string
   foodType: string
