@@ -5,12 +5,14 @@ import { cleanList } from '../../utilities/utilities'
 
 export interface RestaurantsState {
   restaurants: CleanedRestaurantsState[]
+  filteredRestaurants: CleanedRestaurantsState[]
   status: string
   error: string | null
 }
 
 const initialState: RestaurantsState = {
   restaurants: [] as CleanedRestaurantsState[],
+  filteredRestaurants: [] as CleanedRestaurantsState[],
   status: 'idle',
   error: null,
 }
@@ -24,7 +26,11 @@ export const getRestaurants = createAsyncThunk('restaurants/fetchRestaurants', a
 export const restaurantsSlice = createSlice({
   name: 'restaurants',
   initialState,
-  reducers: {},
+  reducers: {
+    filterRestaurants(state, action) {
+      state.filteredRestaurants = action.payload
+    }
+  },
   extraReducers(builder) {
     builder
       .addCase(getRestaurants.pending, (state, action) => {
@@ -33,6 +39,7 @@ export const restaurantsSlice = createSlice({
       .addCase(getRestaurants.fulfilled, (state, action) => {
         state.status = 'succeeded'
         state.restaurants = action.payload
+        state.filteredRestaurants = action.payload
       })
       .addCase(getRestaurants.rejected, (state, action) => {
         state.status = 'failed'
@@ -40,5 +47,7 @@ export const restaurantsSlice = createSlice({
       })
   },
 })
+
+export const { filterRestaurants } = restaurantsSlice.actions
 
 export default restaurantsSlice.reducer

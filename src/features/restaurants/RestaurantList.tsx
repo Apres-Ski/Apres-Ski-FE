@@ -1,42 +1,48 @@
 import { RestaurantCard } from './RestaurantCard'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../app/store'
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState, AppDispatch } from '../../app/store'
 import { ReactElement, useEffect, useState } from 'react'
+import { filterRestaurants } from '../restaurants/restaurantsSlice'
+
 
 export const RestaurantList = () => {
   const { restaurants } = useSelector((state: RootState) => state.restaurants)
+  const { filteredRestaurants } = useSelector((state: RootState) => state.restaurants)
   const { vibes, hasAlcohol, hasHappyHour } = useSelector(
     (state: RootState) => state.filters
   )
   const [renderedRestaurants, setRenderedRestaurants] =
     useState<ReactElement[]>()
 
+  const dispatch = useDispatch<AppDispatch>()  
+
   useEffect(() => {
-    let filteredRest = restaurants
+    dispatch(filterRestaurants(restaurants))
 
     if (hasAlcohol) {
-      filteredRest = filteredRest.filter((restaurant) => restaurant.alcoholic)
+      dispatch(filterRestaurants(filteredRestaurants.filter((restaurant) => restaurant.alcoholic)))
     }
 
     if (hasHappyHour) {
-      filteredRest = filteredRest.filter((restaurant) => restaurant.happyHours)
+      dispatch(filterRestaurants(filteredRestaurants.filter((restaurant) => restaurant.happyHours)))
     }
 
     if (vibes.length > 0) {
-      filteredRest = filteredRest.filter((restaurant) =>
-        vibes.every((vibe) => restaurant.vibes.includes(vibe))
+      dispatch(filterRestaurants(filteredRestaurants.filter((restaurant) =>
+        vibes.every((vibe) => restaurant.vibes.includes(vibe))))
       )
     }
+  }, [restaurants, hasAlcohol, hasHappyHour, vibes])
 
-    const restaurantCards = filteredRest.map((restaurant) => (
+  useEffect(() => {
+    const restaurantCards = filteredRestaurants.map((restaurant) => (
       <RestaurantCard
         key={`restaurant ${restaurant.id}`}
         restaurant={restaurant}
       />
     ))
-    console.log(filteredRest)
     setRenderedRestaurants(restaurantCards)
-  }, [restaurants, hasAlcohol, hasHappyHour, vibes])
+  }, [filteredRestaurants])
 
   return <div>{renderedRestaurants}</div>
 }
