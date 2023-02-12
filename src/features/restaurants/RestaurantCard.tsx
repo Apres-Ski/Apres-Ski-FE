@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 
 export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsState }) => {
-  const { restaurants, activeRestaurant } = useSelector((state: RootState) => state.restaurants)
   const dispatch = useDispatch<AppDispatch>()
   const [show, setShow] = useState(false);
   const formattedVibes = restaurant.vibes.join(', ')
@@ -19,7 +18,6 @@ export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsS
     dispatch(selectRestaurant(restaurant))
     setShow(true)
   }
-
 
   return (
     <div>
@@ -38,7 +36,6 @@ export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsS
         backdrop="static"
       >
         <Modal.Header className='d-flex justify-content-center'>
-            {/* <Modal.Title className='text-danger'>{activeRestaurant.name}</Modal.Title> */}
         </Modal.Header>
           <Modal.Body className='d-flex justify-content-center'>
             {<DetailModal />}

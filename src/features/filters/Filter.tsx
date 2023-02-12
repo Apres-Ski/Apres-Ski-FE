@@ -7,7 +7,6 @@ import {
   toggleHasHappyHour,
   toggleVibes,
 } from './filtersSlice'
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import { Button, Offcanvas } from 'react-bootstrap'
 
