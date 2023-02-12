@@ -4,17 +4,18 @@ import { RootState, AppDispatch } from '../../app/store'
 import { ReactElement, useEffect, useState } from 'react'
 import { filterRestaurants } from '../restaurants/restaurantsSlice'
 
-
 export const RestaurantList = () => {
   const { restaurants } = useSelector((state: RootState) => state.restaurants)
-  const { filteredRestaurants } = useSelector((state: RootState) => state.restaurants)
+  const { filteredRestaurants } = useSelector(
+    (state: RootState) => state.restaurants
+  )
   const { vibes, hasAlcohol, hasHappyHour } = useSelector(
     (state: RootState) => state.filters
   )
   const [renderedRestaurants, setRenderedRestaurants] =
     useState<ReactElement[]>()
 
-  const dispatch = useDispatch<AppDispatch>()  
+  const dispatch = useDispatch<AppDispatch>()
 
   useEffect(() => {
     dispatch(filterRestaurants(restaurants))

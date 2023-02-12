@@ -7,7 +7,7 @@ import { Error } from '../../components/Error'
 
 export const DemoUsers = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const { status, error } = useSelector((state: RootState) => state.users)
+  const { status } = useSelector((state: RootState) => state.users)
 
   useEffect(() => {
     if (status === 'idle') {
@@ -22,13 +22,13 @@ export const DemoUsers = () => {
   } else if (status === 'succeeded') {
     content = (
       <div>
-        <h2 className='m-5'>Please Select a User</h2>
+        <h2 className="m-5">Please Select a User</h2>
         <UsersList />
       </div>
     )
   } else if (status === 'failed') {
     content = (
-      <Error message='There was a problem on our end. Please try again.'/>
+      <Error message="There was a problem on our end. Please try again." />
     )
   }
 
