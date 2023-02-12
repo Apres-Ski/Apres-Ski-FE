@@ -4,23 +4,14 @@ import type { AppDispatch, RootState } from '../../app/store'
 import { selectRestaurant } from './restaurantsSlice'
 import { DetailModal } from './DetailModal'
 import Modal from 'react-bootstrap/Modal'
-import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 
 export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsState }) => {
-
   const { restaurants, activeRestaurant } = useSelector((state: RootState) => state.restaurants)
-
   const dispatch = useDispatch<AppDispatch>()
-
-  // const selectedRestaurant = restaurants.find(spot => (
-  //     <div key={spot.id}>
-  //             <button onClick={() => dispatch(selectRestaurant(spot))}>{spot.name}</button>
-  //     </div>
-  //   ))
-
   const [show, setShow] = useState(false);
+  const formattedVibes = restaurant.vibes.join(', ')
 
   const handleClose = () => setShow(false);
 
@@ -29,10 +20,11 @@ export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsS
     setShow(true)
   }
 
+
   return (
     <div>
       <p>{restaurant.name}</p>
-      <p>Vibe: {restaurant.vibes}</p>
+      <p>Vibe: {formattedVibes}</p>
       <p>Distance: .25m</p>
       <img style={{ width: 350 }} src={restaurant.coverImg} />
       <p>PLACEHOLDER FOR VIBE BADGES</p>

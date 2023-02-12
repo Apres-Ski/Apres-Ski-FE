@@ -1,17 +1,19 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { CleanedRestaurantsState } from '../../utilities/interfaces'
+import { CleanedHappyHours, CleanedHours, CleanedRestaurantsState } from '../../utilities/interfaces'
 import { fetchRestaurants } from '../../utilities/APICalls'
 import { cleanList } from '../../utilities/utilities'
 
-export interface ListState {
+export interface RestaurantsState {
   restaurants: CleanedRestaurantsState[]
   activeRestaurant: CleanedRestaurantsState 
+  filteredRestaurants: CleanedRestaurantsState[]
   status: string
   error: string | null
 }
 
-const initialState = {
+const initialState: RestaurantsState = {
   restaurants: [] as CleanedRestaurantsState[],
+  filteredRestaurants: [] as CleanedRestaurantsState[],
   status: 'idle',
   error: null,
   activeRestaurant: {
@@ -20,7 +22,7 @@ const initialState = {
     address: '',
     foodType: '',
     cost: '',
-    vibes: '',
+    vibes: [],
     coverImg: '',
     alt: '',
     location: {
@@ -29,10 +31,10 @@ const initialState = {
     },
     alcoholic: false,
     happyHour: false,
-    hours: [],
-    happyHours: [],
+    hours: {} as CleanedHours,
+    happyHours: {} as CleanedHappyHours,
     engagements: [],
-    avgRating: null
+    avgRating: 0
   }
 }
 
@@ -46,6 +48,9 @@ export const restaurantsSlice = createSlice({
   name: 'restaurants',
   initialState,
   reducers: {
+    filterRestaurants(state, action) {
+      state.filteredRestaurants = action.payload
+    },
     selectRestaurant(state, action) {
       const restaurant = action.payload;
       (state.activeRestaurant = restaurant)
@@ -56,7 +61,7 @@ export const restaurantsSlice = createSlice({
       state.activeRestaurant.address = '',
       state.activeRestaurant.foodType = '',
       state.activeRestaurant.cost = '',
-      state.activeRestaurant.vibes = '',
+      state.activeRestaurant.vibes = [],
       state.activeRestaurant.coverImg = '',
       state.activeRestaurant.alt = '',
       state.activeRestaurant.location = {
@@ -65,10 +70,10 @@ export const restaurantsSlice = createSlice({
       },
       state.activeRestaurant.alcoholic = false,
       state.activeRestaurant.happyHour = false,
-      state.activeRestaurant.hours = [],
-      state.activeRestaurant.happyHours = [],
+      state.activeRestaurant.hours = {} as CleanedHours,
+      state.activeRestaurant.happyHours = {} as CleanedHappyHours,
       state.activeRestaurant.engagements = [],
-      state.activeRestaurant.avgRating = null
+      state.activeRestaurant.avgRating = 0
     }
   },
   extraReducers(builder) {
@@ -79,6 +84,7 @@ export const restaurantsSlice = createSlice({
       .addCase(getRestaurants.fulfilled, (state, action) => {
         state.status = 'succeeded'
         state.restaurants = action.payload
+        state.filteredRestaurants = action.payload
       })
       .addCase(getRestaurants.rejected, (state, action) => {
         state.status = 'failed'
@@ -87,14 +93,6 @@ export const restaurantsSlice = createSlice({
   },
 })
 
+export const { filterRestaurants, selectRestaurant, resetRestaurant } = restaurantsSlice.actions
+
 export default restaurantsSlice.reducer
-
-// export const selectRestaurantSlice = createSlice({
-//   name: 'activeRestaurant',
-//   initialState,
-//   reducers: {
-    
-//   }
-// })
-
-export const { selectRestaurant, resetRestaurant} = restaurantsSlice.actions

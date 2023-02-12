@@ -1,16 +1,30 @@
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+import { useState } from 'react'
 
-export const Error = () => {
+export const Error = ({ message }: { message: string}) => {
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(false);
 
   return (
-    <div>
-      <h2>Error Component (General)</h2>
-      <p>There seems to be a problem loading this content. Please return to the Main page</p>
-      <Link to='/'>
-        <button>Go Back</button>  
-      </Link>
-    </div>
-  )
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+      >
+        <Modal.Header className='d-flex justify-content-center'>
+            <Modal.Title className='text-danger'>Error</Modal.Title>
+        </Modal.Header>
+          <Modal.Body className='d-flex justify-content-center'>
+            <p>{message}</p>
+          </Modal.Body>
+  
+          <Modal.Footer className='d-flex justify-content-center'>
+            <Link to='/'><Button variant='primary'>Close</Button></Link>
+          </Modal.Footer>
+      </Modal>
+    )
 }
 
-// Route button to Main page

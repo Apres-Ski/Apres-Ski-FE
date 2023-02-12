@@ -32,7 +32,7 @@ export interface Engagement {
   user: number[]
 }
 
-export interface RestaurantsState {
+export interface Restaurants {
   id: string
   type: string
   attributes: {
@@ -74,7 +74,7 @@ export interface CleanedHappyHours {
 }
 
 export interface CleanedRestaurantsState {
-  id: string
+  id: string | null
   name: string
   address: string
   foodType: string
@@ -95,19 +95,18 @@ export interface CleanedRestaurantsState {
 }
 
 export interface Feature {
-    type: string,
-    geometry: {
-      type: string,
-      coordinates: { lon: number, lat: number },
-    },
-    properties: {
-      title: string,
-    }
-
+  type: string
+  geometry: {
+    type: string
+    coordinates: { lon: number; lat: number }
+  }
+  properties: {
+    title: string
+  }
 }
 
 export interface GeoJson {
-  type: string,
+  type: string
   features: Feature[]
 }
 
@@ -122,6 +121,24 @@ export interface Users {
 
 export interface CleanedUserState {
   id: number | null
+  name: string
+  location: {
+    lat: string
+    long: string
+  }
+}
+
+export interface Lifts {
+  id: string
+  attributes: {
+    name: string
+    lat: string
+    lon: string
+  }
+}
+
+export interface CleanedLiftsState {
+  id: string
   name: string
   location: {
     lat: string

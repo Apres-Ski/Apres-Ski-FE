@@ -2,14 +2,16 @@ import {
   CleanedRestaurantsState,
   CleanedUserState,
   Engagement,
-  RestaurantsState,
+  Restaurants,
   Users,
+  Lifts,
+  CleanedLiftsState
 } from './interfaces'
 
 export const cleanList = (
-  restaurants: RestaurantsState[]
+  restaurants: Restaurants[]
 ): CleanedRestaurantsState[] => {
-  return restaurants.map((restaurant: RestaurantsState) => {
+  return restaurants.map((restaurant: Restaurants) => {
     const vibes = getVibes(restaurant.attributes.engagement)
     const cleanedHours = cleanHours(restaurant)
     const cleanedHappyHours = cleanHappyHours(restaurant)
@@ -74,14 +76,14 @@ const getVibes = (engagements: Engagement[]) => {
   }, [])
 }
 
-const cleanHours = (restaurant: RestaurantsState) => {
+const cleanHours = (restaurant: Restaurants) => {
   const cleanedHours = (({ id, restaurant, ...obj }) => obj)(
     restaurant.attributes.hour[0]
   )
   return cleanedHours
 }
 
-const cleanHappyHours = (restaurant: RestaurantsState) => {
+const cleanHappyHours = (restaurant: Restaurants) => {
   if (restaurant.attributes.happyhour[0]) {
     const cleanedHappyHours = (({ id, restaurant, ...obj }) => obj)(
       restaurant.attributes.happyhour[0]
@@ -100,5 +102,18 @@ export const cleanUsersData = (users: Users[]): CleanedUserState[] => {
         long: user.attributes.lon,
       },
     } as CleanedUserState
+  })
+}
+
+export const cleanLiftsData = (lifts: Lifts[]): CleanedLiftsState[] => {
+  return lifts.map((lift: Lifts) => {
+    return {
+      id: lift.id,
+      name: lift.attributes.name,
+      location: {
+        lat: lift.attributes.lat,
+        long: lift.attributes.lon,
+      }
+    }
   })
 }
