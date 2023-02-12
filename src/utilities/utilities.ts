@@ -70,7 +70,7 @@ const getVibes = (engagements: Engagement[]) => {
   return engagements.reduce((acc: string[], engagement: Engagement) => {
     if (!acc.includes(engagement.vibe)) {
       engagement.vibe[0].toUpperCase()
-      acc.push(`${capitalizeWords(engagement.vibe)} `)
+      acc.push(engagement.vibe)
     }
     return acc
   }, [])
