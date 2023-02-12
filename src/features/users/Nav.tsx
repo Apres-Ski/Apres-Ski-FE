@@ -1,15 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../../app/store'
-import { Link } from 'react-router-dom'
+import { AppDispatch, RootState } from '../../app/store'
 import { resetUser } from './usersSlice'
 import Navbar from 'react-bootstrap/Navbar'
-import { Button, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Button, Container, Nav } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { APP_ROUTES } from '../../utilities/constants'
 
 export const NavMenu = () => {
   const { activeUser } = useSelector((state: RootState) => state.users)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
 
   return (
     <Navbar bg="primary" variant="dark" expand="lg" fixed="top">
@@ -28,7 +27,7 @@ export const NavMenu = () => {
             </Navbar.Text>
             <Button
               className="ms-4"
-              size='sm'
+              size="sm"
               variant="outline-dark"
               onClick={() => dispatch(resetUser(activeUser))}
             >
@@ -40,4 +39,3 @@ export const NavMenu = () => {
     </Navbar>
   )
 }
-
