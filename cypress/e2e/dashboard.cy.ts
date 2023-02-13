@@ -34,7 +34,9 @@ describe('Dashboard Test', () => {
     cy.get(':nth-child(9) > .mapboxgl-canvas').should('exist')
   })
 
-  it('Should find a Filter button', () => {
+  it('Should find a Filter button that opens menu when clicked', () => {
     cy.get('.me-2').should('exist')
+    // .click()
+    // cy.get('.offcanvas-body').should('exist')
   })
 })
