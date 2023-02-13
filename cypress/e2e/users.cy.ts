@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Users Test', () => {
   beforeEach(() => {
     cy.intercept("GET", 'http://127.0.0.1:8000/api/v1/user/',
     {
