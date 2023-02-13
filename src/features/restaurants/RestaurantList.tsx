@@ -21,15 +21,15 @@ export const RestaurantList = () => {
     dispatch(filterRestaurants(restaurants))
 
     if (hasAlcohol) {
-      dispatch(filterRestaurants(filteredRestaurants.filter((restaurant) => restaurant.alcoholic)))
+      dispatch(filterRestaurants(restaurants.filter((restaurant) => restaurant.alcoholic)))
     }
 
     if (hasHappyHour) {
-      dispatch(filterRestaurants(filteredRestaurants.filter((restaurant) => restaurant.happyHours)))
+      dispatch(filterRestaurants(restaurants.filter((restaurant) => restaurant.happyHours)))
     }
 
     if (vibes.length > 0) {
-      dispatch(filterRestaurants(filteredRestaurants.filter((restaurant) =>
+      dispatch(filterRestaurants(restaurants.filter((restaurant) =>
         vibes.every((vibe) => restaurant.vibes.includes(vibe))))
       )
     }
