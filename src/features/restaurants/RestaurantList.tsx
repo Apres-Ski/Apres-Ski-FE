@@ -48,7 +48,7 @@ export const RestaurantList = () => {
 
   useEffect(() => {
     const element = document.getElementById(`card-${mapClickedRestaurant}`)
-    element?.scrollIntoView(false)
+    setTimeout(() => {element?.scrollIntoView(false)}, 1000)
   }, [mapClickedRestaurant])
 
   return <div>{renderedRestaurants}</div>
