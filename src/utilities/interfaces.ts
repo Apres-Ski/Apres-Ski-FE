@@ -102,6 +102,7 @@ export interface Feature {
   }
   properties: {
     title: string
+    id?: string
   }
 }
 

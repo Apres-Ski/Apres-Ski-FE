@@ -11,6 +11,7 @@ export interface RestaurantsState {
   restaurants: CleanedRestaurantsState[]
   activeRestaurant: CleanedRestaurantsState
   filteredRestaurants: CleanedRestaurantsState[]
+  mapClickedRestaurant: string | null
   status: string
   error: string | null
 }
@@ -18,6 +19,7 @@ export interface RestaurantsState {
 const initialState: RestaurantsState = {
   restaurants: [] as CleanedRestaurantsState[],
   filteredRestaurants: [] as CleanedRestaurantsState[],
+  mapClickedRestaurant: null,
   status: 'idle',
   error: null,
   activeRestaurant: {
@@ -82,6 +84,9 @@ export const restaurantsSlice = createSlice({
         (state.activeRestaurant.engagements = []),
         (state.activeRestaurant.avgRating = 0)
     },
+    setMapClickedRestaurant(state, action) {
+      state.mapClickedRestaurant = action.payload
+    }
   },
   extraReducers(builder) {
     builder
@@ -100,7 +105,7 @@ export const restaurantsSlice = createSlice({
   },
 })
 
-export const { filterRestaurants, selectRestaurant, resetRestaurant } =
+export const { filterRestaurants, selectRestaurant, resetRestaurant, setMapClickedRestaurant } =
   restaurantsSlice.actions
 
 export default restaurantsSlice.reducer
