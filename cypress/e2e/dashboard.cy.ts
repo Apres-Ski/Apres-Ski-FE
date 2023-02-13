@@ -5,6 +5,11 @@ describe('Dashboard Test', () => {
       ok: true,
       fixture: 'users',
     })
+    cy.intercept("GET", 'http://127.0.0.1:8000/api/v1/restaurant/', {
+      statusCode: 200,
+      ok: true,
+      fixture: 'restaurants',
+    })
     cy.visit('http://127.0.0.1:5173/demo')
     cy.get(':nth-child(1) > a > .img-fluid').click()
       .url().should('eq', 'http://127.0.0.1:5173/dashboard')
