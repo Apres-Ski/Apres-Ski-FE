@@ -20,7 +20,7 @@ export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsS
   }
 
   return (
-    <div>
+    <div id={`card-${restaurant.id}`}>
       <p>{restaurant.name}</p>
       <p>Vibe: {formattedVibes}</p>
       <p>Distance: .25m</p>
