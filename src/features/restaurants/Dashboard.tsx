@@ -49,7 +49,7 @@ export const Dashboard = () => {
     content = (
       <div className='w-100 d-flex flex-column align-items-center'>
         <NavMenu />
-        <Button variant="primary" onClick={handleShow} className="me-2">
+        <Button variant="primary" onClick={handleShow} className="m-2 align-self-start ">
           Filter
         </Button>
         <Map />

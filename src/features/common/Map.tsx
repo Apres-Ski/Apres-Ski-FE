@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../app/store'
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState, AppDispatch } from '../../app/store'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import { setMapClickedRestaurant } from '../../features/restaurants/restaurantsSlice'
 import { CleanedRestaurantsState, GeoJson, CleanedLiftsState } from '../../utilities/interfaces'
 
 export const Map = () => {
@@ -12,6 +13,8 @@ export const Map = () => {
   const userLat = useSelector((state: RootState) => Number(state.users.activeUser.location.lat))
 
   const { filteredRestaurants } = useSelector((state: RootState) => state.restaurants)
+
+  const dispatch = useDispatch<AppDispatch>()
 
   let geoJsonRestaurants: GeoJson
 
@@ -29,6 +32,7 @@ export const Map = () => {
           },
           properties: {
             title: restaurant.name,
+            id: restaurant.id
           },
         })
         return acc
@@ -97,6 +101,9 @@ export const Map = () => {
       const popup = new mapboxgl.Popup({ offset: 25, closeButton: false }).setText(feature.properties.title)
       const el = document.createElement('div')
       el.className = 'restaurant-marker'
+      el.addEventListener('click', () => {
+        dispatch(setMapClickedRestaurant(feature.properties.id))
+      })
       new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).setPopup(popup).addTo(map)
     }
     const marker1 = new mapboxgl.Marker()
@@ -111,12 +118,6 @@ export const Map = () => {
         id="map-container"
         className="map-container"
       >
-        {/* <button
-          onClick={() => console.log('open filter')}
-          style={{ width: '100px', zIndex: 1, position: 'absolute' }}
-        >
-          FILTER
-        </button> */}
       </div>
   )
 }
