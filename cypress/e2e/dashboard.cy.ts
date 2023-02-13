@@ -53,21 +53,29 @@ describe('Dashboard Test', () => {
     cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(5)').contains('PLACEHOLDER FOR VIBE BADGES')
   })
   
-  it.only('should find a button to click for more details', () => {
-    cy.get(':nth-child(5) > :nth-child(1) > .btn')
-      .should('exist')
+  it('should find a button to click for more details', () => {
+    cy.get(':nth-child(5) > :nth-child(1) > .btn').should('exist')
       .click({ force: true })
     cy.get('.img-fluid').should('exist')
     cy.get('.modal-body > :nth-child(1) > :nth-child(2)').contains(
       '9600 Kitchen'
     )
-    cy.get('.modal-body > :nth-child(1) > :nth-child(3)').contains(
-      '550 Village Rd Breckenridge, CO 80424'
-    )
-    cy.get('.modal-body > :nth-child(1) > :nth-child(4)').contains('American')
-    cy.get('.modal-body > :nth-child(1) > :nth-child(5)').contains('Logic Placeholder')
+    cy.get('.modal-body > :nth-child(1) > :nth-child(3)')
+      .contains('550 Village Rd Breckenridge, CO 80424')
+    cy.get('.modal-body > :nth-child(1) > :nth-child(4)')
+      .contains('American')
+    cy.get('.modal-body > :nth-child(1) > :nth-child(5)')
+      .contains('Logic Placeholder')
     cy.get('.modal-body > :nth-child(1) > :nth-child(4)').should('exist')
-    cy.get('[style="display: flex; justify-content: space-around;"] > :nth-child(2)').contains('No Specials Available')
+    cy.get('[style="display: flex; justify-content: space-around;"] > :nth-child(2)')
+      .contains('No Specials Available')
     cy.get('.modal-body > :nth-child(1) > :nth-child(9)').should('exist')
+    cy.get('.modal-footer > .btn').should('exist')
+  })
+
+  it.only('should click the button to close the modal', () => {
+    cy.get(':nth-child(5) > :nth-child(1) > .btn').should('exist')
+      .click({ force: true })
+    cy.get('.modal-footer > .btn').click()
   })
 })
