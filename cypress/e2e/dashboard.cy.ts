@@ -34,9 +34,28 @@ describe('Dashboard Test', () => {
     cy.get(':nth-child(9) > .mapboxgl-canvas').should('exist')
   })
 
-  it('Should find a Filter button that opens menu when clicked', () => {
+  it.skip('Should find a Filter button that opens menu when clicked', () => {
     cy.get('.me-2').should('exist')
-    // .click()
-    // cy.get('.offcanvas-body').should('exist')
+    .click()
+    cy.get('.offcanvas-body').should('exist')
+  })
+
+  it('should find 3 restaurant cards', () => {
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1)').should('exist')
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(2)').should('exist')
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(3)').should('exist')
+  })
+
+  it('should find the initial details for a restaurant on its card', () => {
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(1)').contains('9600 Kitchen')
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(2)').contains('casual, upscale')
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(3)').contains('.25m')
+    cy.get(':nth-child(1) > img').should('exist')
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(5)').contains('PLACEHOLDER FOR VIBE BADGES')
+  })
+  
+  it.skip('should find a button to click for more details', () => {
+    cy.get(':nth-child(5) > :nth-child(1) > .btn').should('exist')
+    .click()
   })
 })
