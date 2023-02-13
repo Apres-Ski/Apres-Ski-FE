@@ -47,12 +47,11 @@ export const Dashboard = () => {
     content = <p>Loading...</p>
   } else if (status === 'succeeded') {
     content = (
-      <div>
+      <div className='w-100 d-flex flex-column align-items-center'>
         <NavMenu />
         <Button variant="primary" onClick={handleShow} className="me-2">
           Filter
         </Button>
-        <h1>MAIN COMPONENT</h1>
         <Map />
         <RestaurantList />
         <Filter show={show} handleClose={handleClose} />
@@ -64,5 +63,5 @@ export const Dashboard = () => {
     )
   }
 
-  return <section>{content}</section>
+  return <section className='w-100'>{content}</section>
 }

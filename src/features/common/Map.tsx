@@ -107,19 +107,16 @@ export const Map = () => {
 
 
   return (
-    <div>
       <div
         id="map-container"
         className="map-container"
-        style={{ display: 'flex' }}
       >
-        <button
+        {/* <button
           onClick={() => console.log('open filter')}
           style={{ width: '100px', zIndex: 1, position: 'absolute' }}
         >
           FILTER
-        </button>
+        </button> */}
       </div>
-    </div>
   )
 }
