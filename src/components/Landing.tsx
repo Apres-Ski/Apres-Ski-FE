@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
+import { resetFilters } from '../features/filters/filtersSlice'
+import { useDispatch } from 'react-redux'
 
 export const Landing = () => {
-
   return (
     <div>
       <h2>Landing Component</h2>

@@ -127,3 +127,21 @@ export interface CleanedUserState {
     long: string
   }
 }
+
+export interface Lifts {
+  id: string
+  attributes: {
+    name: string
+    lat: string
+    lon: string
+  }
+}
+
+export interface CleanedLiftsState {
+  id: string
+  name: string
+  location: {
+    lat: string
+    long: string
+  }
+}
