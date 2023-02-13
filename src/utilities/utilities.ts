@@ -37,6 +37,9 @@ export const cleanList = (
       engagements: restaurant.attributes.engagement,
       avgRating: avgRating,
     } as CleanedRestaurantsState
+    {
+      /* {JSON.stringify(showHappyHours[0])} */
+    }
   })
 }
 
@@ -55,9 +58,18 @@ const getAvgRating = (engagements: Engagement[]) => {
   return totalRating / ratingCount
 }
 
+const capitalizeWords = (str: string) => {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
+
 const getVibes = (engagements: Engagement[]) => {
   return engagements.reduce((acc: string[], engagement: Engagement) => {
     if (!acc.includes(engagement.vibe)) {
+      engagement.vibe[0].toUpperCase()
       acc.push(engagement.vibe)
     }
     return acc

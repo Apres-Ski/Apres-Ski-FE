@@ -4,31 +4,32 @@ import { RootState, AppDispatch } from '../../app/store'
 import { ReactElement, useEffect, useState } from 'react'
 import { filterRestaurants } from '../restaurants/restaurantsSlice'
 
-
 export const RestaurantList = () => {
   const { restaurants } = useSelector((state: RootState) => state.restaurants)
-  const { filteredRestaurants } = useSelector((state: RootState) => state.restaurants)
+  const { filteredRestaurants } = useSelector(
+    (state: RootState) => state.restaurants
+  )
   const { vibes, hasAlcohol, hasHappyHour } = useSelector(
     (state: RootState) => state.filters
   )
   const [renderedRestaurants, setRenderedRestaurants] =
     useState<ReactElement[]>()
 
-  const dispatch = useDispatch<AppDispatch>()  
+  const dispatch = useDispatch<AppDispatch>()
 
   useEffect(() => {
     dispatch(filterRestaurants(restaurants))
 
     if (hasAlcohol) {
-      dispatch(filterRestaurants(filteredRestaurants.filter((restaurant) => restaurant.alcoholic)))
+      dispatch(filterRestaurants(restaurants.filter((restaurant) => restaurant.alcoholic)))
     }
 
     if (hasHappyHour) {
-      dispatch(filterRestaurants(filteredRestaurants.filter((restaurant) => restaurant.happyHours)))
+      dispatch(filterRestaurants(restaurants.filter((restaurant) => restaurant.happyHours)))
     }
 
     if (vibes.length > 0) {
-      dispatch(filterRestaurants(filteredRestaurants.filter((restaurant) =>
+      dispatch(filterRestaurants(restaurants.filter((restaurant) =>
         vibes.every((vibe) => restaurant.vibes.includes(vibe))))
       )
     }

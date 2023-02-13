@@ -6,15 +6,10 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import { CleanedRestaurantsState, GeoJson, CleanedLiftsState } from '../../utilities/interfaces'
 
 export const Map = () => {
-  mapboxgl.accessToken =
-    'pk.eyJ1IjoibmFnZWwyOSIsImEiOiJjbGRzeXV6YjkxbDA1M3ZzNXJwanl2Ymk1In0.y2ABIXaVJd8h0Fwxo6X6Mw'
+  mapboxgl.accessToken = 'pk.eyJ1IjoibmFnZWwyOSIsImEiOiJjbGRzeXV6YjkxbDA1M3ZzNXJwanl2Ymk1In0.y2ABIXaVJd8h0Fwxo6X6Mw'
 
-  const userLong = useSelector((state: RootState) =>
-    Number(state.users.activeUser.location.long)
-  )
-  const userLat = useSelector((state: RootState) =>
-    Number(state.users.activeUser.location.lat)
-  )
+  const userLong = useSelector((state: RootState) => Number(state.users.activeUser.location.long))
+  const userLat = useSelector((state: RootState) => Number(state.users.activeUser.location.lat))
 
   const { filteredRestaurants } = useSelector((state: RootState) => state.restaurants)
 
@@ -104,12 +99,12 @@ export const Map = () => {
       el.className = 'restaurant-marker'
       new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).setPopup(popup).addTo(map)
     }
-
     const marker1 = new mapboxgl.Marker()
     .setLngLat([userLong, userLat])
     .addTo(map) 
     
   }, [userLong, userLat, filteredRestaurants])
+
 
   return (
     <div>

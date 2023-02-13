@@ -3,11 +3,6 @@ import { resetFilters } from '../features/filters/filtersSlice'
 import { useDispatch } from 'react-redux'
 
 export const Landing = () => {
-
-  const dispatch = useDispatch()
-
-  dispatch(resetFilters(''))
-
   return (
     <div>
       <h2>Landing Component</h2>
