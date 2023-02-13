@@ -3,13 +3,13 @@ import { CleanedRestaurantsState } from '../../utilities/interfaces'
 import { fetchRestaurants } from '../../utilities/APICalls'
 import { cleanList } from '../../utilities/utilities'
 
-export interface ListState {
+export interface RestaurantsState {
   restaurants: CleanedRestaurantsState[]
   status: string
   error: string | null
 }
 
-const initialState = {
+const initialState: RestaurantsState = {
   restaurants: [] as CleanedRestaurantsState[],
   status: 'idle',
   error: null,
