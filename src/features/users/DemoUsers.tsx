@@ -22,7 +22,7 @@ export const DemoUsers = () => {
   } else if (status === 'succeeded') {
     content = (
       <div className="background-color">
-        <h2 className="m-5">Please Select a User</h2>
+        <h2 className="m-5 nav-title">Please Select a User</h2>
         <UsersList />
       </div>
     )

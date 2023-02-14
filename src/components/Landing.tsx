@@ -10,7 +10,7 @@ export const Landing = () => {
           borderRadius: '5px',
         }}
       >
-        <h1>Aprè Ski</h1>
+        <h1 className='nav-title'>Aprè Ski</h1>
         <p>Placeholder - Welcome to our Application demo</p>
         <Link to="/demo">
           <button type="button" className="btn btn-dark">

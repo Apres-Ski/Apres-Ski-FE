@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'LEMONMILK';
+  src: url('./assets/LEMONMILK-Medium.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'LEMONMILK-Italic';
+  src: url('./assets/LEMONMILK-RegularItalic.otf');
+  font-weight: 300;
+}
+
 #root {
   max-width: 1920px;
   height: 100%;
@@ -32,6 +44,12 @@
   border-radius: 5px;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  font-family: LEMONMILK-Italic;
+}
+
+.nav-title {
+  font-family: LEMONMILK;
+  font-weight: 300;
 }
 
 .vibes-title {
@@ -71,7 +89,7 @@
 }
 
 .blue {
-  background-color: #96CAF7;
+  background-color: #96caf7;
   color: #0a4579;
 }
 
@@ -87,17 +105,17 @@
 
 .orange {
   background-color: #f4a771;
-  color: #793403
+  color: #793403;
 }
 
 .pink {
   background-color: #ffa9d7;
-  color: #59002f
+  color: #59002f;
 }
 
 .lightblue {
   background-color: #a9eeff;
-  color: #025468
+  color: #025468;
 }
 
 .card-container {
