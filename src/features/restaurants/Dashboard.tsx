@@ -61,15 +61,17 @@ export const Dashboard = () => {
           paddingTop: '4rem',
         }}
       >
+        <NavMenu />
+        <div className="me-2 m-4"></div>
+        <Map />
         <Button
           variant="green-accent"
           onClick={handleShow}
-          className="me-2 m-4"
+          className="me-2 m-4 small-text"
+          style={{width: '22rem', fontFamily: 'LEMONMILK'}}
         >
           Filter
         </Button>
-        <NavMenu />
-        <Map />
         <RestaurantList />
         <Filter show={show} handleClose={handleClose} />
       </div>
