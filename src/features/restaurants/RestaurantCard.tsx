@@ -1,13 +1,12 @@
 import { CleanedRestaurantsState } from '../../utilities/interfaces'
-import { useSelector, useDispatch } from 'react-redux'
-import type { AppDispatch, RootState } from '../../app/store'
+import { useDispatch } from 'react-redux'
+import type { AppDispatch} from '../../app/store'
 import { selectRestaurant } from './restaurantsSlice'
 import { DetailModal } from './DetailModal'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode } from '@fortawesome/free-solid-svg-icons/faCode'
+import { VibeLabels } from './VibeLabels'
 
 export const RestaurantCard = ({
   restaurant,
@@ -26,12 +25,12 @@ export const RestaurantCard = ({
   }
 
   return (
-    <div className="card mt-2 mb-3" style={{ maxWidth: '240' }}>
+    <div className="card m-2 mb-3" style={{ maxWidth: '240' }}>
       <div className="row g-0">
         <div className="col-md-4">
           <img
             src={restaurant.coverImg}
-            className="img-fluid rounded-start"
+            className="card-img"
             alt="..."
           />
         </div>
@@ -44,20 +43,13 @@ export const RestaurantCard = ({
               longer.
             </p>
             <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
+              <small className="text-muted">
+                Perfect if you are looking for:
+              </small>
             </p>
-            <p style={{ fontSize: '1.4rem' }}>
-              <span className="badge bg-info">
-                <FontAwesomeIcon icon={faCode} />
-                <span className="mx-1">{restaurant.vibes[0]}</span>
-              </span>
-            </p>
-            <p style={{ fontSize: '1.4rem' }}>
-              <span className="badge bg-danger">
-                <FontAwesomeIcon icon={faCode} />
-                <span>{restaurant.vibes[1]}</span>
-              </span>
-            </p>
+            <div className="row g-4">
+             <VibeLabels />
+            </div>
             <button
               onClick={() => handleClick()}
               type="button"
@@ -125,5 +117,18 @@ export const RestaurantCard = ({
     //     </div>
     //   </div>
     // </div>
+
+  //   <p style={{ fontSize: '1.4rem' }}>
+  //   <span className="badge bg-info">
+  //     <FontAwesomeIcon icon={faCode} />
+  //     <span className="mx-1">{restaurant.vibes[0]}</span>
+  //   </span>
+  // </p>
+  // <p style={{ fontSize: '1.4rem' }}>
+  //   <span className="badge bg-danger">
+  //     <FontAwesomeIcon icon={faCode} />
+  //     <span>{restaurant.vibes[1]}</span>
+  //   </span>
+  // </p>
   )
 }

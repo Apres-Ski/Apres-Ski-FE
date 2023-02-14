@@ -52,7 +52,6 @@ export const Dashboard = () => {
         <Button variant="primary" onClick={handleShow} className="me-2">
           Filter
         </Button>
-        <h1>MAIN COMPONENT</h1>
         <Map />
         <RestaurantList />
         <Filter show={show} handleClose={handleClose} />
