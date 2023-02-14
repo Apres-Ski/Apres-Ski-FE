@@ -9,6 +9,7 @@ import user2 from '../../assets/user2.jpg'
 import user3 from '../../assets/user3.jpg'
 
 const colors = ['danger', 'green-accent', 'success']
+const usersList = [user1, user2, user3]
 
 const UsersList = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -20,20 +21,10 @@ const UsersList = () => {
 
   const renderedUsers = users.map((user, index) => {
     
-    let userNum
-
-    if (index === 0) {
-      userNum = user1
-    } else if (index === 1) {
-      userNum = user2
-    } else {
-      userNum = user3
-    }
-    
     return <div key={user.id} className='container mt-4' style={{ width: '45%' }}>
       <Link to="/dashboard">
         <img
-          src={userNum}
+          src={usersList[index]}
           className={`img-fluid rounded border border-2 border-white`}
           alt='...'
           onClick={() => dispatch(selectUser(user))}
