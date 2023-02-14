@@ -25,11 +25,13 @@ export const DetailModal = () => {
     <div style={{ textAlign: 'center' }}>
       <h1 style={{fontFamily: 'LEMONMILK-Italic'}}className="mb-3">{activeRestaurant.name}</h1>
       <hr className="mt-1 mb-6" />
+      <figure className="figure">
       <img
         src={activeRestaurant.coverImg}
         alt={activeRestaurant.alt}
-        className="img-fluid"
+        className="figure-img img-fluid rounded" 
       />
+</figure>
       <div style={{ margin: '1rem' }}>
         <DistanceMarkers userDistance={activeRestaurant.userDistance} />
       </div>
