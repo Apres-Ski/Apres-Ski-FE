@@ -42,7 +42,7 @@
   display: flex;
   justify-content: center;
   margin: 1rem 0 1rem 0;
-  height: 8rem;
+  height: 5rem;
   flex-wrap: wrap;
 }
 
@@ -123,6 +123,12 @@
 .lightblue {
   background-color: #a9eeff;
   color: #025468;
+}
+
+.distance-color {
+  background-color: #99ebd795;
+  width: 2rem;
+
 }
 
 .card-container {
