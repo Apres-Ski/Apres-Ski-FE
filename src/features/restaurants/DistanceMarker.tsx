@@ -1,3 +1,7 @@
+import greenLocation from '../../assets/green-location.svg'
+import yellowLocation from '../../assets/yellow-location.svg'
+import redLocation from '../../assets/red-location.svg'
+
 export interface DistanceProps {
   userDistance: string | undefined
 }
@@ -6,11 +10,11 @@ export const DistanceMarkers = ({ userDistance }: DistanceProps) => {
   const getIcon = (userDistance: string | undefined) => {
     const distanceValue = Number(userDistance)
     if (distanceValue < 0.2) {
-      return 'green-location.svg'
+      return greenLocation
     } else if (1 < distanceValue) {
-      return 'red-location.svg'
+      return redLocation
     } else {
-      return 'yellow-location.svg'
+      return yellowLocation
     }
   }
 
@@ -22,7 +26,7 @@ export const DistanceMarkers = ({ userDistance }: DistanceProps) => {
           marginBottom: '1rem',
           marginRight: '.5rem',
         }}
-        src={`../src/assets/${getIcon(userDistance)}`}
+        src={getIcon(userDistance)}
       />
       Distance:{' '}
       <span style={{ letterSpacing: '.3rem' }}>{userDistance} miles</span>

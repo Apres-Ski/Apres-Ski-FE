@@ -1,6 +1,7 @@
 import { ListGroup } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import type { RootState } from '../../app/store'
+import smile from '../../assets/smile.svg'
 
 export const HappyHours = () => {
   const { activeRestaurant } = useSelector(
@@ -37,7 +38,7 @@ export const HappyHours = () => {
                   margin: '1rem',
                   marginRight: '.5rem',
                 }}
-                src={`../src/assets/smile.svg`}
+                src={smile}
               />
             </span>
           </span>
