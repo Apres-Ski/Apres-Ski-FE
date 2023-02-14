@@ -7,41 +7,77 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 
-export const RestaurantCard = ({ restaurant }: { restaurant: CleanedRestaurantsState }) => {
+export const RestaurantCard = ({
+  restaurant,
+}: {
+  restaurant: CleanedRestaurantsState
+}) => {
+  const { activeUser } = useSelector((state: RootState) => state.users)
   const dispatch = useDispatch<AppDispatch>()
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
   const formattedVibes = restaurant.vibes.join(', ')
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => setShow(false)
 
   const handleClick = () => {
     dispatch(selectRestaurant(restaurant))
     setShow(true)
   }
 
+  const getUserDistance = (
+    userLat: number,
+    userLong: number,
+    restLat: number,
+    restLong: number
+  ): string => {
+    let R = 6371 // Radius of the earth in km
+    let dLat = deg2rad(restLat - userLat) // deg2rad below
+    let dLon = deg2rad(restLong - userLong)
+    let a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(deg2rad(userLat)) *
+        Math.cos(deg2rad(restLat)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2)
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+    let d = R * c // Distance in km
+    let miles = d / 1.609
+    return miles.toFixed(2)
+  }
+
+  function deg2rad(deg: number) {
+    return deg * (Math.PI / 180)
+  }
+
+  const userDistance = getUserDistance(Number(activeUser.location.lat), Number(activeUser.location.long), Number(restaurant.location.lat), Number(restaurant.location.long))
+
   return (
     <div id={`card-${restaurant.id}`}>
       <p>{restaurant.name}</p>
+      <p>{'Distance: ' + userDistance + ' miles'}</p>
       <p>Vibe: {formattedVibes}</p>
       <p>Distance: .25m</p>
       <img style={{ width: 350 }} src={restaurant.coverImg} />
       <p>PLACEHOLDER FOR VIBE BADGES</p>
-      <button onClick={() => handleClick()} type="button" className="btn btn-primary" data-toggle="modal" data-target={restaurant.id}>
+      <button
+        onClick={() => handleClick()}
+        type="button"
+        className="btn btn-primary"
+        data-toggle="modal"
+        data-target={restaurant.id}
+      >
         Show Details
       </button>
 
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-      >
-        <Modal.Header className='d-flex justify-content-center'>
-        </Modal.Header>
-          <Modal.Body className='d-flex justify-content-center'>
-            {<DetailModal />}
-          </Modal.Body>
-        <Modal.Footer className='d-flex justify-content-center'>
-          <Button onClick={() => handleClose()}variant='primary'>Close</Button>
+      <Modal show={show} onHide={handleClose} backdrop="static">
+        <Modal.Header className="d-flex justify-content-center"></Modal.Header>
+        <Modal.Body className="d-flex justify-content-center">
+          {<DetailModal />}
+        </Modal.Body>
+        <Modal.Footer className="d-flex justify-content-center">
+          <Button onClick={() => handleClose()} variant="primary">
+            Close
+          </Button>
         </Modal.Footer>
       </Modal>
     </div>
