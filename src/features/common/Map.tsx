@@ -7,12 +7,19 @@ import { setMapClickedRestaurant } from '../../features/restaurants/restaurantsS
 import { CleanedRestaurantsState, GeoJson, CleanedLiftsState } from '../../utilities/interfaces'
 
 export const Map = () => {
-  mapboxgl.accessToken = 'pk.eyJ1IjoibmFnZWwyOSIsImEiOiJjbGRzeXV6YjkxbDA1M3ZzNXJwanl2Ymk1In0.y2ABIXaVJd8h0Fwxo6X6Mw'
+  mapboxgl.accessToken =
+    'pk.eyJ1IjoibmFnZWwyOSIsImEiOiJjbGRzeXV6YjkxbDA1M3ZzNXJwanl2Ymk1In0.y2ABIXaVJd8h0Fwxo6X6Mw'
 
-  const userLong = useSelector((state: RootState) => Number(state.users.activeUser.location.long))
-  const userLat = useSelector((state: RootState) => Number(state.users.activeUser.location.lat))
+  const userLong = useSelector((state: RootState) =>
+    Number(state.users.activeUser.location.long)
+  )
+  const userLat = useSelector((state: RootState) =>
+    Number(state.users.activeUser.location.lat)
+  )
 
-  const { filteredRestaurants } = useSelector((state: RootState) => state.restaurants)
+  const { filteredRestaurants } = useSelector(
+    (state: RootState) => state.restaurants
+  )
 
   const dispatch = useDispatch<AppDispatch>()
 
@@ -45,7 +52,6 @@ export const Map = () => {
 
     return geoJsonRestaurants
   }
-  
 
   const { lifts } = useSelector((state: RootState) => state.lifts)
 
@@ -87,18 +93,26 @@ export const Map = () => {
       zoom: 15,
     })
 
-
     getGeoJsonLifts()
     for (const feature of geoJsonLifts.features) {
-      const popup = new mapboxgl.Popup({ offset: 25, closeButton: false }).setText(feature.properties.title)
+      const popup = new mapboxgl.Popup({
+        offset: 25,
+        closeButton: false,
+      }).setText(feature.properties.title)
       const el = document.createElement('div')
       el.className = 'lift-marker'
-      new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).setPopup(popup).addTo(map)
+      new mapboxgl.Marker(el)
+        .setLngLat(feature.geometry.coordinates)
+        .setPopup(popup)
+        .addTo(map)
     }
 
     getGeoJsonRestaurants()
     for (const feature of geoJsonRestaurants.features) {
-      const popup = new mapboxgl.Popup({ offset: 25, closeButton: false }).setText(feature.properties.title)
+      const popup = new mapboxgl.Popup({
+        offset: 25,
+        closeButton: false,
+      }).setText(feature.properties.title)
       const el = document.createElement('div')
       el.className = 'restaurant-marker'
       el.addEventListener('click', () => {
@@ -107,11 +121,9 @@ export const Map = () => {
       new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).setPopup(popup).addTo(map)
     }
     const marker1 = new mapboxgl.Marker()
-    .setLngLat([userLong, userLat])
-    .addTo(map) 
-    
+      .setLngLat([userLong, userLat])
+      .addTo(map)
   }, [userLong, userLat, filteredRestaurants])
-
 
   return (
       <div

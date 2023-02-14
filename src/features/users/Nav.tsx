@@ -5,16 +5,22 @@ import Navbar from 'react-bootstrap/Navbar'
 import { Button, Container, Nav } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { APP_ROUTES } from '../../utilities/constants'
+import skis from '../../assets/ski-poles.svg'
 
 export const NavMenu = () => {
   const { activeUser } = useSelector((state: RootState) => state.users)
   const dispatch = useDispatch<AppDispatch>()
 
   return (
-    <Navbar bg="primary" variant="dark" expand="lg" fixed="top">
+    <Navbar bg="custom-color" variant="dark" expand="lg" fixed="top">
       <Container>
         <LinkContainer to={APP_ROUTES.LANDING}>
-          <Navbar.Brand href="#home">Après Ski ⛷</Navbar.Brand>
+          <Navbar.Brand href="#home" className='nav-title'>
+            Après Ski{' '}
+            <span>
+              <img style={{width: '3rem'}} src={skis} />
+            </span>
+          </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
