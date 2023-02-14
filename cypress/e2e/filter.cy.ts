@@ -23,11 +23,11 @@ describe('Filter Test', () => {
         fixture: 'lifts',
       }
     )
-    cy.visit('http://127.0.0.1:5173/demo')
+    cy.visit('https://apres-ski-fe.vercel.app/demo')
     cy.get(':nth-child(1) > a > .img-fluid')
       .click()
       .url()
-      .should('eq', 'http://127.0.0.1:5173/dashboard')
+      .should('eq', 'https://apres-ski-fe.vercel.app/dashboard')
     cy.get('button').contains('Filter').should('exist').click({ force: true })
   })
 
