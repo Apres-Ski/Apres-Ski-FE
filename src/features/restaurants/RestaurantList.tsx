@@ -4,6 +4,7 @@ import { RootState, AppDispatch } from '../../app/store'
 import { ReactElement, useEffect, useState } from 'react'
 import { filterRestaurants } from '../restaurants/restaurantsSlice'
 import { CleanedRestaurantsState } from '../../utilities/interfaces'
+import { Sorry } from '../../components/Sorry'
 
 
 export const RestaurantList = () => {
@@ -59,5 +60,8 @@ export const RestaurantList = () => {
     setTimeout(() => {element?.scrollIntoView(false)}, 1000)
   }, [mapClickedRestaurant])
 
-  return <div>{renderedRestaurants}</div>
+  return  <div>
+            {renderedRestaurants}
+            {!filteredRestaurants.length && <Sorry />}
+          </div>
 }
