@@ -19,7 +19,7 @@ export const Landing = () => {
         </Link>
       </div>
       <video className="video-settings" autoPlay={true} muted loop>
-        <source src='src/assets/sking.mp4' type="video/mp4" />
+        <source src={'src/assets/sking.mp4'} type="video/mp4" />
       </video>
     </div>
   )
