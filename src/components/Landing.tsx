@@ -10,7 +10,7 @@ export const Landing = () => {
           borderRadius: '5px',
         }}
       >
-        <h1 className='nav-title'>Aprè Ski</h1>
+        <h1 className="nav-title">Aprè Ski</h1>
         <p>Placeholder - Welcome to our Application demo</p>
         <Link to="/demo">
           <button type="button" className="btn btn-dark">
@@ -18,7 +18,7 @@ export const Landing = () => {
           </button>
         </Link>
       </div>
-      <video className="video-settings" autoPlay={true}>
+      <video className="video-settings" autoPlay={true} muted loop>
         <source src={'src/assets/sking.mp4'} type="video/mp4" />
       </video>
     </div>

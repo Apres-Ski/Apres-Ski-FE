@@ -48,6 +48,7 @@ export const Dashboard = () => {
   } else if (status === 'succeeded') {
     content = (
       <div
+        className="fade-in w-100 d-flex flex-column align-items-center"
         style={{
           maxWidth: '1280px',
           paddingTop: '4rem',
@@ -73,10 +74,7 @@ export const Dashboard = () => {
   }
 
   return (
-    <div
-      className="fade-in w-100 d-flex flex-column align-items-center"
-      style={{ display: 'flex', justifyContent: 'center' }}
-    >
+    <div className="fade-in w-100 d-flex flex-column align-items-center">
       {content}
     </div>
   )
