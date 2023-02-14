@@ -46,20 +46,23 @@ describe('Dashboard Test', () => {
   })
 
   it('should find the initial details for a restaurant on its card', () => {
-    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(1)').contains('9600 Kitchen')
-    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(2)').contains('casual, upscale')
-    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(3)').contains('.25m')
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(1)')
+      .contains('9600 Kitchen')
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(2)')
+      .contains('casual, upscale')
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(3)')
+      .contains('.25m')
     cy.get(':nth-child(1) > img').should('exist')
-    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(5)').contains('PLACEHOLDER FOR VIBE BADGES')
+    cy.get(':nth-child(1) > :nth-child(5) > :nth-child(1) > :nth-child(5)')
+      .contains('PLACEHOLDER FOR VIBE BADGES')
   })
   
   it('should find a button to click for more details', () => {
     cy.get(':nth-child(5) > :nth-child(1) > .btn').should('exist')
       .click({ force: true })
     cy.get('.img-fluid').should('exist')
-    cy.get('.modal-body > :nth-child(1) > :nth-child(2)').contains(
-      '9600 Kitchen'
-    )
+    cy.get('.modal-body > :nth-child(1) > :nth-child(2)')
+      .contains('9600 Kitchen')
     cy.get('.modal-body > :nth-child(1) > :nth-child(3)')
       .contains('550 Village Rd Breckenridge, CO 80424')
     cy.get('.modal-body > :nth-child(1) > :nth-child(4)')
@@ -73,7 +76,7 @@ describe('Dashboard Test', () => {
     cy.get('.modal-footer > .btn').should('exist')
   })
 
-  it.only('should click the button to close the modal', () => {
+  it('should click the button to close the modal', () => {
     cy.get(':nth-child(5) > :nth-child(1) > .btn').should('exist')
       .click({ force: true })
     cy.get('.modal-footer > .btn').click()
