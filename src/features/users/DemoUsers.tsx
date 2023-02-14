@@ -32,5 +32,5 @@ export const DemoUsers = () => {
     )
   }
 
-  return <section>{content}</section>
+  return <section className='fade-in'>{content}</section>
 }

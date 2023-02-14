@@ -53,7 +53,11 @@ export const Dashboard = () => {
           paddingTop: '4rem',
         }}
       >
-        <Button variant='green-accent' onClick={handleShow} className="me-2 m-4">
+        <Button
+          variant="green-accent"
+          onClick={handleShow}
+          className="me-2 m-4"
+        >
           Filter
         </Button>
         <NavMenu />
@@ -69,6 +73,11 @@ export const Dashboard = () => {
   }
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>{content}</div>
+    <div
+      className="fade-in"
+      style={{ display: 'flex', justifyContent: 'center' }}
+    >
+      {content}
+    </div>
   )
 }
