@@ -60,13 +60,22 @@
 }
 
 .background-color {
-  height: 100vh;
   background: linear-gradient(
     180deg,
-    hsla(343, 100%, 83%, 1) 0%,
-    hsla(247, 55%, 27%, 1) 100%
+    rgb(251, 198, 213) 0%,
+    rgb(184, 176, 243) 100%
   );
   position: absolute;
+}
+
+.video-settings {
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+  /* overflow: hidden;
+  box-sizing: border-box; */
+  /* width: 100vw; */
+  /* height: 100%; */
 }
 
 .landing-container {
@@ -75,14 +84,13 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(
-    180deg,
-    hsla(343, 100%, 83%, 1) 0%,
-    hsla(247, 55%, 27%, 1) 100%
-  );
-  background-image: url('./assets/user1.jpg');
+  box-sizing: border-box;
+  overflow: hidden;
+  /* background-image: url('./assets/user1.jpg');
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
+  margin: 0 2rem 0 2rem;
+  padding: 0;
 }
 
 .dashboard-container {

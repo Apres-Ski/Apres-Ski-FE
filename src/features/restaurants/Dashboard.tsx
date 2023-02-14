@@ -53,7 +53,7 @@ export const Dashboard = () => {
           paddingTop: '4rem',
         }}
       >
-        <Button variant="primary" onClick={handleShow} className="me-2 m-4">
+        <Button onClick={handleShow} className="me-2 m-4">
           Filter
         </Button>
         <NavMenu />
@@ -68,5 +68,7 @@ export const Dashboard = () => {
     )
   }
 
-  return <div style={{ display: 'flex', justifyContent: 'center'}}>{content}</div>
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center' }}>{content}</div>
+  )
 }
