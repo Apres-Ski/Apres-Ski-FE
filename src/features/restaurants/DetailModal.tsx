@@ -12,10 +12,6 @@ export const DetailModal = () => {
     (state: RootState) => state.restaurants
   )
 
-  const showHours = Object.entries(activeRestaurant.hours).map((day) => {
-    return `${day[0][0].toUpperCase()}: ${day[1]}`
-  })
-
   function hasBooze() {
     if (activeRestaurant.alcoholic) {
       return 'Yes'
