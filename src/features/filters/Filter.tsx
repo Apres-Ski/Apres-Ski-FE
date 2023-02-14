@@ -64,8 +64,9 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
             checked={vibes.includes('family friendly')}
             type="checkbox"
             onChange={(e) => handleVibeChange(e.target.value)}
+            className='m-1'
           >
-            Family Friendly
+            🍼 Family Friendly
           </ToggleButton>{' '}
           <ToggleButton
             variant="outline-dark"
@@ -74,8 +75,9 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
             checked={vibes.includes('casual')}
             type="checkbox"
             onChange={(e) => handleVibeChange(e.target.value)}
+            className='m-1'
           >
-            Casual
+            👖 Casual
           </ToggleButton>{' '}
           <ToggleButton
             variant="outline-dark"
@@ -84,8 +86,9 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
             checked={vibes.includes('upscale')}
             type="checkbox"
             onChange={(e) => handleVibeChange(e.target.value)}
+            className='m-1'
           >
-            Upscale
+            💎 Upscale
           </ToggleButton>{' '}
           <ToggleButton
             variant="outline-dark"
@@ -94,8 +97,9 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
             checked={vibes.includes('quick & easy')}
             type="checkbox"
             onChange={(e) => handleVibeChange(e.target.value)}
+            className='m-1'
           >
-            Quick & Easy
+            🚀 Quick & Easy
           </ToggleButton>{' '}
           <ToggleButton
             variant="outline-dark"
@@ -104,8 +108,9 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
             checked={vibes.includes('lively')}
             type="checkbox"
             onChange={(e) => handleVibeChange(e.target.value)}
+            className='m-1'
           >
-            Lively
+            💃🏻 Lively
           </ToggleButton>{' '}
           <ToggleButton
             variant="outline-dark"
@@ -114,8 +119,9 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
             checked={vibes.includes('fun')}
             type="checkbox"
             onChange={(e) => handleVibeChange(e.target.value)}
+            className='m-1'
           >
-            Fun
+            🥳 Fun
           </ToggleButton>{' '}
           <ToggleButton
             variant="outline-dark"
@@ -124,8 +130,9 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
             checked={vibes.includes('cozy')}
             type="checkbox"
             onChange={(e) => handleVibeChange(e.target.value)}
+            className='m-1'
           >
-            Cozy
+            ☕ Cozy
           </ToggleButton>
           <ToggleButton
             variant="outline-dark"
@@ -134,11 +141,12 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
             checked={vibes.includes('relaxed')}
             type="checkbox"
             onChange={(e) => handleVibeChange(e.target.value)}
+            className='m-1'
           >
-            Relaxed
+            🪷 Relaxed
           </ToggleButton>{' '}
           <section>
-            <h3>Alcohol</h3>
+            <h3 className='mt-3'>Alcohol</h3>
             <Form.Check
               type="switch"
               id="custom-switch"
@@ -147,7 +155,7 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
             />
           </section>
           <section>
-            <h4>Happy Hour</h4>
+            <h4 className='mt-3'>Happy Hour</h4>
             <Form.Check
               type="switch"
               id="custom-switch"

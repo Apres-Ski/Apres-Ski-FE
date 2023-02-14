@@ -1,0 +1,24 @@
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+
+@font-face {
+  font-family: 'Varela Round';
+  src: url('./assets/fonts/VarelaRound-Regular.ttf');
+}
+
+$theme-colors: (
+  primary: #ffaac1,
+  dark: #271f69,
+  'custom-color': #ffaac1,
+  'green-accent': #99ebd6,
+);
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Your variable overrides -> please don't remove this comments, need the below for more styling
+$body-bg: #ffffff;
+// $body-color: #ffffff;
+$font-family-sans-serif: 'Varela Round';
+
+// Bootstrap and its default variables
+@import 'node_modules/bootstrap/scss/bootstrap';
