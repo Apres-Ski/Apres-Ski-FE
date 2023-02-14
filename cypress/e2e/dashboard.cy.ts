@@ -27,9 +27,11 @@ describe('Dashboard Test', () => {
         fixture: 'lifts',
       }
     )
-    cy.visit('http://127.0.0.1:5173/demo')
-    cy.get(':nth-child(1) > a > .img-fluid').click()
-      .url().should('eq', 'http://127.0.0.1:5173/dashboard')
+    cy.visit('https://apres-ski-fe.vercel.app/demo')
+    cy.get(':nth-child(1) > a > .img-fluid')
+      .click()
+      .url()
+      .should('eq', 'https://apres-ski-fe.vercel.app/dashboard')
   })
 
   it('should find a Nav bar with the selected User\s name', () => {
@@ -38,17 +40,23 @@ describe('Dashboard Test', () => {
   })
 
   it('should click the app logo to return to start', () => {
-    cy.get('.navbar-brand').should('exist').click()
-      .url().should('eq', 'http://127.0.0.1:5173/')
+    cy.get('.navbar-brand')
+      .should('exist')
+      .click()
+      .url()
+      .should('eq', 'https://apres-ski-fe.vercel.app/')
   })
 
   it('should find a Logout button which returns to the Landing page', () => {
-    cy.get('.ms-4').should('exist').click()
-      .url().should('eq', 'http://127.0.0.1:5173/')
+    cy.get('.ms-4')
+      .should('exist')
+      .click()
+      .url()
+      .should('eq', 'https://apres-ski-fe.vercel.app/')
   })
 
   it('should find the Map', () => {
-    cy.get(':nth-child(14) > .mapboxgl-canvas').should('exist')
+    cy.get(':nth-child(5) > .mapboxgl-canvas').should('exist')
   })
 
   it('Should find a Filter button that opens menu when clicked', () => {
