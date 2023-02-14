@@ -85,5 +85,9 @@ button:focus-visible {
 }
 
 .map-container {
-  height: 400px;
+  height: 300px;
+  width: 95%;
+  border-radius: 15px;
 }
+
+

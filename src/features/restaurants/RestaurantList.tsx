@@ -6,6 +6,7 @@ import { filterRestaurants } from '../restaurants/restaurantsSlice'
 
 export const RestaurantList = () => {
   const { restaurants } = useSelector((state: RootState) => state.restaurants)
+  const { mapClickedRestaurant } = useSelector((state: RootState) => state.restaurants)
   const { filteredRestaurants } = useSelector(
     (state: RootState) => state.restaurants
   )
@@ -44,6 +45,11 @@ export const RestaurantList = () => {
     ))
     setRenderedRestaurants(restaurantCards)
   }, [filteredRestaurants])
+
+  useEffect(() => {
+    const element = document.getElementById(`card-${mapClickedRestaurant}`)
+    setTimeout(() => {element?.scrollIntoView(false)}, 1000)
+  }, [mapClickedRestaurant])
 
   return <div>{renderedRestaurants}</div>
 }
