@@ -4,6 +4,7 @@ import { RootState, AppDispatch } from '../../app/store'
 import { ReactElement, useEffect, useState } from 'react'
 import { filterRestaurants } from '../restaurants/restaurantsSlice'
 
+
 export const RestaurantList = () => {
   const { restaurants } = useSelector((state: RootState) => state.restaurants)
   const { mapClickedRestaurant } = useSelector((state: RootState) => state.restaurants)
@@ -38,6 +39,7 @@ export const RestaurantList = () => {
 
   useEffect(() => {
     const restaurantCards = filteredRestaurants.map((restaurant) => (
+
       <RestaurantCard
         key={`restaurant ${restaurant.id}`}
         restaurant={restaurant}

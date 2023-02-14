@@ -24,37 +24,10 @@ export const RestaurantCard = ({
     setShow(true)
   }
 
-  const getUserDistance = (
-    userLat: number,
-    userLong: number,
-    restLat: number,
-    restLong: number
-  ): string => {
-    let R = 6371 // Radius of the earth in km
-    let dLat = deg2rad(restLat - userLat) // deg2rad below
-    let dLon = deg2rad(restLong - userLong)
-    let a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(deg2rad(userLat)) *
-        Math.cos(deg2rad(restLat)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2)
-    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-    let d = R * c // Distance in km
-    let miles = d / 1.609
-    return miles.toFixed(2)
-  }
-
-  function deg2rad(deg: number) {
-    return deg * (Math.PI / 180)
-  }
-
-  const userDistance = getUserDistance(Number(activeUser.location.lat), Number(activeUser.location.long), Number(restaurant.location.lat), Number(restaurant.location.long))
-
   return (
     <div id={`card-${restaurant.id}`}>
       <p>{restaurant.name}</p>
-      <p>{'Distance: ' + userDistance + ' miles'}</p>
+      {/* <p>{'Distance: ' + userDistance + ' miles'}</p> */}
       <p>Vibe: {formattedVibes}</p>
       <p>Distance: .25m</p>
       <img style={{ width: 350 }} src={restaurant.coverImg} />
