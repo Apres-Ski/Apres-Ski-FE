@@ -1,43 +1,176 @@
-#root {
+@font-face {
+  font-family: 'LEMONMILK';
+  src: url('./assets/fonts/LEMONMILK-Medium.otf');
+  font-weight: 500;
+}
 
-  width: 100vw;
+@font-face {
+  font-family: 'LEMONMILK-Italic';
+  src: url('./assets/fonts/LEMONMILK-RegularItalic.otf');
+  font-weight: 300;
+}
+
+#root {
+  max-width: 1920px;
+  height: 100%;
   margin: 0 auto;
-  padding-top: 4rem;
+  box-sizing: border-box;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.fade-in {
+  animation: fadeIn 3s;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom-right-radius: 0px;
+}
+
+.label-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+  height: 8rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-family: LEMONMILK-Italic;
+}
+
+.nav-title {
+  font-family: LEMONMILK;
+  font-weight: 300;
+}
+
+.vibes-title {
+  text-transform: uppercase;
+  place-items: center;
+  text-align: center;
+}
+
+.label {
+  display: inline-block;
+  align-self: center;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  border-radius: 25px;
+  margin: 4px;
+  padding: 5px 15px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.label-icon {
+  height: 2rem;
+}
+
+/* badge colors */
+.green {
+  background-color: #c6f8e5;
+  color: #03623c;
+}
+
+.purple {
+  background-color: #e2bef1;
+  color: #6e208f;
+}
+
+.blue {
+  background-color: #96caf7;
+  color: #0a4579;
+}
+
+.yellow {
+  background-color: #fff59b;
+  color: rgb(113, 102, 3);
+}
+
+.red {
+  background-color: #f87c6e;
+  color: #7d1105;
+}
+
+.orange {
+  background-color: #f4a771;
+  color: #793403;
+}
+
+.pink {
+  background-color: #ffa9d7;
+  color: #59002f;
+}
+
+.lightblue {
+  background-color: #a9eeff;
+  color: #025468;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-text {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.background-color {
+  background: linear-gradient(
+    180deg,
+    hsl(218, 81%, 82%) 0%,
+    rgb(184, 176, 243) 100%
+  );
+  position: absolute;
+  height: 145%;
+}
+
+.video-settings {
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0 2rem 0 2rem;
+  padding: 0;
+}
+
+.dashboard-container {
+  padding-top: 4rem;
+  max-width: 1280px;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }

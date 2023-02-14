@@ -6,6 +6,7 @@ import { DetailModal } from './DetailModal'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
+import { VibeLabels } from './VibeLabels'
 
 export const RestaurantCard = ({
   restaurant,
@@ -24,21 +25,39 @@ export const RestaurantCard = ({
   }
 
   return (
-    <div id={`card-${restaurant.id}`}>
-      <p>{restaurant.name}</p>
-      <p>Vibe: {formattedVibes}</p>
-      <p>{'Distance: ' + restaurant.userDistance + ' miles'}</p>
-      <img style={{ width: 350 }} src={restaurant.coverImg} />
-      <p>PLACEHOLDER FOR VIBE BADGES</p>
-      <button
-        onClick={() => handleClick()}
-        type="button"
-        className="btn btn-primary"
-        data-toggle="modal"
-        data-target={restaurant.id}
-      >
-        Show Details
-      </button>
+    <div id={`card-${restaurant.id}`} className="card m-2 mb-3" style={{ maxWidth: '240' }}>
+      <div className="row g-0">
+        <div className="col-md-4">
+          <img src={restaurant.coverImg} className="card-img" alt="..." />
+        </div>
+        <div className="col-md-8">
+          <div className="card-body card-container">
+            <h2 className="card-title title">{restaurant.name}</h2>
+            <div className="row g-0">
+              <div>
+                <hr className="mt-1 mb-6" />
+                <p className="card-text">
+                  <small className="text-muted small-text">
+                    Perfect if you are looking for:
+                  </small>
+                </p>
+              </div>
+              <VibeLabels restaurant={restaurant} />
+              <hr className="mt-1 mb-6" />
+            </div>
+            <Button
+              onClick={() => handleClick()}
+              type="button"
+              className="btn btn-dark m-2"
+              data-toggle="modal"
+              data-target={restaurant.id}
+              size="lg"
+            >
+              Show Details
+            </Button>
+          </div>
+        </div>
+      </div>
 
       <Modal show={show} onHide={handleClose} backdrop="static">
         <Modal.Header className="d-flex justify-content-center"></Modal.Header>

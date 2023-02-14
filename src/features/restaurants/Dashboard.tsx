@@ -14,6 +14,7 @@ import { Button } from 'react-bootstrap'
 import { getLifts } from '../lifts/liftsSlice' 
 import { getUserDistance } from '../../utilities/utilities'
 
+
 export const Dashboard = () => {
   const dispatch = useDispatch<AppDispatch>()
   const navigate = useNavigate()
@@ -53,11 +54,21 @@ export const Dashboard = () => {
     content = <p>Loading...</p>
   } else if (status === 'succeeded') {
     content = (
-      <div className='w-100 d-flex flex-column align-items-center'>
-        <NavMenu />
-        <Button variant="primary" onClick={handleShow} className="m-2 align-self-start ">
+      <div
+        className="fade-in w-100 d-flex flex-column align-items-center"
+        style={{
+          maxWidth: '1280px',
+          paddingTop: '4rem',
+        }}
+      >
+        <Button
+          variant="green-accent"
+          onClick={handleShow}
+          className="me-2 m-4"
+        >
           Filter
         </Button>
+        <NavMenu />
         <Map />
         <RestaurantList />
         <Filter show={show} handleClose={handleClose} />
@@ -65,9 +76,13 @@ export const Dashboard = () => {
     )
   } else if (status === 'failed') {
     content = (
-      <Error message='There was a problem on our end. Please try again.'/>
+      <Error message="There was a problem on our end. Please try again." />
     )
   }
 
-  return <section className='w-100'>{content}</section>
+  return (
+    <div className="fade-in w-100 d-flex flex-column align-items-center">
+      {content}
+    </div>
+  )
 }

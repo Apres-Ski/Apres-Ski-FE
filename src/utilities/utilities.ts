@@ -5,7 +5,8 @@ import {
   Restaurants,
   Users,
   Lifts,
-  CleanedLiftsState
+  CleanedLiftsState,
+  LabelMap
 } from './interfaces'
 
 export const cleanList = (
@@ -113,6 +114,17 @@ export const cleanLiftsData = (lifts: Lifts[]): CleanedLiftsState[] => {
       }
     }
   })
+}
+
+export const labelMap: LabelMap = {
+  'family friendly': { class: 'label yellow', text: '🍼 Family Friendly' },
+  relaxed: { class: 'label green', text: '🪷 Relaxed' },
+  casual: { class: 'label blue', text: '👖 Casual' },
+  fun: { class: 'label purple', text: '🥳 Fun' },
+  lively: { class: 'label red', text: '💃🏻 Lively' },
+  'quick & easy': { class: 'label orange', text: '🚀 Quick & Easy' },
+  cozy: { class: 'label pink', text: '☕ Cozy' },
+  upscale: { class: 'label lightblue', text: '💎 Upscale' },
 }
 
 export const getUserDistance = (
