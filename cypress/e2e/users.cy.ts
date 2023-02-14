@@ -9,7 +9,7 @@ describe('Users Test', () => {
         fixture: 'users',
       }
     )
-    cy.visit('http://127.0.0.1:5173/demo')
+    cy.visit('https://apres-ski-fe.vercel.app/demo')
   })
 
   it('should find the canned users', () => {
@@ -18,7 +18,9 @@ describe('Users Test', () => {
   })
 
   it('should be able to select a user to load the dashboard', () => {
-    cy.get(':nth-child(1) > a > .img-fluid').click()
-      .url().should('eq', 'http://127.0.0.1:5173/dashboard')
+    cy.get(':nth-child(1) > a > .img-fluid')
+      .click()
+      .url()
+      .should('eq', 'https://apres-ski-fe.vercel.app/dashboard')
   })
 })
