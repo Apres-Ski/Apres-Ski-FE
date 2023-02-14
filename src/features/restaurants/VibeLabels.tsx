@@ -16,9 +16,7 @@ export const VibeLabels = () => {
       <span className="label">
         <FontAwesomeIcon icon={faCode} /> Hello
       </span>
-      <span className="label">
-        <FontAwesomeIcon icon={faCode} /> Hello
-      </span>
+      <span className="label">⭐️ Hello</span>
       <span className="label">
         <FontAwesomeIcon icon={faCode} /> Hello
       </span>

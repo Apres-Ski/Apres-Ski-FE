@@ -1,6 +1,6 @@
 import { CleanedRestaurantsState } from '../../utilities/interfaces'
 import { useDispatch } from 'react-redux'
-import type { AppDispatch} from '../../app/store'
+import type { AppDispatch } from '../../app/store'
 import { selectRestaurant } from './restaurantsSlice'
 import { DetailModal } from './DetailModal'
 import Modal from 'react-bootstrap/Modal'
@@ -28,37 +28,33 @@ export const RestaurantCard = ({
     <div className="card m-2 mb-3" style={{ maxWidth: '240' }}>
       <div className="row g-0">
         <div className="col-md-4">
-          <img
-            src={restaurant.coverImg}
-            className="card-img"
-            alt="..."
-          />
+          <img src={restaurant.coverImg} className="card-img" alt="..." />
         </div>
         <div className="col-md-8">
-          <div className="card-body">
-            <h5 className="card-title">{restaurant.name}</h5>
-            <p className="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p className="card-text">
-              <small className="text-muted">
-                Perfect if you are looking for:
-              </small>
-            </p>
-            <div className="row g-4">
-             <VibeLabels />
+          <div className="card-body card-container">
+            <h2 className="card-title">{restaurant.name}</h2>
+            <div className="row g-0">
+              <div>
+                <hr className="mt-1 mb-6" />
+                <p className="card-text">
+                  <small className="text-muted small-text">
+                    Perfect if you are looking for:
+                  </small>
+                </p>
+              </div>
+              <VibeLabels />
+              <hr className="mt-1 mb-6" />
             </div>
-            <button
+            <Button
               onClick={() => handleClick()}
               type="button"
               className="btn btn-dark m-2"
               data-toggle="modal"
               data-target={restaurant.id}
+              size="lg"
             >
               Show Details
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -118,17 +114,17 @@ export const RestaurantCard = ({
     //   </div>
     // </div>
 
-  //   <p style={{ fontSize: '1.4rem' }}>
-  //   <span className="badge bg-info">
-  //     <FontAwesomeIcon icon={faCode} />
-  //     <span className="mx-1">{restaurant.vibes[0]}</span>
-  //   </span>
-  // </p>
-  // <p style={{ fontSize: '1.4rem' }}>
-  //   <span className="badge bg-danger">
-  //     <FontAwesomeIcon icon={faCode} />
-  //     <span>{restaurant.vibes[1]}</span>
-  //   </span>
-  // </p>
+    //   <p style={{ fontSize: '1.4rem' }}>
+    //   <span className="badge bg-info">
+    //     <FontAwesomeIcon icon={faCode} />
+    //     <span className="mx-1">{restaurant.vibes[0]}</span>
+    //   </span>
+    // </p>
+    // <p style={{ fontSize: '1.4rem' }}>
+    //   <span className="badge bg-danger">
+    //     <FontAwesomeIcon icon={faCode} />
+    //     <span>{restaurant.vibes[1]}</span>
+    //   </span>
+    // </p>
   )
 }

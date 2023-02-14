@@ -11,7 +11,7 @@ export const NavMenu = () => {
   const dispatch = useDispatch<AppDispatch>()
 
   return (
-    <Navbar bg="primary" variant="dark" expand="lg" fixed="top">
+    <Navbar bg="custom-color" variant="dark" expand="lg" fixed="top">
       <Container>
         <LinkContainer to={APP_ROUTES.LANDING}>
           <Navbar.Brand href="#home">Après Ski ⛷</Navbar.Brand>

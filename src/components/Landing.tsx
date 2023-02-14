@@ -4,11 +4,13 @@ import { useDispatch } from 'react-redux'
 
 export const Landing = () => {
   return (
-    <div>
+    <div className='landing-container'>
       <h2>Landing Component</h2>
       <p>Placeholder - Welcome to our Application demo</p>
-      <Link to='/demo'>
-        <button type="button" className="btn btn-dark">Start Demo</button>
+      <Link to="/demo">
+        <button type="button" className="btn btn-dark">
+          Start Demo
+        </button>
       </Link>
     </div>
   )

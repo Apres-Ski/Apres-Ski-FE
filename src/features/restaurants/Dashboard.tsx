@@ -11,7 +11,7 @@ import { Error } from '../../components/Error'
 import { useNavigate } from 'react-router-dom'
 import { APP_ROUTES } from '../../utilities/constants'
 import { Button } from 'react-bootstrap'
-import { getLifts } from '../lifts/liftsSlice' 
+import { getLifts } from '../lifts/liftsSlice'
 
 export const Dashboard = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -47,21 +47,26 @@ export const Dashboard = () => {
     content = <p>Loading...</p>
   } else if (status === 'succeeded') {
     content = (
-      <div>
+      <div
+        style={{
+          maxWidth: '1280px',
+          paddingTop: '4rem',
+        }}
+      >
         <NavMenu />
-        <Button variant="primary" onClick={handleShow} className="me-2">
+        <Map />
+        <Button variant="primary" onClick={handleShow} className="me-2 m-4">
           Filter
         </Button>
-        <Map />
         <RestaurantList />
         <Filter show={show} handleClose={handleClose} />
       </div>
     )
   } else if (status === 'failed') {
     content = (
-      <Error message='There was a problem on our end. Please try again.'/>
+      <Error message="There was a problem on our end. Please try again." />
     )
   }
 
-  return <section>{content}</section>
+  return <div style={{ display: 'flex', justifyContent: 'center'}}>{content}</div>
 }
