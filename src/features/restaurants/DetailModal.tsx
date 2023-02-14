@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import type { RootState } from '../../app/store'
 import { HappyHours } from './HappyHours'
+import { VibeLabels } from './VibeLabels'
 
 export const DetailModal = () => {
   const { activeRestaurant } = useSelector(
@@ -30,7 +31,9 @@ export const DetailModal = () => {
       <p>{activeRestaurant.address}</p>
       <p>Food Type: {activeRestaurant.foodType}</p>
       <p>Distance: Logic Placeholder</p>
+      <hr className="mt-1 mb-6" />
       <p>Cost: {activeRestaurant.cost}</p>
+      <hr className="mt-1 mb-6" />
       <p>Alcohol: {hasBooze()}</p>
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <div>
@@ -49,7 +52,7 @@ export const DetailModal = () => {
           <p>No Specials Available</p>
         )}
       </div>
-      <p>Vibes: {activeRestaurant.vibes}</p>
+      <VibeLabels restaurant={activeRestaurant} />
     </div>
   )
 }
