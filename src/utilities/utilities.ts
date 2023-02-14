@@ -38,9 +38,6 @@ export const cleanList = (
       engagements: restaurant.attributes.engagement,
       avgRating: avgRating,
     } as CleanedRestaurantsState
-    {
-      /* {JSON.stringify(showHappyHours[0])} */
-    }
   })
 }
 
@@ -128,4 +125,29 @@ export const labelMap: LabelMap = {
   'quick & easy': { class: 'label orange', text: '🚀 Quick & Easy' },
   cozy: { class: 'label pink', text: '☕ Cozy' },
   upscale: { class: 'label lightblue', text: '💎 Upscale' },
+}
+
+export const getUserDistance = (
+  userLat: number,
+  userLong: number,
+  restLat: number,
+  restLong: number
+): string => {
+  let R = 6371 // Radius of the earth in km
+  let dLat = deg2rad(restLat - userLat) // deg2rad below
+  let dLon = deg2rad(restLong - userLong)
+  let a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(userLat)) *
+      Math.cos(deg2rad(restLat)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2)
+  let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+  let d = R * c // Distance in km
+  let miles = d / 1.609
+  return miles.toFixed(2)
+}
+
+function deg2rad(deg: number) {
+  return deg * (Math.PI / 180)
 }

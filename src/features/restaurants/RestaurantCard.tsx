@@ -25,7 +25,7 @@ export const RestaurantCard = ({
   }
 
   return (
-    <div className="card m-2 mb-3" style={{ maxWidth: '240' }}>
+    <div id={`card-${restaurant.id}`} className="card m-2 mb-3" style={{ maxWidth: '240' }}>
       <div className="row g-0">
         <div className="col-md-4">
           <img src={restaurant.coverImg} className="card-img" alt="..." />
@@ -58,6 +58,7 @@ export const RestaurantCard = ({
           </div>
         </div>
       </div>
+
       <Modal show={show} onHide={handleClose} backdrop="static">
         <Modal.Header className="d-flex justify-content-center"></Modal.Header>
         <Modal.Body className="d-flex justify-content-center">

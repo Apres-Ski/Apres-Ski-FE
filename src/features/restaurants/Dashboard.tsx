@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { AppDispatch, RootState } from '../../app/store'
 import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { getRestaurants } from './restaurantsSlice'
+import { getRestaurants, setDistance } from './restaurantsSlice'
 import { RestaurantList } from './RestaurantList'
 import { NavMenu } from '../users/Nav'
 import { Filter } from '../filters/Filter'
@@ -11,7 +11,9 @@ import { Error } from '../../components/Error'
 import { useNavigate } from 'react-router-dom'
 import { APP_ROUTES } from '../../utilities/constants'
 import { Button } from 'react-bootstrap'
-import { getLifts } from '../lifts/liftsSlice'
+import { getLifts } from '../lifts/liftsSlice' 
+import { getUserDistance } from '../../utilities/utilities'
+
 
 export const Dashboard = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -19,6 +21,7 @@ export const Dashboard = () => {
   const { status } = useSelector((state: RootState) => state.restaurants)
   const { activeUser } = useSelector((state: RootState) => state.users)
   const { liftsStatus } = useSelector((state: RootState) => state.lifts)
+  const { restaurants } = useSelector((state: RootState) => state.restaurants)
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -40,6 +43,10 @@ export const Dashboard = () => {
       dispatch(getLifts())
     }
   }, [liftsStatus, dispatch])
+
+  useEffect(() => {
+    restaurants.forEach(restaurant => dispatch(setDistance({id: restaurant.id, distance: getUserDistance(Number(activeUser.location.lat), Number(activeUser.location.long), Number(restaurant.location.lat), Number(restaurant.location.long))})))
+  }, [restaurants])
 
   let content
 
