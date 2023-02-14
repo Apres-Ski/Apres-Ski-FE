@@ -1,6 +1,6 @@
 import { CleanedRestaurantsState } from '../../utilities/interfaces'
-import { useSelector, useDispatch } from 'react-redux'
-import type { AppDispatch, RootState } from '../../app/store'
+import { useDispatch } from 'react-redux'
+import type { AppDispatch } from '../../app/store'
 import { selectRestaurant } from './restaurantsSlice'
 import { DetailModal } from './DetailModal'
 import Modal from 'react-bootstrap/Modal'
@@ -12,7 +12,6 @@ export const RestaurantCard = ({
 }: {
   restaurant: CleanedRestaurantsState
 }) => {
-  const { activeUser } = useSelector((state: RootState) => state.users)
   const dispatch = useDispatch<AppDispatch>()
   const [show, setShow] = useState(false)
   const formattedVibes = restaurant.vibes.join(', ')
@@ -27,7 +26,7 @@ export const RestaurantCard = ({
   return (
     <div id={`card-${restaurant.id}`}>
       <p>{restaurant.name}</p>
-      {/* <p>{'Distance: ' + userDistance + ' miles'}</p> */}
+      <p>{'Distance: ' + restaurant.userDistance + ' miles'}</p>
       <p>Vibe: {formattedVibes}</p>
       <p>Distance: .25m</p>
       <img style={{ width: 350 }} src={restaurant.coverImg} />

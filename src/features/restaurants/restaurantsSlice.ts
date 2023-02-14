@@ -88,7 +88,8 @@ export const restaurantsSlice = createSlice({
       state.mapClickedRestaurant = action.payload
     },
     setDistance(state, action) {
-      state.restaurants.forEach(restaurant => restaurant.userDistance = action.payload)
+      const rest = state.restaurants.find(restaurant => restaurant.id === action.payload.id)
+      rest ? rest.userDistance = action.payload.distance : null
     }
   },
   extraReducers(builder) {
