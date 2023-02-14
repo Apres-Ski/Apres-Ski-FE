@@ -39,22 +39,35 @@ export const RestaurantCard = ({
             <h2 className="card-title title">{restaurant.name}</h2>
             <div className="row g-0">
               <div>
-                <hr className="mt-1 mb-6" style={{minWidth: '100%'}} />
+                <hr className="mt-1 mb-6" style={{ minWidth: '100%' }} />
                 <p
                   style={{ letterSpacing: '.5rem' }}
                   className="card-text small-text"
                 >
                   <img
-                    style={{ width: '2rem', marginBottom: '1rem', marginRight: '.5rem' }}
+                    style={{
+                      width: '2rem',
+                      marginBottom: '1rem',
+                      marginRight: '.5rem',
+                    }}
                     src={'../src/assets/location.svg'}
                   />
-                  Distance: <span>{restaurant.userDistance}</span>
+                  Distance:{' '}
+                  <span style={{ letterSpacing: '.3rem'}}>
+                    {restaurant.userDistance} miles
+                  </span>
                 </p>
                 <div className="d-flex justify-content-center">
-                  <hr style={{ width: '6rem', height: '.12rem'}} className="mt-1 mb-1" />
+                  <hr
+                    style={{ width: '6rem', height: '.12rem' }}
+                    className="mt-1 mb-1"
+                  />
                 </div>
                 <p className="card-text mt-4">
-                  <small className="text-muted small-text">
+                  <small
+                    style={{ letterSpacing: '.15rem' }}
+                    className="text-muted small-text"
+                  >
                     Perfect if you are looking for:
                   </small>
                 </p>
