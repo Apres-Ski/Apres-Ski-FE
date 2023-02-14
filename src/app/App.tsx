@@ -8,7 +8,7 @@ import { APP_ROUTES } from '../utilities/constants'
 
 function App() {
   return (
-    <div>
+    <div className='w-100'>
         <Routes>
           <Route path={APP_ROUTES.LANDING} element={(<Landing />)} />
           <Route path={APP_ROUTES.DEMO} element={(<DemoUsers />)} />

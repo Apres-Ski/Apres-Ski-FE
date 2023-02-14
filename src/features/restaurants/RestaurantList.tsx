@@ -3,9 +3,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RootState, AppDispatch } from '../../app/store'
 import { ReactElement, useEffect, useState } from 'react'
 import { filterRestaurants } from '../restaurants/restaurantsSlice'
+import { CleanedRestaurantsState } from '../../utilities/interfaces'
+
 
 export const RestaurantList = () => {
   const { restaurants } = useSelector((state: RootState) => state.restaurants)
+  const { mapClickedRestaurant } = useSelector((state: RootState) => state.restaurants)
   const { filteredRestaurants } = useSelector(
     (state: RootState) => state.restaurants
   )
@@ -37,13 +40,24 @@ export const RestaurantList = () => {
 
   useEffect(() => {
     const restaurantCards = filteredRestaurants.map((restaurant) => (
+
       <RestaurantCard
         key={`restaurant ${restaurant.id}`}
         restaurant={restaurant}
       />
     ))
+
+    restaurantCards.sort((a, b) => {
+        return Number(a.props.restaurant.userDistance) - Number(b.props.restaurant.userDistance)
+    })
+
     setRenderedRestaurants(restaurantCards)
   }, [filteredRestaurants])
+
+  useEffect(() => {
+    const element = document.getElementById(`card-${mapClickedRestaurant}`)
+    setTimeout(() => {element?.scrollIntoView(false)}, 1000)
+  }, [mapClickedRestaurant])
 
   return <div>{renderedRestaurants}</div>
 }
