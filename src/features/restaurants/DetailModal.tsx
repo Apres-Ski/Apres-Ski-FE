@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import type { RootState } from '../../app/store'
+import { DistanceMarkers } from './DistanceMarker'
 import { HappyHours } from './HappyHours'
 import { VibeLabels } from './VibeLabels'
 
@@ -21,16 +22,19 @@ export const DetailModal = () => {
   }
 
   return (
-    <div>
+    <div style={{textAlign: 'center'}}>
+      
+      <p>{activeRestaurant.name}</p>
       <img
         src={activeRestaurant.coverImg}
         alt={activeRestaurant.alt}
         className="img-fluid"
       />
-      <p>{activeRestaurant.name}</p>
+      <hr className="mt-1 mb-6" />
+      <DistanceMarkers userDistance={activeRestaurant.userDistance} />
+      <hr className="mt-1 mb-6" />
       <p>{activeRestaurant.address}</p>
       <p>Food Type: {activeRestaurant.foodType}</p>
-      <p>Distance: Logic Placeholder</p>
       <hr className="mt-1 mb-6" />
       <p>Cost: {activeRestaurant.cost}</p>
       <hr className="mt-1 mb-6" />
