@@ -30,5 +30,3 @@ export const Sorry = () => {
     </div>
   )
 }
-
-// Route buttons to open Filter menu w/ selected option
