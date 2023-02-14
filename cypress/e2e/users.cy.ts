@@ -13,8 +13,10 @@ describe('Users Test', () => {
   })
 
   it('should find the canned users', () => {
-    cy.get(':nth-child(1) > a > .img-fluid').should('exist')
-    cy.get(':nth-child(2) > a > .img-fluid').should('exist')
+    cy.get(':nth-child(1) > a > .img-fluid')
+     .should('exist')
+    cy.get(':nth-child(2) > a > .img-fluid')
+     .should('exist')
   })
 
   it('should be able to select a user to load the dashboard', () => {
