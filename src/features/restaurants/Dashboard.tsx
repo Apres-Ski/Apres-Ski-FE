@@ -53,11 +53,11 @@ export const Dashboard = () => {
           paddingTop: '4rem',
         }}
       >
-        <NavMenu />
-        <Map />
         <Button variant="primary" onClick={handleShow} className="me-2 m-4">
           Filter
         </Button>
+        <NavMenu />
+        <Map />
         <RestaurantList />
         <Filter show={show} handleClose={handleClose} />
       </div>

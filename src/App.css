@@ -70,12 +70,19 @@
 }
 
 .landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   background: linear-gradient(
     180deg,
     hsla(343, 100%, 83%, 1) 0%,
     hsla(247, 55%, 27%, 1) 100%
   );
+  background-image: url('./assets/user1.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .dashboard-container {
