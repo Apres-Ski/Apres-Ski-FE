@@ -22,16 +22,17 @@ export const DetailModal = () => {
   }
 
   return (
-    <div style={{textAlign: 'center'}}>
-      
-      <p>{activeRestaurant.name}</p>
+    <div style={{ textAlign: 'center' }}>
+      <h1 style={{fontFamily: 'LEMONMILK-Italic'}}className="mb-3">{activeRestaurant.name}</h1>
+      <hr className="mt-1 mb-6" />
       <img
         src={activeRestaurant.coverImg}
         alt={activeRestaurant.alt}
         className="img-fluid"
       />
-      <hr className="mt-1 mb-6" />
-      <DistanceMarkers userDistance={activeRestaurant.userDistance} />
+      <div style={{ margin: '1rem' }}>
+        <DistanceMarkers userDistance={activeRestaurant.userDistance} />
+      </div>
       <hr className="mt-1 mb-6" />
       <p>{activeRestaurant.address}</p>
       <p>Food Type: {activeRestaurant.foodType}</p>
