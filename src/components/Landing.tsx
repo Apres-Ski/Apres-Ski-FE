@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import landingVideo from '../assets/sking.mp4'
 
 export const Landing = () => {
   return (
@@ -19,7 +20,7 @@ export const Landing = () => {
         </Link>
       </div>
       <video className="video-settings" autoPlay={true} muted loop>
-        <source src={'src/assets/sking.mp4'} type="video/mp4" />
+        <source src={landingVideo} type="video/mp4" />
       </video>
     </div>
   )
