@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { resetFilters } from '../filters/filtersSlice'
 
-const colors = ['danger', 'primary', 'success']
+const colors = ['danger', 'green-accent', 'success']
 
 const UsersList = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -16,7 +16,7 @@ const UsersList = () => {
   }, [activeUser])
 
   const renderedUsers = users.map((user, index) => (
-    <div key={user.id} className='container' style={{ width: '45%' }}>
+    <div key={user.id} className='container mt-4' style={{ width: '45%' }}>
       <Link to="/dashboard">
         <img
           src={`src/assets/user${index + 1}.jpg`}

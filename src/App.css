@@ -62,10 +62,11 @@
 .background-color {
   background: linear-gradient(
     180deg,
-    rgb(251, 198, 213) 0%,
+    hsl(218, 81%, 82%) 0%,
     rgb(184, 176, 243) 100%
   );
   position: absolute;
+   height: 145%;
 }
 
 .video-settings {
