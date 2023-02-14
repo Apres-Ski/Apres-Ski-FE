@@ -107,6 +107,9 @@ describe('Filter Test', () => {
     cy.get('[for="quickEasy"]').click()
     cy.get('.btn-close').click({ force: false })
     cy.get('.fade-in > :nth-child(4) > div > :nth-child(2)').click()
+    cy.wait(250)
+    cy.get('[for="cozy"]').click({ multiple: true })
+    cy.get('[for="quickEasy"]').click({ multiple: true })
   })
 
   it('should be able to use the button to reset all filter options and re-render all cards', () => {
