@@ -42,7 +42,7 @@
   display: flex;
   justify-content: center;
   margin: 1rem 0 1rem 0;
-  height: 8rem;
+  height: 5rem;
   flex-wrap: wrap;
 }
 
@@ -71,7 +71,7 @@
   flex-wrap: wrap;
   text-transform: uppercase;
   border-radius: 25px;
-  margin: 4px;
+  margin: 7px;
   padding: 5px 15px;
   font-weight: bold;
   font-size: 14px;
@@ -110,6 +110,11 @@
   color: #7d1105;
 }
 
+.grey {
+  background-color: #605651d0;
+  color: #ffffff;
+}
+
 .orange {
   background-color: #f4a771;
   color: #793403;
@@ -123,6 +128,12 @@
 .lightblue {
   background-color: #a9eeff;
   color: #025468;
+}
+
+.distance-color {
+  background-color: #99ebd795;
+  width: 2rem;
+
 }
 
 .card-container {
