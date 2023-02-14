@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'Varela Round';
-  src: url('./assets/VarelaRound-Regular.ttf');
+  src: url('./assets/fonts/VarelaRound-Regular.ttf');
 }
 
 $theme-colors: (
@@ -15,7 +15,7 @@ $theme-colors: (
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
-// Your variable overrides
+// Your variable overrides -> please don't remove this comments, need the below for more styling
 $body-bg: #ffffff;
 // $body-color: #ffffff;
 $font-family-sans-serif: 'Varela Round';

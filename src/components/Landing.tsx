@@ -24,5 +24,3 @@ export const Landing = () => {
     </div>
   )
 }
-
-// Button group is a demo/placeholder as we had some issues with the initial Bootstrap setup

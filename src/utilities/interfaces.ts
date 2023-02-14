@@ -146,3 +146,11 @@ export interface CleanedLiftsState {
     long: string
   }
 }
+
+export interface VibeLabelsProps {
+  restaurant: CleanedRestaurantsState
+}
+
+export interface LabelMap {
+  [key: string]: { class: string; text: string }
+}
