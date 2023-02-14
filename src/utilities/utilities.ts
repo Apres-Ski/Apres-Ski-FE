@@ -115,7 +115,6 @@ export const cleanLiftsData = (lifts: Lifts[]): CleanedLiftsState[] => {
   })
 }
 
-
 export const getUserDistance = (
   userLat: number,
   userLong: number,
