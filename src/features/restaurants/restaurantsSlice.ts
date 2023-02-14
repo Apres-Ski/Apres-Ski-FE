@@ -86,6 +86,10 @@ export const restaurantsSlice = createSlice({
     },
     setMapClickedRestaurant(state, action) {
       state.mapClickedRestaurant = action.payload
+    },
+    setDistance(state, action) {
+      const rest = state.restaurants.find(restaurant => restaurant.id === action.payload.id)
+      rest ? rest.userDistance = action.payload.distance : null
     }
   },
   extraReducers(builder) {
@@ -105,7 +109,7 @@ export const restaurantsSlice = createSlice({
   },
 })
 
-export const { filterRestaurants, selectRestaurant, resetRestaurant, setMapClickedRestaurant } =
+export const { filterRestaurants, selectRestaurant, resetRestaurant, setMapClickedRestaurant, setDistance } =
   restaurantsSlice.actions
 
 export default restaurantsSlice.reducer
