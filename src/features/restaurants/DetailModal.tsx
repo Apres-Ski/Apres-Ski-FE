@@ -81,16 +81,20 @@ export const DetailModal = () => {
       </div>
       <Hours restaurant={activeRestaurant} />
 
-      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        {activeRestaurant.happyHours ? (
-          <HappyHours />
-        ) : (
-          <p>No Specials Available</p>
-        )}
-      </div>
+      {activeRestaurant.happyHours ? (
+        <HappyHours />
+      ) : (
+        <div className="m-4 label grey" role="alert">
+          😔 No Specials Available
+        </div>
+      )}
       <hr className="mt-1 mb-6" />
       <p
-        style={{ letterSpacing: '.5rem', textAlign: 'center', fontSize: '1.2rem' }}
+        style={{
+          letterSpacing: '.5rem',
+          textAlign: 'center',
+          fontSize: '1.2rem',
+        }}
         className="card-text small-text"
       >
         Vibes
