@@ -23,22 +23,36 @@ export const DetailModal = () => {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <h1 style={{fontFamily: 'LEMONMILK-Italic'}}className="mb-3">{activeRestaurant.name}</h1>
+      <h1 style={{ fontFamily: 'LEMONMILK-Italic' }} className="mb-3">
+        {activeRestaurant.name}
+      </h1>
+      <p style={{ letterSpacing: '.5rem' }} className="card-text ">
+        <img
+          style={{
+            width: '3rem',
+            marginBottom: '1rem',
+            marginRight: '.5rem',
+          }}
+          src={'../src/assets/area-map.gif'}
+        />
+        <span style={{ letterSpacing: '.3rem' }}>
+          {activeRestaurant.address}
+        </span>
+      </p>
       <hr className="mt-1 mb-6" />
       <figure className="figure">
-      <img
-        src={activeRestaurant.coverImg}
-        alt={activeRestaurant.alt}
-        className="figure-img img-fluid rounded" 
-      />
-</figure>
+        <img
+          src={activeRestaurant.coverImg}
+          alt={activeRestaurant.alt}
+          className="figure-img img-fluid rounded"
+        />
+      </figure>
+      <hr className="mt-1 mb-6" />
       <div style={{ margin: '1rem' }}>
         <DistanceMarkers userDistance={activeRestaurant.userDistance} />
       </div>
       <hr className="mt-1 mb-6" />
-      <p>{activeRestaurant.address}</p>
       <p>Food Type: {activeRestaurant.foodType}</p>
-      <hr className="mt-1 mb-6" />
       <p>Cost: {activeRestaurant.cost}</p>
       <hr className="mt-1 mb-6" />
       <p>Alcohol: {hasBooze()}</p>
