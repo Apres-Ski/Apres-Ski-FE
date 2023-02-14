@@ -1,7 +1,7 @@
 describe('template spec', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:5173/')
-    cy.visit('http://127.0.0.1:5173/sdojbsdv')
+    cy.visit('https://apres-ski-fe.vercel.app/')
+    cy.visit('https://apres-ski-fe.vercel.app/sdojbsdv')
   })
 
   it('should load error content with bad path', () => {
@@ -11,6 +11,9 @@ describe('template spec', () => {
   })
 
   it('should click the button to close and return to landing', () => {
-    cy.get('.btn').click().url().should('eq', 'http://127.0.0.1:5173/')
+    cy.get('.btn')
+      .click()
+      .url()
+      .should('eq', 'https://apres-ski-fe.vercel.app/')
   })
 })
