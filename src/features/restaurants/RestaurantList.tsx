@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RootState, AppDispatch } from '../../app/store'
 import { ReactElement, useEffect, useState } from 'react'
 import { filterRestaurants } from '../restaurants/restaurantsSlice'
+import { CleanedRestaurantsState } from '../../utilities/interfaces'
 
 
 export const RestaurantList = () => {
@@ -45,6 +46,11 @@ export const RestaurantList = () => {
         restaurant={restaurant}
       />
     ))
+
+    restaurantCards.sort((a, b) => {
+        return Number(a.props.restaurant.userDistance) - Number(b.props.restaurant.userDistance)
+    })
+
     setRenderedRestaurants(restaurantCards)
   }, [filteredRestaurants])
 
