@@ -32,7 +32,7 @@ export const RestaurantCard = ({
         </div>
         <div className="col-md-8">
           <div className="card-body card-container">
-            <h2 className="card-title">{restaurant.name}</h2>
+            <h2 className="card-title title">{restaurant.name}</h2>
             <div className="row g-0">
               <div>
                 <hr className="mt-1 mb-6" />
@@ -42,7 +42,7 @@ export const RestaurantCard = ({
                   </small>
                 </p>
               </div>
-              <VibeLabels />
+              <VibeLabels restaurant={restaurant}/>
               <hr className="mt-1 mb-6" />
             </div>
             <Button

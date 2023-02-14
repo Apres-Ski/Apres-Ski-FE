@@ -27,25 +27,71 @@
 }
 
 .title {
-  background-color: rgba(79, 186, 145, 0.805);
+  /* background-color: rgba(79, 186, 145, 0.805); */
   text-transform: uppercase;
   border-radius: 5px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .label {
   display: inline-block;
   align-self: center;
   flex-wrap: wrap;
-  background-color: rgba(79, 186, 145, 0.805);
   text-transform: uppercase;
-  border-radius: 5px;
+  border-radius: 25px;
   margin: 4px;
-  padding: 10px 15px;
+  padding: 5px 15px;
   font-weight: bold;
-  font-size: 12px;
-  letter-spacing: 0.05em;
+  font-size: 14px;
+  letter-spacing: 0.1em;
   justify-content: space-evenly;
   color: white;
+}
+
+.label-icon {
+  height: 2rem;
+}
+
+/* badge colors */
+.green {
+  background-color: #c6f8e5;
+  color: #03623c;
+}
+
+.purple {
+  background-color: #e2bef1;
+  color: #6e208f;
+}
+
+.blue {
+  background-color: #96CAF7;
+  color: #0a4579;
+}
+
+.yellow {
+  background-color: #fff59b;
+  color: rgb(113, 102, 3);
+}
+
+.red {
+  background-color: #f87c6e;
+  color: #7d1105;
+}
+
+.orange {
+  background-color: #f4a771;
+  color: #793403
+}
+
+.pink {
+  background-color: #ffa9d7;
+  color: #59002f
+}
+
+.lightblue {
+  background-color: #a9eeff;
+  color: #025468
 }
 
 .card-container {
@@ -66,17 +112,13 @@
     rgb(184, 176, 243) 100%
   );
   position: absolute;
-   height: 145%;
+  height: 145%;
 }
 
 .video-settings {
   position: absolute;
   margin: 0;
   z-index: -1;
-  /* overflow: hidden;
-  box-sizing: border-box; */
-  /* width: 100vw; */
-  /* height: 100%; */
 }
 
 .landing-container {
