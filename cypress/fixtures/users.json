@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "type": "User",
+            "id": "1",
+            "attributes": {
+                "name": "Lily White",
+                "lat": "39.47677682",
+                "lon": "-106.0476996"
+            }
+        },
+        {
+            "type": "User",
+            "id": "2",
+            "attributes": {
+                "name": "Jack Hill",
+                "lat": "39.483421213997",
+                "lon": "-106.066812539715"
+            }
+        }
+    ]
+}

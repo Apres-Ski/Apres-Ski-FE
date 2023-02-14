@@ -1,0 +1,31 @@
+{
+    "data": [
+        {
+            "type": "Lift",
+            "id": "1",
+            "attributes": {
+                "name": "Imperial Express",
+                "lat": "39.485365",
+                "lon": "-106.047495"
+            }
+        },
+        {
+            "type": "Lift",
+            "id": "2",
+            "attributes": {
+                "name": "Snowflake",
+                "lat": "39.478373",
+                "lon": "-106.053167"
+            }
+        },
+        {
+            "type": "Lift",
+            "id": "3",
+            "attributes": {
+                "name": "QuickSilver SuperChair",
+                "lat": "39.475606",
+                "lon": "-106.047927"
+            }
+        }
+    ]
+}
