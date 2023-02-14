@@ -4,6 +4,7 @@ import { Alcohol } from './Alcohol'
 import { Cost } from './Cost'
 import { DistanceMarkers } from './DistanceMarker'
 import { HappyHours } from './HappyHours'
+import { Hours } from './Hours'
 import { VibeLabels } from './VibeLabels'
 
 export const DetailModal = () => {
@@ -72,24 +73,15 @@ export const DetailModal = () => {
             Food Type: {activeRestaurant.foodType}
           </span>
         </p>
-      <hr className="mt-1 mb-6" />
+        <hr className="mt-1 mb-6" />
         <Alcohol alcohol={hasBooze()} />
         <hr className="mt-1 mb-6" />
         <Cost cost={activeRestaurant.cost} />
         <hr className="mt-1 mb-6" />
       </div>
+      <Hours restaurant={activeRestaurant} />
 
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-        <div>
-          Hours:
-          <p>{showHours[0]}</p>
-          <p>{showHours[1]}</p>
-          <p>{showHours[2]}</p>
-          <p>{showHours[3]}</p>
-          <p>{showHours[4]}</p>
-          <p>{showHours[5]}</p>
-          <p>{showHours[6]}</p>
-        </div>
         {activeRestaurant.happyHours ? (
           <HappyHours />
         ) : (
@@ -97,6 +89,12 @@ export const DetailModal = () => {
         )}
       </div>
       <hr className="mt-1 mb-6" />
+      <p
+        style={{ letterSpacing: '.5rem', textAlign: 'center', fontSize: '1.2rem' }}
+        className="card-text small-text"
+      >
+        Vibes
+      </p>
       <VibeLabels restaurant={activeRestaurant} />
     </div>
   )
