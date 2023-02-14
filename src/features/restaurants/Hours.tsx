@@ -1,5 +1,6 @@
 import { ListGroup } from 'react-bootstrap'
 import { CleanedRestaurantsState } from '../../utilities/interfaces'
+import open from '../../assets/open.svg'
 
 export interface HoursProps {
   restaurant: CleanedRestaurantsState
@@ -29,7 +30,7 @@ export const Hours = ({ restaurant }: HoursProps) => {
                   marginBottom: '1rem',
                   marginRight: '.5rem',
                 }}
-                src={`../src/assets/open.svg`}
+                src={open}
               />
             </span>
           HOURS

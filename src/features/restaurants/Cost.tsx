@@ -1,3 +1,5 @@
+import dollarBill from '../../assets/dollar-bill.svg'
+
 export interface CostProps {
   cost: string
 }
@@ -12,7 +14,7 @@ export const Cost = ({ cost }: CostProps) => {
               width: '2.7rem',
               marginRight: '.5rem',
             }}
-            src={`../src/assets/dollar-bill.svg`}
+            src={dollarBill}
           />
         </span>
       )
@@ -24,14 +26,14 @@ export const Cost = ({ cost }: CostProps) => {
               width: '2.7rem',
               marginRight: '.5rem',
             }}
-            src={`../src/assets/dollar-bill.svg`}
+            src={dollarBill}
           />
           <img
             style={{
               width: '2.7rem',
               marginRight: '.5rem',
             }}
-            src={`../src/assets/dollar-bill.svg`}
+            src={dollarBill}
           />
         </span>
       )
@@ -43,21 +45,21 @@ export const Cost = ({ cost }: CostProps) => {
               width: '2.7rem',
               marginRight: '.5rem',
             }}
-            src={`../src/assets/dollar-bill.svg`}
+            src={dollarBill}
           />
           <img
             style={{
               width: '2.7rem',
               marginRight: '.5rem',
             }}
-            src={`../src/assets/dollar-bill.svg`}
+            src={dollarBill}
           />
           <img
             style={{
               width: '2.7rem',
               marginRight: '.5rem',
             }}
-            src={`../src/assets/dollar-bill.svg`}
+            src={dollarBill}
           />
         </span>
       )

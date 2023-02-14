@@ -1,3 +1,5 @@
+import alcoholImg from '../../assets/alcohol.svg'
+
 export interface AlcoholProps {
   alcohol: string
 }
@@ -16,7 +18,7 @@ export const Alcohol = ({alcohol}: AlcoholProps) => {
               marginBottom: '1rem',
               marginRight: '.5rem',
             }}
-            src={`../src/assets/alcohol.svg`}
+            src={alcoholImg}
           />
         </span>
         Alcohol: {alcohol}

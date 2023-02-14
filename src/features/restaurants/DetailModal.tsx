@@ -6,6 +6,8 @@ import { DistanceMarkers } from './DistanceMarker'
 import { HappyHours } from './HappyHours'
 import { Hours } from './Hours'
 import { VibeLabels } from './VibeLabels'
+import menu from '../../assets/menu.svg'
+import mapGif from '../../assets/area-map.gif'
 
 export const DetailModal = () => {
   const { activeRestaurant } = useSelector(
@@ -32,7 +34,7 @@ export const DetailModal = () => {
             marginBottom: '1rem',
             marginRight: '.5rem',
           }}
-          src={'../src/assets/area-map.gif'}
+          src={mapGif}
         />
         <span style={{ letterSpacing: '.3rem' }}>
           {activeRestaurant.address}
@@ -63,7 +65,7 @@ export const DetailModal = () => {
                   width: '2.7rem',
                   marginRight: '.5rem',
                 }}
-                src={`../src/assets/menu.svg`}
+                src={menu}
               />
             </span>
             Food Type: {activeRestaurant.foodType}
