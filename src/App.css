@@ -130,6 +130,11 @@
   color: #025468;
 }
 
+.hotpink {
+  background-color: hotpink;
+  color: rgb(91, 1, 46);
+}
+
 .distance-color {
   background-color: #99ebd795;
   width: 2rem;
