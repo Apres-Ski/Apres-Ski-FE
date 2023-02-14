@@ -17,7 +17,7 @@ export const NavMenu = () => {
           <Navbar.Brand href="#home" className='nav-title'>
             Après Ski{' '}
             <span>
-              <img style={{width: '3rem'}} src='../src/assets/ski-poles.svg' />
+              <img style={{width: '3rem'}} src={'../src/assets/ski-poles.svg'} />
             </span>
           </Navbar.Brand>
         </LinkContainer>
