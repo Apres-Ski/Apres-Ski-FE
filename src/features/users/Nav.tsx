@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import { Button, Container, Nav } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { APP_ROUTES } from '../../utilities/constants'
+import skis from '../../assets/ski-poles.svg'
 
 export const NavMenu = () => {
   const { activeUser } = useSelector((state: RootState) => state.users)
@@ -17,7 +18,7 @@ export const NavMenu = () => {
           <Navbar.Brand href="#home" className='nav-title'>
             Après Ski{' '}
             <span>
-              <img style={{width: '3rem'}} src={'../src/assets/ski-poles.svg'} />
+              <img style={{width: '3rem'}} src={skis} />
             </span>
           </Navbar.Brand>
         </LinkContainer>

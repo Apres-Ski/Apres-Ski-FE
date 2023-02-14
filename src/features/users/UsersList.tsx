@@ -4,6 +4,9 @@ import { selectUser } from './usersSlice'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { resetFilters } from '../filters/filtersSlice'
+import user1 from '../../assets/user1.jpg'
+import user2 from '../../assets/user2.jpg'
+import user3 from '../../assets/user3.jpg'
 
 const colors = ['danger', 'green-accent', 'success']
 
@@ -15,19 +18,30 @@ const UsersList = () => {
     dispatch(resetFilters(''))
   }, [activeUser])
 
-  const renderedUsers = users.map((user, index) => (
-    <div key={user.id} className='container mt-4' style={{ width: '45%' }}>
+  const renderedUsers = users.map((user, index) => {
+    
+    let userNum
+
+    if (index === 0) {
+      userNum = user1
+    } else if (index === 1) {
+      userNum = user2
+    } else {
+      userNum = user3
+    }
+    
+    return <div key={user.id} className='container mt-4' style={{ width: '45%' }}>
       <Link to="/dashboard">
         <img
-          src={`src/assets/user${index + 1}.jpg`}
-          className={`img-fluid rounded border border-2 border-${colors[index]}`}
+          src={userNum}
+          className={`img-fluid rounded border border-2 border-white`}
           alt='...'
           onClick={() => dispatch(selectUser(user))}
         />
       </Link>
       <p className={`text-${colors[index]}`}>{user.name}</p>
     </div>
-  ))
+} )
 
   return (
     <div>
