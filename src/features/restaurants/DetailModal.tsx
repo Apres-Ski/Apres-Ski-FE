@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import type { RootState } from '../../app/store'
+import { Alcohol } from './Alcohol'
 import { Cost } from './Cost'
 import { DistanceMarkers } from './DistanceMarker'
 import { HappyHours } from './HappyHours'
@@ -53,12 +54,31 @@ export const DetailModal = () => {
         <DistanceMarkers userDistance={activeRestaurant.userDistance} />
       </div>
       <hr className="mt-1 mb-6" />
-
-      <Cost cost={activeRestaurant.cost} />
-
-      <p>Food Type: {activeRestaurant.foodType}</p>
-      <p>Alcohol: {hasBooze()}</p>
+      <div className="d-flex flex-column align-items-justify">
+        <p
+          style={{ letterSpacing: '.5rem', textAlign: 'center' }}
+          className="card-text small-text"
+        >
+          <span style={{ letterSpacing: '.3rem' }}>
+            <span>
+              <img
+                style={{
+                  width: '2.7rem',
+                  marginRight: '.5rem',
+                }}
+                src={`../src/assets/menu.svg`}
+              />
+            </span>
+            Food Type: {activeRestaurant.foodType}
+          </span>
+        </p>
       <hr className="mt-1 mb-6" />
+        <Alcohol alcohol={hasBooze()} />
+        <hr className="mt-1 mb-6" />
+        <Cost cost={activeRestaurant.cost} />
+        <hr className="mt-1 mb-6" />
+      </div>
+
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <div>
           Hours:
