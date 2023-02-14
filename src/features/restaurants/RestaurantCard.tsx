@@ -7,6 +7,7 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 import { VibeLabels } from './VibeLabels'
+import { DistanceMarkers } from './DistanceMarker'
 
 export const RestaurantCard = ({
   restaurant,
@@ -40,23 +41,7 @@ export const RestaurantCard = ({
             <div className="row g-0">
               <div>
                 <hr className="mt-1 mb-6" style={{ minWidth: '100%' }} />
-                <p
-                  style={{ letterSpacing: '.5rem' }}
-                  className="card-text small-text"
-                >
-                  <img
-                    style={{
-                      width: '2rem',
-                      marginBottom: '1rem',
-                      marginRight: '.5rem',
-                    }}
-                    src={'../src/assets/location.svg'}
-                  />
-                  Distance:{' '}
-                  <span style={{ letterSpacing: '.3rem'}}>
-                    {restaurant.userDistance} miles
-                  </span>
-                </p>
+                <DistanceMarkers userDistance={restaurant.userDistance} />
                 <div className="d-flex justify-content-center">
                   <hr
                     style={{ width: '6rem', height: '.12rem' }}
