@@ -1,6 +1,6 @@
 describe('Landing Test', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:5173/')
+    cy.visit('https://apres-ski-fe.vercel.app/')
   })
 
   it('should find the landing content', () => {
@@ -12,13 +12,22 @@ describe('Landing Test', () => {
   })
 
   it('should be able to click through to the users page', () => {
-    cy.get('.btn').click().url().should('eq', 'http://127.0.0.1:5173/demo')
+    cy.get('.btn')
+      .click()
+      .url()
+      .should('eq', 'https://apres-ski-fe.vercel.app/demo')
   })
 
   it('should be able to use browser arrows to return to landing', () => {
-    cy.get('.btn').click()
-      .url().should('eq', 'http://127.0.0.1:5173/demo')
-      .go('back').url().should('eq', 'http://127.0.0.1:5173/')
-      .go('forward').url().should('eq', 'http://127.0.0.1:5173/demo')
+    cy.get('.btn')
+      .click()
+      .url()
+      .should('eq', 'https://apres-ski-fe.vercel.app/demo')
+      .go('back')
+      .url()
+      .should('eq', 'https://apres-ski-fe.vercel.app/')
+      .go('forward')
+      .url()
+      .should('eq', 'https://apres-ski-fe.vercel.app/demo')
   })
 })
