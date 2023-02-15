@@ -113,7 +113,8 @@ To install and run on your personal computer you will need to do the following:
 
 [Notion Wireframe](https://triciaholmes.notion.site/Apr-s-Ski-Design-Wiki-5b7323435534441a9b2610182191dc28)
 
-![Wireframe (1)](https://triciaholmes.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F244c3760-874e-48eb-b32d-9d70037f96d1%2FApres_Ski_-_Wireframe.png?id=96985bd4-e832-41f8-a6e0-a02c449c17ec&table=block&spaceId=caa1b8cb-26d9-43a1-8671-ef7fa062e392&width=2000&userId=&cache=v2)
+<p align="center">
+<img src="https://triciaholmes.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F244c3760-874e-48eb-b32d-9d70037f96d1%2FApres_Ski_-_Wireframe.png?id=96985bd4-e832-41f8-a6e0-a02c449c17ec&table=block&spaceId=caa1b8cb-26d9-43a1-8671-ef7fa062e392&width=2000&userId=&cache=v2" height="1000"/> </p>
 
 
 <br>
