@@ -8,7 +8,7 @@ export interface HoursProps {
 export const Hours = ({ restaurant }: HoursProps) => {
   const showHours = Object.entries(restaurant.hours).map((day) => {
     return (
-      <ListGroup.Item>
+      <ListGroup.Item key={`hours ${day}`}>
         {day[0][0].toUpperCase()}: {day[1]}
       </ListGroup.Item>
     )
