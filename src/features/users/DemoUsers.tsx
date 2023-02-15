@@ -4,6 +4,7 @@ import { AppDispatch, RootState } from '../../app/store'
 import UsersList from './UsersList'
 import { getUsers } from './usersSlice'
 import { Error } from '../../components/Error'
+import logo from '../../assets/apres-logo.svg'
 
 export const DemoUsers = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -22,7 +23,8 @@ export const DemoUsers = () => {
   } else if (status === 'succeeded') {
     content = (
       <div className="background-color">
-        <h2 className="m-5 nav-title">Please Select a User</h2>
+        <img className="m-4 logo" src={logo}  />
+        <h2  className="m-4 subtitle">Please Select a User</h2>
         <UsersList />
       </div>
     )

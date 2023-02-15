@@ -23,8 +23,12 @@
 }
 
 @keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .read-the-docs {
@@ -138,7 +142,6 @@
 .distance-color {
   background-color: #99ebd795;
   width: 2rem;
-
 }
 
 .card-container {
@@ -154,27 +157,51 @@
 }
 
 .background-color {
-  background: linear-gradient(
-    180deg,
-    hsl(218, 81%, 82%) 0%,
-    rgb(184, 176, 243) 100%
-  );
+  background: linear-gradient(-45deg, #251f69, #97c9f3, #ffaac0, #e8f5fe);
+  animation: colorChange 15s ease infinite;
+  height: 100vh;
+  width: 100vw;
+  background-size: 400% 400%;
   position: absolute;
   height: 100vh;
-  width: 100vw;;
+  width: 100vw;
 }
 
-@media screen and (max-width: 900px) {
+.logo {
+  width: 30rem;
+}
+
+@media screen and (max-width: 1393px) {
   .background-color {
     background: linear-gradient(
-    180deg,
-    hsl(218, 81%, 82%) 0%,
-    rgb(243, 176, 176) 100%
-  );
-  position: absolute;
-  height: 130rem;
+      180deg,
+      hsl(218, 81%, 82%) 0%,
+      rgb(243, 176, 176) 100%
+    );
+    position: absolute;
+    height: 142rem;
+  }
+  .logo {
+    width: 24rem;
   }
 }
+
+.subtitle {
+  display: inline-block;
+  align-self: center;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  border-radius: 25px;
+  margin: 7px;
+  padding: 15px 15px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  justify-content: space-evenly;
+  background-color: black;
+  color: white;
+}
+
 
 .video-settings {
   position: absolute;
@@ -202,4 +229,16 @@
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+@keyframes colorChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
