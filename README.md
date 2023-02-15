@@ -16,9 +16,9 @@
   </h2>
 
   <h3 align="center">
-    <a href="https://github.com/Apres-Ski/Apres_Ski_FE/issues">Report Bug</a>
+    <a href="https://github.com/Apres-Ski/Apres-Ski-FE/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Apres-Ski/Apres_Ski_FE/issues">Request Feature</a>
+    <a href="https://github.com/Apres-Ski/Apres-Ski-FE/issues">Request Feature</a>
   </h3>
 </div>
 <br>
