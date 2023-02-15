@@ -189,7 +189,7 @@ Future features we wish to implement for our application:
 </tr>
 <tr>
 <td>
-  <img width="150px" style='border-radius: 6px 12px 18px 24px;' src="https://media.licdn.com/dms/image/D5635AQHwJzSWwut2vQ/profile-framedphoto-shrink_800_800/0/1673339431275?e=1677092400&v=beta&t=CpSFN55uglIWfoL5mEUYRr1OYEkb2DOLZT5hBFx-l-8">
+  <img width="150px" style='border-radius: 6px 12px 18px 24px;' src="https://media.licdn.com/dms/image/C4E03AQEOr4kuJZACXg/profile-displayphoto-shrink_200_200/0/1658863260778?e=1681948800&v=beta&t=4A0ua2RrNI_346nm6xRxbFd_0C05ybSmcScgjGTMDoE">
 
 [![GitHub: MattWalterTX][matt-github-follow-badge]][matt-GitHub] <br>
 [![LinkedIn: matt-walter-67b810246][linkedin-badge]][matt-LinkedIn]
@@ -197,7 +197,7 @@ Future features we wish to implement for our application:
 </td>
 <td>
 <p>
-REFLECTION GOES HERE
+This project was groundbreaking for me in many ways. We got to collaborate with a Back-End team for the first time and beagn to understand how important communication is for a cross stack team. We were able to hone our workflow processes from concept to deployment using tools we have learned to make the process as painless as possible. We explored new technologies on both sides that have yielded a product that meets our own plans and expectations. I personally had no prior experience with ***Redux***, ***Vite***, ***Bootstrap***, ***Mapbox*** or ***Vercel*** so there were numerous growing pains and hurdles for me to navigate during our two and half week timeline. But with the help, guidance and patience of my team I am now able to understand and use these skills that will seve me in valuable ways moving forward. 
 </p>
 </td>
 </tr>
