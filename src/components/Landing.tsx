@@ -19,7 +19,7 @@ export const Landing = () => {
           style={{ letterSpacing: '.1rem', fontSize: '1.4rem' }}
           className="mt-5"
         >
-          Après-Ski is an application geared towards snowsport entheusiests in
+          Après Ski is an application geared towards snowsport entheusiests in
           Breckenridge, Colorado looking for good vibes, food, and drinks to
           round out their day.
         </p>
