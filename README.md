@@ -79,7 +79,7 @@ This is a React web application designed for use with our backend team's Django 
 
 ### Local Installation
 
-This back-end application was made with the following:
+This Front-End application was made with the following:
 
 * Bootstrap 5.3.0
 * Cypress 12.5.1
