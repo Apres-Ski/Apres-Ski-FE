@@ -199,7 +199,7 @@ Future features we wish to implement for our application:
 </td>
 <td>
 <p>
-This project was groundbreaking for me in many ways. We got to collaborate with a Back-End team for the first time and beagn to understand how important communication is for a cross stack team. We were able to hone our workflow processes from concept to deployment using tools we have learned to make the process as painless as possible. We explored new technologies on both sides that have yielded a product that meets our own plans and expectations. I personally had no prior experience with Redux, Vite, Bootstrap, Mapbox or Vercel so there were numerous growing pains and hurdles for me to navigate during our two and half week timeline. But with the help, guidance and patience of my team I am now able to understand and use these skills that will seve me in valuable ways moving forward. 
+This project was groundbreaking for me in many ways. We got to collaborate with a Back-End team for the first time and beagn to understand how important communication is for a cross stack team. We were able to hone our workflow processes from concept to deployment using tools we have learned to make the process as painless as possible. We explored new technologies on both sides that have yielded a product that meets our own plans and expectations. I personally had no prior experience with Redux, Vite, Bootstrap, Mapbox or Vercel so there were numerous growing pains and hurdles for me to navigate during our two and half week timeline. But with the help, guidance and patience of my team I am now able to understand and use these skills that will serve me in valuable ways moving forward. 
 </p>
 </td>
 </tr>
