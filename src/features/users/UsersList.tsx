@@ -4,11 +4,13 @@ import { selectUser } from './usersSlice'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { resetFilters } from '../filters/filtersSlice'
+import { Card, Col, Figure, Row } from 'react-bootstrap'
 import user1 from '../../assets/user1.jpg'
 import user2 from '../../assets/user2.jpg'
 import user3 from '../../assets/user3.jpg'
 import lilyWhite from '../../assets/lily.jpg'
-import { Card, Col, Figure, Row } from 'react-bootstrap'
+import thomasPena from '../../assets/thomas.jpg'
+import jackHill from '../../assets/test.jpg'
 
 const colors = ['danger', 'green-accent', 'success']
 const usersList = [user1, user2, user3]
@@ -40,21 +42,21 @@ const UsersList = () => {
   return (
     <div className='d-flex m-4 align-items-center justify-content-center flex-wrap'>
     <Card style={{width: '24rem', margin: '2rem'}}>
-      <Card.Img variant="top" src={lilyWhite}/>
+      <Card.Img variant="top" src={thomasPena}/>
       <Card.Body>
-        <Card.Title>{users[0].name}</Card.Title>
+        <Card.Title className='label yellow'>{users[1].name}</Card.Title>
+      </Card.Body>
+    </Card>
+    <Card style={{width: '24rem', margin: '2rem'}}>
+      <Card.Img variant="top" src={jackHill}/>
+      <Card.Body>
+        <Card.Title className='label lightblue'>{users[2].name}</Card.Title>
       </Card.Body>
     </Card>
     <Card style={{width: '24rem', margin: '2rem'}}>
       <Card.Img variant="top" src={lilyWhite}/>
       <Card.Body>
-        <Card.Title>{users[0].name}</Card.Title>
-      </Card.Body>
-    </Card>
-    <Card style={{width: '24rem', margin: '2rem'}}>
-      <Card.Img variant="top" src={lilyWhite}/>
-      <Card.Body>
-        <Card.Title>{users[0].name}</Card.Title>
+        <Card.Title className='label green'>{users[0].name}</Card.Title>
       </Card.Body>
     </Card>
     {/* // <div>
