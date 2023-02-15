@@ -206,8 +206,12 @@
 }
 
 .video-settings {
-  position: absolute;
-  margin: 0;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
 
@@ -223,8 +227,33 @@
 }
 
 .landing-box {
-  /* background-color: rgba(255, 255, 255, 0.888); */
-  /* background: linear-gradient(to bottom right, #a9eefff0, #a9affff3); */
+  display: flex;
+  flex-direction: column;
+  justify-content: 'space-evenly';
+  align-items: 'center';
+  padding: 4rem 6rem;
+  border-radius: 25px;
+  margin-top: 8rem;
+  min-width: 12rem;
+  max-width: 46rem;
+  color: black;
+  background-color: white;
+}
+
+.welcome-logo {
+  width: 32rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 590px) {
+  .welcome-logo {
+    width: 22rem;
+  }
+
+  .landing-box {
+    padding: 1rem 6rem;
+    border-radius: 15px;
+  }
 }
 
 .dashboard-container {
