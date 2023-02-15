@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import landingVideo from '../assets/sking.mp4'
+import landingVideo from '../assets/skiing3.mp4'
 import welcome from '../assets/welcome4.png'
 import mapIcon from '../assets/area-map.gif'
 import { APP_ROUTES } from '../utilities/constants'
