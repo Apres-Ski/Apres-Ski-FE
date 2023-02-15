@@ -160,7 +160,20 @@
     rgb(184, 176, 243) 100%
   );
   position: absolute;
-  height: 145%;
+  height: 100vh;
+  width: 100vw;;
+}
+
+@media screen and (max-width: 900px) {
+  .background-color {
+    background: linear-gradient(
+    180deg,
+    hsl(218, 81%, 82%) 0%,
+    rgb(243, 176, 176) 100%
+  );
+  position: absolute;
+  height: 130rem;
+  }
 }
 
 .video-settings {
