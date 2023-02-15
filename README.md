@@ -16,9 +16,9 @@
   </h2>
 
   <h3 align="center">
-    <a href="https://github.com/Apres-Ski/Apres_Ski_BE/issues">Report Bug</a>
+    <a href="https://github.com/Apres-Ski/Apres_Ski_FE/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Apres-Ski/Apres_Ski_BE/issues">Request Feature</a>
+    <a href="https://github.com/Apres-Ski/Apres_Ski_FE/issues">Request Feature</a>
   </h3>
 </div>
 <br>
@@ -220,7 +220,7 @@ REFLECTION GOES HERE
 </td>
 <td>
 <p>
-REFLECTION GOES HERE
+This project was a great opportunity that not only introduced me new technologies, but also allowed me to gain the experience of working and communicating with a Back-End team in an Agile environment. I had been very interested in using Redux in a project and this gave me the opportunity to gain experience with Redux and better understand the challenges and benefits. It's been a valuable experience and I really look forward to using Redux in the future to manage global state.
 </p>
 </td>
 </tr>
@@ -272,10 +272,7 @@ Thanks again!
 
 Special *thank you!*, for your insight and help, as we designed and built an API in a totally new language and framework:
 
-* [Mike Hernandez](https://github.com/mikez321)
-* [Jake Cohen]()
-
-Thank you [Tricia Holmes](https://github.com/tricia-holmes) on our Front-End Team for your PR setting up CORS!
+ADD ACKNOWLEDGEMENTS HERE
 
 This project was the capstone for our team at:
 * [Turing School of Software Design](https://turing.edu/)
@@ -286,18 +283,18 @@ This project was the capstone for our team at:
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- Contributors Shield -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Apres-Ski/Apres_Ski_BE.svg?style=for-the-badge
-[contributors-url]: https://github.com/Apres-Ski/Apres_Ski_BE/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/Apres-Ski/Apres_Ski_FE.svg?style=for-the-badge
+[contributors-url]: https://github.com/Apres-Ski/Apres_Ski_FE/graphs/contributors
 
 <!-- Forks Shield -->
 
-[forks-shield]: https://img.shields.io/github/forks/Apres-Ski/Apres_Ski_BE.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Apres-Ski/Apres_Ski_BE/network/members
+[forks-shield]: https://img.shields.io/github/forks/Apres-Ski/Apres_Ski_FE.svg?style=for-the-badge
+[forks-url]: https://github.com/othneildrew/Apres-Ski/Apres_Ski_FE/network/members
 
 <!-- Issues Shield -->
 
-[issues-shield]: https://img.shields.io/github/issues/Apres-Ski/Apres_Ski_BE.svg?style=for-the-badge
-[issues-url]: https://github.com/Apres-Ski/Apres_Ski_BE/issues
+[issues-shield]: https://img.shields.io/github/issues/Apres-Ski/Apres_Ski_FE.svg?style=for-the-badge
+[issues-url]: https://github.com/Apres-Ski/Apres_Ski_FE/issues
 
 <!-- LinkedIn Badges -->
 
