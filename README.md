@@ -5,6 +5,7 @@
   [![Contributors][contributors-shield]][contributors-url]
   [![Forks][forks-shield]][forks-url]
   [![Issues][issues-shield]][issues-url]
+  [![Cypress Tests][test-shield]][test-url]
 
   <a href="https://github.com/Apres-Ski">
     <img src="https://media.giphy.com/media/xEBZR96wLedVHzOeqw/giphy.gif">
@@ -282,19 +283,25 @@ This project was the capstone for our team at:
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
+
+<!-- Test Shield -->
+
+[test-shield]: https://github.com/Apres-Ski/Apres-Ski-FE/actions/workflows/main.yml/badge.svg
+[test-url]: https://github.com/Apres-Ski/Apres-Ski-FE/actions/workflows/main.yml
+
 <!-- Contributors Shield -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Apres-Ski/Apres-Ski-FE.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/Apres-Ski/Apres-Ski-FE.svg
 [contributors-url]: https://github.com/Apres-Ski/Apres-Ski-FE/graphs/contributors
 
 <!-- Forks Shield -->
 
-[forks-shield]: https://img.shields.io/github/forks/Apres-Ski/Apres-Ski-FE.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/Apres-Ski/Apres-Ski-FE.svg
 [forks-url]: https://github.com/othneildrew/Apres-Ski/Apres-Ski-FE/network/members
 
 <!-- Issues Shield -->
 
-[issues-shield]: https://img.shields.io/github/issues/Apres-Ski/Apres-Ski-FE.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/Apres-Ski/Apres-Ski-FE.svg
 [issues-url]: https://github.com/Apres-Ski/Apres-Ski-FE/issues
 
 <!-- LinkedIn Badges -->
