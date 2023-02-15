@@ -64,7 +64,7 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
                 width: '12rem',
                 textAlign: 'center',
               }}
-              className="label pink px-4 mb-4"
+              className="label purple px-4 mb-4"
             >
               Vibes{' '}
               <span style={{ letterSpacing: '.5rem' }} className="card-text">

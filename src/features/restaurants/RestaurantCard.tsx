@@ -16,7 +16,6 @@ export const RestaurantCard = ({
 }) => {
   const dispatch = useDispatch<AppDispatch>()
   const [show, setShow] = useState(false)
-  const formattedVibes = restaurant.vibes.join(', ')
 
   const handleClose = () => setShow(false)
 
@@ -74,7 +73,7 @@ export const RestaurantCard = ({
         </div>
       </div>
 
-      <Modal show={show} onHide={handleClose} backdrop="static">
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header className="d-flex justify-content-center"></Modal.Header>
         <Modal.Body className="d-flex justify-content-center">
           {<DetailModal />}
