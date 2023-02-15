@@ -13,15 +13,12 @@ describe('Users Test', () => {
   })
 
   it('should find the canned users', () => {
-    cy.get(':nth-child(1) > .card')
-      .should('exist')
-    cy.get(':nth-child(2) > .card')
-      .should('exist')
+    cy.get(':nth-child(1) > .card').should('exist')
+    cy.get(':nth-child(2) > .card').should('exist')
   })
 
   it('should be able to select a user to load the dashboard', () => {
     cy.get(':nth-child(1) > .card')
-
       .click({ force: true })
       .url()
       .should('eq', 'https://apres-ski-fe.vercel.app/dashboard')
