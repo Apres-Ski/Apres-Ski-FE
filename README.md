@@ -147,7 +147,7 @@ The first four days of our project was dedicated to planning. In this time our F
 
 ### Tech Stack
 
-Après-Ski's Front-End is a web application, built with ***React*** & ***Redux-toolkit***, and hosted on***Vercel***.
+Après-Ski's Front-End is a web application, built with ***React*** & ***Redux-toolkit***, and hosted on ***Vercel***.
 
 <br>
 <div align='center'>
