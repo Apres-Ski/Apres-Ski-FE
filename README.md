@@ -51,7 +51,7 @@ The web application geared towards snowsport entheusiests looking to find their 
 
 ### Web Usage
 
-This is a React web application designed for use with our backend team's Django REST API. To get started in the application, follow [this link](https://apres-ski-fe.vercel.app/) and select one of our test-users. Once you selected a user you will be able to:
+This is a React web application designed for use with our [backend](https://github.com/Apres-Ski/Apres_Ski_BE) team's Django REST API. To get started in the application, follow [this link](https://apres-ski-fe.vercel.app/) and select one of our test-users. Once you selected a user you will be able to:
 
 * Browse a list of restaurants near you based on:
   * Vibe
