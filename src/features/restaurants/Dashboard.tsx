@@ -83,7 +83,7 @@ export const Dashboard = () => {
   }
 
   return (
-    <div className="fade-in w-100 d-flex flex-column align-items-center">
+    <div className="w-100 d-flex flex-column align-items-center">
       {content}
     </div>
   )
