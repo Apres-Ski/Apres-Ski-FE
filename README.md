@@ -128,7 +128,7 @@ The Front-End Team's learning goals were:
 - Gain exposure and experience to ***Redux***, ***Mapbox-gl***, and ***Bootstrap***.
 - Implement Agile work process throughout development.
 - Leverage ***Redux*** for global state management and use ***Redux-toolkit*** to apply best practices.
-- Use ***Bootstrap*** to design a mobile-first application.
+- Use ***Bootstrap*** to design a mobile-first & responsive application.
 - Practice professional git workflow and pull request reviews.
 - Implement continuous integrations.
 - Further hone communicational skills with a Back-End Team by doing daily stand-ups and slack networking.
@@ -283,18 +283,18 @@ This project was the capstone for our team at:
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- Contributors Shield -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Apres-Ski/Apres_Ski_FE.svg?style=for-the-badge
-[contributors-url]: https://github.com/Apres-Ski/Apres_Ski_FE/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/Apres-Ski/Apres-Ski-FE.svg?style=for-the-badge
+[contributors-url]: https://github.com/Apres-Ski/Apres-Ski-FE/graphs/contributors
 
 <!-- Forks Shield -->
 
-[forks-shield]: https://img.shields.io/github/forks/Apres-Ski/Apres_Ski_FE.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Apres-Ski/Apres_Ski_FE/network/members
+[forks-shield]: https://img.shields.io/github/forks/Apres-Ski/Apres-Ski-FE.svg?style=for-the-badge
+[forks-url]: https://github.com/othneildrew/Apres-Ski/Apres-Ski-FE/network/members
 
 <!-- Issues Shield -->
 
-[issues-shield]: https://img.shields.io/github/issues/Apres-Ski/Apres_Ski_FE.svg?style=for-the-badge
-[issues-url]: https://github.com/Apres-Ski/Apres_Ski_FE/issues
+[issues-shield]: https://img.shields.io/github/issues/Apres-Ski/Apres-Ski-FE.svg?style=for-the-badge
+[issues-url]: https://github.com/Apres-Ski/Apres-Ski-FE/issues
 
 <!-- LinkedIn Badges -->
 
