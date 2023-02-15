@@ -6,7 +6,7 @@ import { APP_ROUTES } from '../utilities/constants'
 
 export const Landing = () => {
   return (
-    <div className="landing-container">
+    <div className="landing-container fade-in">
       <div className="landing-box">
         <span>
           <img className="welcome-logo" src={welcome} />
