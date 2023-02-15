@@ -4,13 +4,11 @@ describe('Landing Test', () => {
   })
 
   it('should find the landing content', () => {
-    cy.get('p')
-      .should('exist')
+    cy.get('p').should('exist')
   })
 
   it('should find the landing content', () => {
-    cy.get('.btn')
-      .should('exist')
+    cy.get('.btn').should('exist')
   })
 
   it('should be able to click through to the users page', () => {
