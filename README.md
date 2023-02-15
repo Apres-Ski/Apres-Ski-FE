@@ -220,7 +220,7 @@ REFLECTION GOES HERE
 </td>
 <td>
 <p>
-This project was a great opportunity that not only introduced me new technologies, but also allowed me to gain the experience of working and communicating with a Back-End team in an Agile environment. I had been very interested in using Redux in a project and this gave me the opportunity to gain experience with Redux and better understand the challenges and benefits. It's been a valuable experience and I really look forward to using Redux in the future to manage global state.
+This project was a great opportunity that not only introduced me new technologies, but also allowed me to gain the experience of working and communicating with a Back-End team in an Agile environment. I had been very interested in using Redux in a project and this gave me the opportunity to gain experience with Redux and better understand the challenges and benefits. It's been a valuable experience and I really look forward to using Redux in the future to manage global state. Overall, it was a really positive group experience and we benefited from the amount of collaboration and planning we did up front.
 </p>
 </td>
 </tr>
