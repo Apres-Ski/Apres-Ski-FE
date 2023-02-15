@@ -7,6 +7,7 @@ import { Error } from '../../components/Error'
 import logo from '../../assets/apres-logo.svg'
 import { APP_ROUTES } from '../../utilities/constants'
 import { Link } from 'react-router-dom'
+import { Loader } from '../../components/Loader'
 
 export const DemoUsers = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -21,7 +22,7 @@ export const DemoUsers = () => {
   let content
 
   if (status === 'loading') {
-    content = <p>Loading...</p>
+    content = <Loader />
   } else if (status === 'succeeded') {
     content = (
       <div className="background-color">

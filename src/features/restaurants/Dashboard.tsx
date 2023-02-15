@@ -13,6 +13,7 @@ import { APP_ROUTES } from '../../utilities/constants'
 import { Button } from 'react-bootstrap'
 import { getLifts } from '../lifts/liftsSlice'
 import { getUserDistance } from '../../utilities/utilities'
+import { Loader } from '../../components/Loader'
 
 export const Dashboard = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -62,15 +63,7 @@ export const Dashboard = () => {
   let content
 
   if (status === 'loading') {
-    content = (
-      <div className="d-flex justify-content-center center">
-        <div
-          className="spinner-border text-secondary"
-          style={{ width: '3rem', height: '3rem' }}
-          role="status"
-        ></div>
-      </div>
-    )
+    content = <Loader />
   } else if (status === 'succeeded') {
     content = (
       <div
