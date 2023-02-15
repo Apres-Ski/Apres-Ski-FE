@@ -7,10 +7,7 @@
   [![Issues][issues-shield]][issues-url]
   [![Cypress Tests][test-shield]][test-url]
 
-  <a href="https://github.com/Apres-Ski">
-    <img src="https://media.giphy.com/media/xEBZR96wLedVHzOeqw/giphy.gif">
-  </a>
-  <h2 align="center">
+![Searching (1)](src/assets/app-gif.gif)
 
 [Après-Ski App](https://apres-ski-fe.vercel.app/)
 
