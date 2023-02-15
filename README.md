@@ -147,11 +147,11 @@ The first four days of our project was dedicated to planning. In this time our F
 
 ### Tech Stack
 
-Après-Ski's Back-end is a ***Django REST Framework*** API, built with ***Python*** & ***PostgreSQL***, and hosted on***Heroku***.
+Après-Ski's Front-End is a web application, built with ***React*** & ***Redux-toolkit***, and hosted on***Vercel***.
 
 <br>
 <div align='center'>
-  <img src="assets/FE-tech-stack.png" alt="tech_stack" width="50%">
+  <img src="src/assets/FE-tech-stack.png" alt="tech_stack" width="50%">
 </div>
 
 <br>
