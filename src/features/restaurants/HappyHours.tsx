@@ -14,9 +14,9 @@ export const HappyHours = () => {
     })!
   }
 
-    const showHappyHours = Object.entries(activeRestaurant.hours).map((day) => {
+    const showHappyHours = Object.entries(activeRestaurant.hours).map((day, index) => {
       return (
-        <ListGroup.Item>
+        <ListGroup.Item key={`hh ${index}`}>
           {day[0][0].toUpperCase()}: {day[1]}
         </ListGroup.Item>
       )
@@ -42,7 +42,7 @@ export const HappyHours = () => {
               />
             </span>
           </span>
-         Happy Hours:  <span>{showSpecial()[1]}</span>
+         Happy Hours:  <span style={{fontFamily: 'LEMONMILK'}}>{showSpecial()[1]}</span>
         </p>
       </ListGroup.Item>
       {showHappyHours}

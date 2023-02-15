@@ -4,6 +4,10 @@ import { AppDispatch, RootState } from '../../app/store'
 import UsersList from './UsersList'
 import { getUsers } from './usersSlice'
 import { Error } from '../../components/Error'
+import logo from '../../assets/apres-logo.svg'
+import { APP_ROUTES } from '../../utilities/constants'
+import { Link } from 'react-router-dom'
+import { Loader } from '../../components/Loader'
 
 export const DemoUsers = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -18,11 +22,15 @@ export const DemoUsers = () => {
   let content
 
   if (status === 'loading') {
-    content = <p>Loading...</p>
+    content = <Loader />
   } else if (status === 'succeeded') {
     content = (
       <div className="background-color">
-        <h2 className="m-5 nav-title">Please Select a User</h2>
+        <Link to={APP_ROUTES.LANDING}>
+          {' '}
+          <img className="m-4 logo" src={logo} />
+        </Link>
+        <h2 className="m-4 subtitle">Please Select a User</h2>
         <UsersList />
       </div>
     )
@@ -32,5 +40,5 @@ export const DemoUsers = () => {
     )
   }
 
-  return <section className='fade-in'>{content}</section>
+  return <section className="fade-in">{content}</section>
 }

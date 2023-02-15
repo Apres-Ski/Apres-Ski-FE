@@ -15,10 +15,10 @@ export const NavMenu = () => {
     <Navbar bg="custom-color" variant="dark" expand="lg" fixed="top">
       <Container>
         <LinkContainer to={APP_ROUTES.LANDING}>
-          <Navbar.Brand href="#home" className='nav-title'>
+          <Navbar.Brand href="#home" className="nav-title">
             Après Ski{' '}
             <span>
-              <img style={{width: '3rem'}} src={skis} />
+              <img style={{ width: '3rem' }} src={skis} />
             </span>
           </Navbar.Brand>
         </LinkContainer>

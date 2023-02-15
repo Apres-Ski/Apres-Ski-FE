@@ -11,9 +11,9 @@ import { Error } from '../../components/Error'
 import { useNavigate } from 'react-router-dom'
 import { APP_ROUTES } from '../../utilities/constants'
 import { Button } from 'react-bootstrap'
-import { getLifts } from '../lifts/liftsSlice' 
+import { getLifts } from '../lifts/liftsSlice'
 import { getUserDistance } from '../../utilities/utilities'
-
+import { Loader } from '../../components/Loader'
 
 export const Dashboard = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -45,13 +45,25 @@ export const Dashboard = () => {
   }, [liftsStatus, dispatch])
 
   useEffect(() => {
-    restaurants.forEach(restaurant => dispatch(setDistance({id: restaurant.id, distance: getUserDistance(Number(activeUser.location.lat), Number(activeUser.location.long), Number(restaurant.location.lat), Number(restaurant.location.long))})))
+    restaurants.forEach((restaurant) =>
+      dispatch(
+        setDistance({
+          id: restaurant.id,
+          distance: getUserDistance(
+            Number(activeUser.location.lat),
+            Number(activeUser.location.long),
+            Number(restaurant.location.lat),
+            Number(restaurant.location.long)
+          ),
+        })
+      )
+    )
   }, [restaurants])
 
   let content
 
   if (status === 'loading') {
-    content = <p>Loading...</p>
+    content = <Loader />
   } else if (status === 'succeeded') {
     content = (
       <div
@@ -61,15 +73,17 @@ export const Dashboard = () => {
           paddingTop: '4rem',
         }}
       >
+        <NavMenu />
+        <div className="me-2 m-4"></div>
+        <Map />
         <Button
           variant="green-accent"
           onClick={handleShow}
-          className="me-2 m-4"
+          className="me-2 m-4 small-text"
+          style={{ width: '22rem', fontFamily: 'LEMONMILK' }}
         >
           Filter
         </Button>
-        <NavMenu />
-        <Map />
         <RestaurantList />
         <Filter show={show} handleClose={handleClose} />
       </div>
@@ -81,8 +95,6 @@ export const Dashboard = () => {
   }
 
   return (
-    <div className="fade-in w-100 d-flex flex-column align-items-center">
-      {content}
-    </div>
+    <div className="w-100 d-flex flex-column align-items-center">{content}</div>
   )
 }
