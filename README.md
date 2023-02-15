@@ -5,6 +5,7 @@
   [![Contributors][contributors-shield]][contributors-url]
   [![Forks][forks-shield]][forks-url]
   [![Issues][issues-shield]][issues-url]
+  [![Cypress Tests][test-shield]][test-url]
 
   <a href="https://github.com/Apres-Ski">
     <img src="https://media.giphy.com/media/xEBZR96wLedVHzOeqw/giphy.gif">
@@ -113,7 +114,8 @@ To install and run on your personal computer you will need to do the following:
 
 [Notion Wireframe](https://triciaholmes.notion.site/Apr-s-Ski-Design-Wiki-5b7323435534441a9b2610182191dc28)
 
-![Wireframe (1)](https://triciaholmes.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F244c3760-874e-48eb-b32d-9d70037f96d1%2FApres_Ski_-_Wireframe.png?id=96985bd4-e832-41f8-a6e0-a02c449c17ec&table=block&spaceId=caa1b8cb-26d9-43a1-8671-ef7fa062e392&width=2000&userId=&cache=v2)
+<p align="center">
+<img src="https://triciaholmes.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F244c3760-874e-48eb-b32d-9d70037f96d1%2FApres_Ski_-_Wireframe.png?id=96985bd4-e832-41f8-a6e0-a02c449c17ec&table=block&spaceId=caa1b8cb-26d9-43a1-8671-ef7fa062e392&width=2000&userId=&cache=v2" height="1000"/> </p>
 
 
 <br>
@@ -147,11 +149,11 @@ The first four days of our project was dedicated to planning. In this time our F
 
 ### Tech Stack
 
-Après-Ski's Back-end is a ***Django REST Framework*** API, built with ***Python*** & ***PostgreSQL***, and hosted on***Heroku***.
+Après-Ski's Front-End is a web application, built with ***React*** & ***Redux-toolkit***, and hosted on ***Vercel***.
 
 <br>
 <div align='center'>
-  <img src="assets/apres_ski_tech_stack.png" alt="tech_stack" width="50%">
+  <img src="src/assets/FE-tech-stack.png" alt="tech_stack" width="50%">
 </div>
 
 <br>
@@ -281,19 +283,25 @@ This project was the capstone for our team at:
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
+
+<!-- Test Shield -->
+
+[test-shield]: https://github.com/Apres-Ski/Apres-Ski-FE/actions/workflows/main.yml/badge.svg
+[test-url]: https://github.com/Apres-Ski/Apres-Ski-FE/actions/workflows/main.yml
+
 <!-- Contributors Shield -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Apres-Ski/Apres-Ski-FE.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/Apres-Ski/Apres-Ski-FE.svg
 [contributors-url]: https://github.com/Apres-Ski/Apres-Ski-FE/graphs/contributors
 
 <!-- Forks Shield -->
 
-[forks-shield]: https://img.shields.io/github/forks/Apres-Ski/Apres-Ski-FE.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/Apres-Ski/Apres-Ski-FE.svg
 [forks-url]: https://github.com/othneildrew/Apres-Ski/Apres-Ski-FE/network/members
 
 <!-- Issues Shield -->
 
-[issues-shield]: https://img.shields.io/github/issues/Apres-Ski/Apres-Ski-FE.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/Apres-Ski/Apres-Ski-FE.svg
 [issues-url]: https://github.com/Apres-Ski/Apres-Ski-FE/issues
 
 <!-- LinkedIn Badges -->

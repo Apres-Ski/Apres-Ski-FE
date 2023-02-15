@@ -213,6 +213,7 @@
   top: 0;
   left: 0;
   z-index: -1;
+  pointer-events: none;
 }
 
 .landing-container {
@@ -248,7 +249,7 @@
 
 @media screen and (max-width: 590px) {
   .welcome-logo {
-    width: 22rem;
+    width: 18rem;
   }
 
   .landing-box {

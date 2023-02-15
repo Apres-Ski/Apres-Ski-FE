@@ -26,10 +26,7 @@ export const DemoUsers = () => {
   } else if (status === 'succeeded') {
     content = (
       <div className="background-color">
-        <Link to={APP_ROUTES.LANDING}>
-          {' '}
-          <img className="m-4 logo" src={logo} />
-        </Link>
+        <img className="m-4 logo" src={logo} />
         <h2 className="m-4 subtitle">Please Select a User</h2>
         <UsersList />
       </div>
