@@ -28,8 +28,8 @@ describe('Dashboard Test', () => {
       }
     )
     cy.visit('https://apres-ski-fe.vercel.app/demo')
-    cy.get(':nth-child(1) > a > .img-fluid')
-      .click()
+    cy.get(':nth-child(1) > .card > .card-img-top')
+      .click({ force: true })
       .url()
       .should('eq', 'https://apres-ski-fe.vercel.app/dashboard')
   })
