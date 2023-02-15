@@ -11,9 +11,8 @@ import { Error } from '../../components/Error'
 import { useNavigate } from 'react-router-dom'
 import { APP_ROUTES } from '../../utilities/constants'
 import { Button } from 'react-bootstrap'
-import { getLifts } from '../lifts/liftsSlice' 
+import { getLifts } from '../lifts/liftsSlice'
 import { getUserDistance } from '../../utilities/utilities'
-
 
 export const Dashboard = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -45,13 +44,33 @@ export const Dashboard = () => {
   }, [liftsStatus, dispatch])
 
   useEffect(() => {
-    restaurants.forEach(restaurant => dispatch(setDistance({id: restaurant.id, distance: getUserDistance(Number(activeUser.location.lat), Number(activeUser.location.long), Number(restaurant.location.lat), Number(restaurant.location.long))})))
+    restaurants.forEach((restaurant) =>
+      dispatch(
+        setDistance({
+          id: restaurant.id,
+          distance: getUserDistance(
+            Number(activeUser.location.lat),
+            Number(activeUser.location.long),
+            Number(restaurant.location.lat),
+            Number(restaurant.location.long)
+          ),
+        })
+      )
+    )
   }, [restaurants])
 
   let content
 
   if (status === 'loading') {
-    content = <p>Loading...</p>
+    content = (
+      <div className="d-flex justify-content-center center">
+        <div
+          className="spinner-border text-secondary"
+          style={{ width: '3rem', height: '3rem' }}
+          role="status"
+        ></div>
+      </div>
+    )
   } else if (status === 'succeeded') {
     content = (
       <div
@@ -68,7 +87,7 @@ export const Dashboard = () => {
           variant="green-accent"
           onClick={handleShow}
           className="me-2 m-4 small-text"
-          style={{width: '22rem', fontFamily: 'LEMONMILK'}}
+          style={{ width: '22rem', fontFamily: 'LEMONMILK' }}
         >
           Filter
         </Button>
@@ -83,8 +102,6 @@ export const Dashboard = () => {
   }
 
   return (
-    <div className="w-100 d-flex flex-column align-items-center">
-      {content}
-    </div>
+    <div className="w-100 d-flex flex-column align-items-center">{content}</div>
   )
 }
