@@ -15,6 +15,7 @@ export const Cost = ({ cost }: CostProps) => {
               marginRight: '.5rem',
             }}
             src={dollarBill}
+            alt="dollar bill"
           />
         </span>
       )
@@ -27,6 +28,7 @@ export const Cost = ({ cost }: CostProps) => {
               marginRight: '.5rem',
             }}
             src={dollarBill}
+            alt="dollar bill"
           />
           <img
             style={{
@@ -46,6 +48,7 @@ export const Cost = ({ cost }: CostProps) => {
               marginRight: '.5rem',
             }}
             src={dollarBill}
+            alt="dollar bill"
           />
           <img
             style={{
@@ -53,6 +56,7 @@ export const Cost = ({ cost }: CostProps) => {
               marginRight: '.5rem',
             }}
             src={dollarBill}
+            alt="dollar bill"
           />
           <img
             style={{
@@ -60,6 +64,7 @@ export const Cost = ({ cost }: CostProps) => {
               marginRight: '.5rem',
             }}
             src={dollarBill}
+            alt="dollar bill"
           />
         </span>
       )
