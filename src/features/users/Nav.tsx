@@ -18,7 +18,7 @@ export const NavMenu = () => {
           <Navbar.Brand className="nav-title">
             Après Ski{' '}
             <span>
-              <img style={{ width: '3rem' }} src={skis} />
+              <img style={{ width: '3rem' }} src={skis} alt="skis"/>
             </span>
           </Navbar.Brand>
         </LinkContainer>
