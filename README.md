@@ -7,7 +7,7 @@
   [![Issues][issues-shield]][issues-url]
   [![Cypress Tests][test-shield]][test-url]
 
-![Searching (1)](src/assets/app-gif.gif)
+<img src="src/assets/app-gif.gif" height="425" />
 
 [Après-Ski App](https://apres-ski-fe.vercel.app/)
 
