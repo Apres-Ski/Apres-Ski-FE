@@ -172,6 +172,7 @@ All MVP goals were met.
 Future features we wish to implement for our application:
 
 * Rate and review restaurants
+* Photo galleries for restaurants
 * View route to restaurant on map
 
 <br>
@@ -264,14 +265,6 @@ Please fork the repo, create your branch, and create a pull request. You can als
 5. Open a Pull Request
 
 Thanks again!
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-Special *thank you!*, for your insight and help, as we designed and built an API in a totally new language and framework:
-
-ADD ACKNOWLEDGEMENTS HERE
 
 This project was the capstone for our team at:
 * [Turing School of Software Design](https://turing.edu/)
