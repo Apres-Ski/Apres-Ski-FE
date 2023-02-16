@@ -73,6 +73,7 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
                     width: '2rem',
                   }}
                   src={'../src/assets/rainbow_sparkles.gif'}
+                  alt="rainbow sparkles"
                 />
               </span>
             </h3>
@@ -190,6 +191,7 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
                     marginBottom: '.4rem',
                   }}
                   src={'../src/assets/cheers.gif'}
+                  alt="beers icon"
                 />
               </span>
             </h3>
@@ -216,6 +218,7 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
                     marginBottom: '.4rem',
                   }}
                   src={'../src/assets/alarm_clock.gif'}
+                  alt="clock icon"
                 />
               </span>
             </h4>
