@@ -39,6 +39,7 @@ export const HappyHours = () => {
                   marginRight: '.5rem',
                 }}
                 src={smile}
+                alt="smiley face"
               />
             </span>
           </span>
