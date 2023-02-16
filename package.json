@@ -7,7 +7,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "start": "vite",
+    "cy:open-e2e": "cypress open --e2e --browser chrome",
+    "cy:open-unit": "cypress open --component --browser chrome",
+    "cy:run-e2e": "cypress run --e2e",
+    "cy:run-unit": "cypress run --component",
+    "cy:e2e": "start-server-and-test start http-get://localhost:3000 cy:open-e2e"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
@@ -27,6 +33,8 @@
     "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.10.0",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@types/cypress": "^1.1.3",
     "@types/jest": "^29.4.0",
     "@types/mapbox-gl": "^2.7.10",
@@ -35,10 +43,13 @@
     "@types/react-dom": "^18.0.10",
     "@types/react-router-bootstrap": "^0.24.5",
     "@vitejs/plugin-react": "^3.1.0",
+    "babel-plugin-istanbul": "^6.1.1",
     "cypress": "^12.5.1",
     "prettier": "2.8.3",
     "sass": "^1.58.1",
+    "start-server-and-test": "^1.15.4",
     "typescript": "^4.9.5",
-    "vite": "^4.1.0"
+    "vite": "^4.1.0",
+    "vite-plugin-istanbul": "^4.0.0"
   }
 }
