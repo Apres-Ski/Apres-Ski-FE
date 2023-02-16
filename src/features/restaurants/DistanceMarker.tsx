@@ -27,6 +27,7 @@ export const DistanceMarkers = ({ userDistance }: DistanceProps) => {
           marginRight: '.5rem',
         }}
         src={getIcon(userDistance)}
+        alt="distance marker"
       />
       Distance:{' '}
       <span style={{ letterSpacing: '.3rem' }}>{userDistance} miles</span>
