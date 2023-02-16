@@ -242,7 +242,7 @@ This project was a great opportunity that not only introduced me new technologie
 </td>
 <td>
 <p>
-REFLECTION GOES HERE
+This project was great affirmation for me with the previous experience I have. I have built several full stack projects before this, but I had never had the opportunity to work collaboratively on project with a FE and BE team. I thought it was a great experience to get to develop a full stack app with a team. I felt I gained a lot of insight on the planning process for the BE. I also am happy to have Redux has a stretch tech for the FE. I had previously briefly used Redux, but now have a much better understanding now having used it for this project. I thought my team was great with communicating and getting things over the line. I felt this app was a great experience both with the tech we used and collaboring both FE and BE.
 </p>
 </td>
 </tr>
