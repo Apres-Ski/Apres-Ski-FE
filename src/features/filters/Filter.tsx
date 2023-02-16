@@ -11,6 +11,7 @@ import ToggleButton from 'react-bootstrap/ToggleButton'
 import { Button, Offcanvas } from 'react-bootstrap'
 import cheers from '../../assets/cheers.gif'
 import alarmClock from '../../assets/alarm_clock.gif'
+import rainbowSprinkles from '../../assets/rainbow_sparkles.gif'
 
 interface FilterMenu {
   show: boolean
@@ -74,7 +75,7 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
                   style={{
                     width: '2rem',
                   }}
-                  src={'../src/assets/rainbow_sparkles.gif'}
+                  src={rainbowSprinkles}
                   alt="rainbow sparkles"
                 />
               </span>
