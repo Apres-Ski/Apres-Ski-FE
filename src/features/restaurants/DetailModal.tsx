@@ -35,6 +35,7 @@ export const DetailModal = () => {
             marginRight: '.5rem',
           }}
           src={mapGif}
+          alt="map icon"
         />
         <span style={{ letterSpacing: '.3rem' }}>
           {activeRestaurant.address}
@@ -66,6 +67,7 @@ export const DetailModal = () => {
                   marginRight: '.5rem',
                 }}
                 src={menu}
+                alt="menu icon"
               />
             </span>
             Food Type: {activeRestaurant.foodType}
