@@ -9,6 +9,8 @@ import {
 } from './filtersSlice'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import { Button, Offcanvas } from 'react-bootstrap'
+import cheers from '../../assets/cheers.gif'
+import alarmClock from '../../assets/alarm_clock.gif'
 
 interface FilterMenu {
   show: boolean
@@ -190,7 +192,7 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
                     width: '2rem',
                     marginBottom: '.4rem',
                   }}
-                  src={'../src/assets/cheers.gif'}
+                  src={cheers}
                   alt="beers icon"
                 />
               </span>
@@ -217,7 +219,7 @@ export const Filter = ({ show, handleClose }: FilterMenu) => {
                     width: '1.4rem',
                     marginBottom: '.4rem',
                   }}
-                  src={'../src/assets/alarm_clock.gif'}
+                  src={alarmClock}
                   alt="clock icon"
                 />
               </span>
