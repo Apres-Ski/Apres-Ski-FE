@@ -19,6 +19,7 @@ export const Alcohol = ({alcohol}: AlcoholProps) => {
               marginRight: '.5rem',
             }}
             src={alcoholImg}
+            alt="alcohol icon"
           />
         </span>
         Alcohol: {alcohol}

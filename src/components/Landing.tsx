@@ -9,9 +9,9 @@ export const Landing = () => {
     <div className="landing-container fade-in">
       <div className="landing-box">
         <span>
-          <img className="welcome-logo" src={welcome} />
+          <img className="welcome-logo" src={welcome} alt="welcome logo"/>
           <div>
-            <img style={{ width: '10rem' }} src={mapIcon} />
+            <img style={{ width: '10rem' }} src={mapIcon} alt="map icon"/>
           </div>
         </span>
 

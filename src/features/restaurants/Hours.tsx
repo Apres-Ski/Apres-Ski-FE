@@ -31,9 +31,10 @@ export const Hours = ({ restaurant }: HoursProps) => {
                   marginRight: '.5rem',
                 }}
                 src={open}
+                alt="open sign"
               />
             </span>
-          HOURS
+            HOURS
           </span>
         </p>
       </ListGroup.Item>

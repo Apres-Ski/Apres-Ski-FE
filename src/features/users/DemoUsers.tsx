@@ -26,7 +26,7 @@ export const DemoUsers = () => {
   } else if (status === 'succeeded') {
     content = (
       <div className="background-color">
-        <img className="m-4 logo" src={logo} />
+        <img className="m-4 logo" src={logo} alt="logo"/>
         <h2 className="m-4 subtitle">Please Select a User</h2>
         <UsersList />
       </div>

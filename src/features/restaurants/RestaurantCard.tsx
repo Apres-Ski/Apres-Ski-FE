@@ -32,7 +32,7 @@ export const RestaurantCard = ({
     >
       <div className="row g-0">
         <div className="col-md-4">
-          <img src={restaurant.coverImg} className="card-img" alt="..." />
+          <img src={restaurant.coverImg} className="card-img" alt={restaurant.name} />
         </div>
         <div className="col-md-8">
           <div className="card-body card-container">
