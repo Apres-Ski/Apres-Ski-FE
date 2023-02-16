@@ -23,7 +23,7 @@ const UsersList = () => {
 
   const renderedUsers = users.map((user, index) => {
     return (
-      <Link style={{color: 'black'}} to={APP_ROUTES.DASH} key={user.id}>
+      <Link style={{ color: 'black' }} to={APP_ROUTES.DASH} key={user.id}>
         <Card
           style={{
             width: '24rem',
@@ -32,7 +32,11 @@ const UsersList = () => {
           }}
           onClick={() => dispatch(selectUser(user))}
         >
-          <Card.Img variant="top" src={usersList[index]} />
+          <Card.Img
+            variant="top"
+            src={usersList[index]}
+            alt={users[index].name}
+          />
           <Card.Body>
             <Card.Title className={`label ${colors[index]}`}>
               {users[index].name}
