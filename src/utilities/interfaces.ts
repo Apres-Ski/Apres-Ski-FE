@@ -49,6 +49,7 @@ export interface Restaurants {
     hour: Hours[]
     happyhour: HappyHours[]
     engagement: Engagement[]
+    photo: Photo[]
   }
 }
 
@@ -93,6 +94,7 @@ export interface CleanedRestaurantsState {
   engagements: Engagement[]
   avgRating: number
   userDistance?: string
+  photo: Photo[]
 }
 
 export interface Feature {
@@ -154,4 +156,11 @@ export interface VibeLabelsProps {
 
 export interface LabelMap {
   [key: string]: { class: string; text: string }
+}
+
+export interface Photo {
+  id: number
+  url: string
+  alt_text: string
+  restaurant: number
 }
