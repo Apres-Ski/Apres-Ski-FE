@@ -79,7 +79,7 @@ export interface CleanedRestaurantsState {
   address: string
   foodType: string
   cost: string
-  vibes: string[]
+  vibes: Vibe[]
   coverImg: string
   alt: string
   location: {
@@ -154,4 +154,9 @@ export interface VibeLabelsProps {
 
 export interface LabelMap {
   [key: string]: { class: string; text: string }
+}
+
+export interface Vibe {
+  name: string
+  count: number
 }

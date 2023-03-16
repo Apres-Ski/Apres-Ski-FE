@@ -6,7 +6,8 @@ import {
   Users,
   Lifts,
   CleanedLiftsState,
-  LabelMap
+  LabelMap,
+  Vibe
 } from './interfaces'
 
 export const cleanList = (
@@ -65,11 +66,20 @@ const capitalizeWords = (str: string) => {
 }
 
 const getVibes = (engagements: Engagement[]) => {
-  return engagements.reduce((acc: string[], engagement: Engagement) => {
-    if (!acc.includes(engagement.vibe)) {
+  return engagements.reduce((acc: Vibe[], engagement: Engagement) => {
+    if (!acc[0].name.includes(engagement.vibe)) {
+      // add a find(acc)=> to the conditional to exclude, then 
       engagement.vibe[0].toUpperCase()
-      acc.push(engagement.vibe)
+// eng.vibe is a capitalized string
+// create obj with name: string and count: num
+// push that obj into array
+
+      
+      acc[0].name.push(engagement.vibe)
+    } else if () {
+  // add a find()=> to the conditional to check if includes, then only +1 the count
     }
+    console.log('eng.V:', engagement.vibe, 'Vibe:', vibe)
     return acc
   }, [])
 }
