@@ -79,7 +79,7 @@ export interface CleanedRestaurantsState {
   address: string
   foodType: string
   cost: string
-  vibes: {}
+  vibes: {[key: string]: number}
   coverImg: string
   alt: string
   location: {
