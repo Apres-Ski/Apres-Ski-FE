@@ -28,7 +28,7 @@ const initialState: RestaurantsState = {
     address: '',
     foodType: '',
     cost: '',
-    vibes: [],
+    vibes: {},
     coverImg: '',
     alt: '',
     location: {
@@ -70,7 +70,7 @@ export const restaurantsSlice = createSlice({
         (state.activeRestaurant.address = ''),
         (state.activeRestaurant.foodType = ''),
         (state.activeRestaurant.cost = ''),
-        (state.activeRestaurant.vibes = []),
+        (state.activeRestaurant.vibes = {}),
         (state.activeRestaurant.coverImg = ''),
         (state.activeRestaurant.alt = ''),
         (state.activeRestaurant.location = {
