@@ -6,7 +6,7 @@ import {
   Users,
   Lifts,
   CleanedLiftsState,
-  LabelMap
+  LabelMap,
 } from './interfaces'
 
 export const cleanList = (
@@ -65,14 +65,15 @@ const capitalizeWords = (str: string) => {
 }
 
 const getVibes = (engagements: Engagement[]) => {
-  return engagements.reduce((acc: Record<string, number>, engagement: Engagement) => {
-    if (!acc[engagement.vibe]) {
-      acc[engagement.vibe] = 1
-    } else {
-      acc[engagement.vibe]++
-    }
-    return acc
-  }, {})
+  return engagements.reduce(
+    (acc: Record<string, number>, engagement: Engagement) => {
+      if (!acc[engagement.vibe]) {
+        acc[engagement.vibe] = 1
+      } else {
+        acc[engagement.vibe]++
+      }
+      return acc
+    },{})
 }
 
 const cleanHours = (restaurant: Restaurants) => {
@@ -112,7 +113,7 @@ export const cleanLiftsData = (lifts: Lifts[]): CleanedLiftsState[] => {
       location: {
         lat: lift.attributes.lat,
         long: lift.attributes.lon,
-      }
+      },
     }
   })
 }
@@ -152,5 +153,3 @@ export const getUserDistance = (
 function deg2rad(deg: number) {
   return deg * (Math.PI / 180)
 }
-
-
