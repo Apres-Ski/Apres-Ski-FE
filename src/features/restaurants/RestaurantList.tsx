@@ -34,7 +34,7 @@ export const RestaurantList = () => {
 
     if (vibes.length > 0) {
       dispatch(filterRestaurants(restaurants.filter((restaurant) =>
-        vibes.every((vibe) => restaurant.vibes.includes(vibe))))
+        vibes.every((vibe) => Object.keys(restaurant.vibes).includes(vibe))))
       )
     }
   }, [restaurants, hasAlcohol, hasHappyHour, vibes])

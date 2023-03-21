@@ -18,6 +18,7 @@ export const cleanList = (
     const cleanedHours = cleanHours(restaurant)
     const cleanedHappyHours = cleanHappyHours(restaurant)
     const avgRating = getAvgRating(restaurant.attributes.engagement)
+    const ratingDist = getRatingDist(restaurant.attributes.engagement)
 
     return {
       id: restaurant.id,
@@ -39,6 +40,8 @@ export const cleanList = (
       engagements: restaurant.attributes.engagement,
       avgRating: avgRating,
       photo: restaurant.attributes.photo,
+      ratingDist: ratingDist,
+
     } as CleanedRestaurantsState
   })
 }
@@ -58,6 +61,25 @@ const getAvgRating = (engagements: Engagement[]) => {
   return totalRating / ratingCount
 }
 
+const getRatingDist = (engagements: Engagement[]) => {
+  let tempDist = engagements.reduce((acc, engagement) => {
+    if (Number(engagement.rating) >= 4.5) {
+      acc['5']++
+    } else if (Number(engagement.rating) >= 3.5) {
+      acc['4']++
+    } else if (Number(engagement.rating) >= 2.5) {
+      acc['3']++
+    }else if (Number(engagement.rating) >= 1.5) {
+      acc['2']++
+    } else {
+      acc['1']++
+    }
+    return acc
+  },{'1': 0, '2': 0, '3': 0, '4': 0, '5': 0})
+
+  return [tempDist['5'], tempDist['4'], tempDist['3'], tempDist['2'], tempDist['1'] ]
+}
+
 const capitalizeWords = (str: string) => {
   return str
     .toLowerCase()
@@ -67,13 +89,15 @@ const capitalizeWords = (str: string) => {
 }
 
 const getVibes = (engagements: Engagement[]) => {
-  return engagements.reduce((acc: string[], engagement: Engagement) => {
-    if (!acc.includes(engagement.vibe)) {
-      engagement.vibe[0].toUpperCase()
-      acc.push(engagement.vibe)
-    }
-    return acc
-  }, [])
+  return engagements.reduce(
+    (acc: Record<string, number>, engagement: Engagement) => {
+      if (!acc[engagement.vibe]) {
+        acc[engagement.vibe] = 1
+      } else {
+        acc[engagement.vibe]++
+      }
+      return acc
+    },{})
 }
 
 const cleanHours = (restaurant: Restaurants) => {
@@ -113,7 +137,7 @@ export const cleanLiftsData = (lifts: Lifts[]): CleanedLiftsState[] => {
       location: {
         lat: lift.attributes.lat,
         long: lift.attributes.lon,
-      }
+      },
     }
   })
 }
@@ -153,5 +177,3 @@ export const getUserDistance = (
 function deg2rad(deg: number) {
   return deg * (Math.PI / 180)
 }
-
-

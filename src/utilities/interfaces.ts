@@ -80,7 +80,7 @@ export interface CleanedRestaurantsState {
   address: string
   foodType: string
   cost: string
-  vibes: string[]
+  vibes: {[key: string]: number}
   coverImg: string
   alt: string
   location: {
@@ -93,6 +93,7 @@ export interface CleanedRestaurantsState {
   happyHours: CleanedHappyHours
   engagements: Engagement[]
   avgRating: number
+  ratingDist: number[]
   userDistance?: string
   photo: Photo[]
 }
