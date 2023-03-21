@@ -2,7 +2,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const DoughnutChart = ({ ratings }: { ratings: number[] }) => {
+// export const DoughnutChart = ({ ratings }: { ratings: number[] }) => {
   // const labels = ['5', '4', '3', '2', '1']
 
   // const data = {
@@ -17,5 +17,5 @@ export const DoughnutChart = ({ ratings }: { ratings: number[] }) => {
   //   ],
   // }
 
-  return <Doughnut data={data} />
-}
+//   return <Doughnut data={data} />
+// }
