@@ -43,7 +43,7 @@ export const DetailModal = () => {
       </p>
       <hr className="mt-1 mb-6" />
       <figure className="figure">
-        <img
+      <img
           src={activeRestaurant.coverImg}
           alt={activeRestaurant.alt}
           className="figure-img img-fluid rounded"

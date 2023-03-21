@@ -27,7 +27,7 @@ const initialState: InitialState = {
 export const getUsers = createAsyncThunk('users/fetchUsers', async () => {
   const response = await fetchUsers()
   const userList = cleanUsersData(response.data)
-  return userList
+  return userList.splice(0, 3)
 })
 
 export const usersSlice = createSlice({
