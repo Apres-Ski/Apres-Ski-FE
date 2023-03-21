@@ -38,7 +38,7 @@ export const cleanList = (
       happyHours: cleanedHappyHours,
       engagements: restaurant.attributes.engagement,
       avgRating: avgRating,
-      // photo: restaurant.attributes.photo,
+      photo: restaurant.attributes.photo,
     } as CleanedRestaurantsState
   })
 }
