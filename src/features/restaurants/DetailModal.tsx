@@ -101,6 +101,7 @@ export const DetailModal = () => {
         Rating & Vibes
       </p>
       <BarChart ratings={activeRestaurant.ratingDist}/>
+      {/* <DoughnutChart vibes={activeRestaurant.ratingDist}/> */}
       {/* <VibeLabels restaurant={activeRestaurant} /> */}
     </div>
   )
