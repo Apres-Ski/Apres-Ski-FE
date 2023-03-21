@@ -9,6 +9,7 @@ import { VibeLabels } from './VibeLabels'
 import menu from '../../assets/menu.svg'
 import mapGif from '../../assets/area-map.gif'
 import {BarChart} from './BarChart'
+import { DoughnutChart } from './DoughnutChart'
 
 export const DetailModal = () => {
   const { activeRestaurant } = useSelector(
@@ -101,8 +102,7 @@ export const DetailModal = () => {
         Rating & Vibes
       </p>
       <BarChart ratings={activeRestaurant.ratingDist}/>
-      {/* <DoughnutChart vibes={activeRestaurant.ratingDist}/> */}
-      {/* <VibeLabels restaurant={activeRestaurant} /> */}
+      <DoughnutChart vibes={activeRestaurant.vibes}/>
     </div>
   )
 }

@@ -26,7 +26,7 @@ export const BarChart = ({ ratings }: { ratings: number[] }) => {
         display: false,
       },
       title: {
-        display: true,
+        display: false,
         text: 'User Ratings',
       },
     },
@@ -64,7 +64,7 @@ export const BarChart = ({ ratings }: { ratings: number[] }) => {
   }
 
   return (
-    <div className='border rounded'>
+    <div className='border rounded pt-2'>User Ratings
       <Bar options={options} data={data} />
     </div>
   )
