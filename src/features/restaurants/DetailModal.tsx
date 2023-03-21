@@ -8,6 +8,7 @@ import { Hours } from './Hours'
 import { VibeLabels } from './VibeLabels'
 import menu from '../../assets/menu.svg'
 import mapGif from '../../assets/area-map.gif'
+import {BarChart} from './BarChart'
 
 export const DetailModal = () => {
   const { activeRestaurant } = useSelector(
@@ -97,9 +98,10 @@ export const DetailModal = () => {
         }}
         className="card-text small-text"
       >
-        Vibes
+        Rating & Vibes
       </p>
-      <VibeLabels restaurant={activeRestaurant} />
+      <BarChart ratings={activeRestaurant.ratingDist}/>
+      {/* <VibeLabels restaurant={activeRestaurant} /> */}
     </div>
   )
 }
