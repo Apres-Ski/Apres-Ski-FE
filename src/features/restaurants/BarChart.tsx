@@ -8,9 +8,11 @@ import {
   Legend,
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
+import { defaults } from 'chart.js'
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export const BarChart = ({ ratings }: { ratings: number[] }) => {
+  defaults.font.family = 'varela round'
   const options = {
     indexAxis: 'y' as const,
     elements: {
@@ -61,5 +63,9 @@ export const BarChart = ({ ratings }: { ratings: number[] }) => {
     ],
   }
 
-  return <Bar options={options} data={data} />
+  return (
+    <div className='border rounded'>
+      <Bar options={options} data={data} />
+    </div>
+  )
 }
