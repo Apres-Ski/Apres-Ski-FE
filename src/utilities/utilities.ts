@@ -6,7 +6,8 @@ import {
   Users,
   Lifts,
   CleanedLiftsState,
-  LabelMap
+  LabelMap,
+  Photo
 } from './interfaces'
 
 export const cleanList = (
@@ -37,6 +38,7 @@ export const cleanList = (
       happyHours: cleanedHappyHours,
       engagements: restaurant.attributes.engagement,
       avgRating: avgRating,
+      // photo: restaurant.attributes.photo,
     } as CleanedRestaurantsState
   })
 }

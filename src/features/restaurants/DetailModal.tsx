@@ -43,13 +43,13 @@ export const DetailModal = () => {
       </p>
       <hr className="mt-1 mb-6" />
       <figure className="figure">
-        {/* <img
+        <img
           src={activeRestaurant.coverImg}
           alt={activeRestaurant.alt}
           className="figure-img img-fluid rounded"
-        /> */}
+        />
 
-        <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+        {/* <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -74,7 +74,7 @@ export const DetailModal = () => {
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
           </button>
-        </div>
+        </div> */}
 
       </figure>
       <hr className="mt-1 mb-6" />
