@@ -41,6 +41,7 @@ const initialState: RestaurantsState = {
     happyHours: {} as CleanedHappyHours,
     engagements: [],
     avgRating: 0,
+    ratingDist: []
   },
 }
 
@@ -82,7 +83,8 @@ export const restaurantsSlice = createSlice({
         (state.activeRestaurant.hours = {} as CleanedHours),
         (state.activeRestaurant.happyHours = {} as CleanedHappyHours),
         (state.activeRestaurant.engagements = []),
-        (state.activeRestaurant.avgRating = 0)
+        (state.activeRestaurant.avgRating = 0),
+        (state.activeRestaurant.ratingDist = [])
     },
     setMapClickedRestaurant(state, action) {
       state.mapClickedRestaurant = action.payload

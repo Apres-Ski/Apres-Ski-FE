@@ -92,6 +92,7 @@ export interface CleanedRestaurantsState {
   happyHours: CleanedHappyHours
   engagements: Engagement[]
   avgRating: number
+  ratingDist: number[]
   userDistance?: string
 }
 

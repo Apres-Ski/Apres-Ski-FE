@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 import { VibeLabels } from './VibeLabels'
 import { DistanceMarkers } from './DistanceMarker'
+import { RestRating } from './Rating'
 
 export const RestaurantCard = ({
   restaurant,
@@ -41,9 +42,10 @@ export const RestaurantCard = ({
               <div>
                 <hr className="mt-1 mb-6" style={{ minWidth: '100%' }} />
                 <DistanceMarkers userDistance={restaurant.userDistance} />
+                <RestRating stars={restaurant.avgRating} />
                 <div className="d-flex justify-content-center">
                   <hr
-                    style={{ width: '6rem', height: '.12rem' }}
+                    style={{ width: '12rem', height: '.12rem' }}
                     className="mt-1 mb-1"
                   />
                 </div>

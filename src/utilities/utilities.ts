@@ -17,6 +17,7 @@ export const cleanList = (
     const cleanedHours = cleanHours(restaurant)
     const cleanedHappyHours = cleanHappyHours(restaurant)
     const avgRating = getAvgRating(restaurant.attributes.engagement)
+    const ratingDist = getRatingDist(restaurant.attributes.engagement)
 
     return {
       id: restaurant.id,
@@ -37,6 +38,8 @@ export const cleanList = (
       happyHours: cleanedHappyHours,
       engagements: restaurant.attributes.engagement,
       avgRating: avgRating,
+      ratingDist: ratingDist,
+
     } as CleanedRestaurantsState
   })
 }
@@ -54,6 +57,25 @@ const getAvgRating = (engagements: Engagement[]) => {
     0
   )
   return totalRating / ratingCount
+}
+
+const getRatingDist = (engagements: Engagement[]) => {
+  let tempDist = engagements.reduce((acc, engagement) => {
+    if (Number(engagement.rating) >= 4.5) {
+      acc['5']++
+    } else if (Number(engagement.rating) >= 3.5) {
+      acc['4']++
+    } else if (Number(engagement.rating) >= 2.5) {
+      acc['3']++
+    }else if (Number(engagement.rating) >= 1.5) {
+      acc['2']++
+    } else {
+      acc['1']++
+    }
+    return acc
+  },{'1': 0, '2': 0, '3': 0, '4': 0, '5': 0})
+
+  return [tempDist['5'], tempDist['4'], tempDist['3'], tempDist['2'], tempDist['1'] ]
 }
 
 const capitalizeWords = (str: string) => {

@@ -19,7 +19,7 @@ export const DistanceMarkers = ({ userDistance }: DistanceProps) => {
   }
 
   return (
-    <p style={{ letterSpacing: '.5rem' }} className="card-text small-text">
+    <p style={{ letterSpacing: '.5rem', marginBottom: '0rem' }} className="card-text small-text">
       <img
         style={{
           width: '2rem',
