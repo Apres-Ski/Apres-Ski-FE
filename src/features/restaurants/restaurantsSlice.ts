@@ -41,7 +41,8 @@ const initialState: RestaurantsState = {
     happyHours: {} as CleanedHappyHours,
     engagements: [],
     avgRating: 0,
-    ratingDist: []
+    ratingDist: [],
+    photo: []
   },
 }
 

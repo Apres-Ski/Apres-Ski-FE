@@ -7,7 +7,7 @@ import {
   Lifts,
   CleanedLiftsState,
   LabelMap,
-  Photo
+  Photo,
 } from './interfaces'
 
 export const cleanList = (
